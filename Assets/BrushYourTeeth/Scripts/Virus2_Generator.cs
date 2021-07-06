@@ -19,49 +19,45 @@ public class Virus2_Generator : MonoBehaviour
 
 
 
-        while (true)
+        while (true)        //바이러스 생성 위치 설정
         {
             for (int i = 0; i < 5; i++)         //바이러스를 생성할 랜덤 위치를 arr2배열에 저장
             {
                 int x = Random.Range(-4, 4);
-                float y = Random.Range(-0.5f, -3.3f);
+                float y = Random.Range(-0.6f, -3.3f);
 
                 arr2[i, 0] = x;
                 arr2[i, 1] = y;
             }
 
+            
 
-
-            for (int i = 0; i < 5; i++)
+            
+            for (int i = 0; i < 4; i++)         //중복된 위치에 나오지 않게끔 재설정
             {
                 for (int j = 1; j < 5; j++)
                 {
-                    if (Mathf.Abs(arr2[i, 0]) == Mathf.Abs(arr2[j, 0]) && (Mathf.Abs(arr2[i, 1]) - Mathf.Abs(arr2[j, 1]) < 0.6) && (Mathf.Abs(arr2[i, 1]) - Mathf.Abs(arr2[j, 1]) > -0.6))
+                    if (i == j)
+                    {
+                        j++;
+                    }
+                    if (Mathf.Abs(arr2[i, 0]) == Mathf.Abs(arr2[j, 0]) && (Mathf.Abs(arr2[i, 1]) - Mathf.Abs(arr2[j, 1]) < 0.8) && (Mathf.Abs(arr2[i, 1]) - Mathf.Abs(arr2[j, 1]) > -0.8))
                     {
                         int x = Random.Range(-4, 4);
-                        float y = Random.Range(-0.5f, -3.3f);
+                        float y = Random.Range(-0.6f, -3.3f);
 
                         arr2[j, 0] = x;
                         arr2[j, 1] = y;
+                        i = 0;
                         continue;
                     }
                 }
             }
-
+            
 
 
             break;
 
-
-            /*
-            if(arr2[0, 0] - arr2[1, 0] > 0.5)
-            {
-                if(arr2[0, 1] - arr2[1, 1] > 0.5)
-                {
-                    break;
-                }
-            }
-            */
 
         }
 

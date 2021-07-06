@@ -35,7 +35,6 @@ public class Control_UI : MonoBehaviour
     void Update()
     {
         this.NumberOfVirusLeft.GetComponent<Text>().text = "남은 바이러스 수 : " + this.LeftVirus;
-        Debug.Log("왜안되");
 
     }
 

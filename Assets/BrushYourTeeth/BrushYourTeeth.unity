@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47be9aae89560e84db6b1d72d1e46819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Virus2_Prefab: {fileID: 5821553669260535364, guid: ffaa51e0bf6fed44b98e471e22548553, type: 3}
+  Virus2_Prefab: {fileID: 8128593663494113829, guid: 8439a18e801b16b44859f209ee850a81, type: 3}
 --- !u!4 &1847656695
 Transform:
   m_ObjectHideFlags: 0

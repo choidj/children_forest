@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8587484255708902677}
   - component: {fileID: 8587484255708902679}
   - component: {fileID: 1138851581127962025}
+  - component: {fileID: 1120749492795204136}
   m_Layer: 0
   m_Name: Virus1_Prefab
   m_TagString: Untagged
@@ -96,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a40f70c603a5c843a020f3b9aef261e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick: {fileID: 1120749492795204136}
+  Virus1_Die: {fileID: 1120749492795204136}
 --- !u!58 &1138851581127962025
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,3 +115,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &1120749492795204136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587484255708902674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d963e1397a0a83459188a080a206bdf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
