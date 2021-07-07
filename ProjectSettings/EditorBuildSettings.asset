@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/puzzle/Scenes/puzzle.unity
     guid: 87039fb9d06ce47c58bb2e09e670c08a
+  - enabled: 1
+    path: Assets/Shape_matching/Scenes/Shape_matching.unity
+    guid: c9259ca5d01484cd2ba9fd17e31d24ff
+  - enabled: 1
+    path: Assets/main_select/Scene/stage_select_scene.unity
+    guid: f248880c943314f358e31fd9611d338d
+  - enabled: 1
+    path: Assets/main_select/Scene/main_scene.unity
+    guid: f8a0019c9723e4ae5975f62f00adcd55
+  - enabled: 1
+    path: Assets/fruit_putin/Scenes/fruit_putin_scene.unity
+    guid: cc8419e75507546a98fbd4f6581448ac
+  - enabled: 1
+    path: Assets/BrushYourTeeth/BrushYourTeeth.unity
+    guid: bc51a45c55043b94a8c7fe49ce416174
   m_configObjects: {}
