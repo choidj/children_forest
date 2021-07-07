@@ -26,24 +26,24 @@ public class StageSceneControl : MonoBehaviour
                 {
                     case "brush":
                         //need to name clean_teeth_scene..
-                        SceneManager.LoadScene("BrushYourTeeth");
+                        SceneManager.LoadScene("clean_teeth_scene");
                         break;
                     case "mart":
-                        SceneManager.LoadScene("mart_scene");
+                        SceneManager.LoadScene("buy_mart_scene");
                         break;
                     case "match":
                         //need to name match_shape_scene..
-                        SceneManager.LoadScene("Shape_matching");
+                        SceneManager.LoadScene("match_shape_scene");
                         break;
                     case "puzzle":
                         //need to name puzzle_scene..
-                        SceneManager.LoadScene("puzzle");
+                        SceneManager.LoadScene("solve_puzzle_scene");
                         break;
                     case "reading":
                         SceneManager.LoadScene("reading_scene");
                         break;
                     case "fruit":
-                        SceneManager.LoadScene("fruit_putin_scene");
+                        SceneManager.LoadScene("put_fruits_scene");
                         break;
                     case "lock":
                         Debug.Log("lock stage is clicked.....");
