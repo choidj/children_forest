@@ -9,7 +9,7 @@ public class MainToStageSelect : MonoBehaviour {
     //when start button clicked, move to the scene of stage selection.
     public void OnClickButton() {
         //Debug.Log("Stage Change!!!");
-        SceneManager.LoadScene("fruit_putin");    
+        SceneManager.LoadScene("select_stage_scene");    
     }
 
     //dynamic initialize button.. 
