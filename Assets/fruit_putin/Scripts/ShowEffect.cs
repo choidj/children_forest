@@ -9,10 +9,7 @@ public class ShowEffect : MonoBehaviour
     // When the fruit collide basket, fruit will be disappeared.
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
-        if (cCollideObject.tag == "PutFruitInBasket")
-        {
-            Instantiate(mg_playEffectObj, transform.position, Quaternion.identity);
-            Destroy(mg_playEffectObj, 1f);
-        }
+        Instantiate(mg_playEffectObj, transform.position, Quaternion.identity);
+        Destroy(mg_playEffectObj, 1f);
     }
 }

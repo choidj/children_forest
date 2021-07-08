@@ -7,6 +7,6 @@ public class attachStartScene : MonoBehaviour
 {
     private void Awake()
     {
-        SceneManager.LoadScene("select_stage_scene");
+        SceneManager.LoadScene("start_stage_scene");
     }
 }
