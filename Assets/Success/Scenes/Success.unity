@@ -124,7 +124,11 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &231086588
+=======
+--- !u!1 &14348488
+>>>>>>> Stashed changes
 =======
 --- !u!1 &14348488
 >>>>>>> Stashed changes
@@ -135,6 +139,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   - component: {fileID: 231086590}
   - component: {fileID: 231086589}
@@ -210,6 +215,11 @@ GameObject:
   - component: {fileID: 14348489}
   - component: {fileID: 14348491}
 >>>>>>> Stashed changes
+=======
+  - component: {fileID: 14348490}
+  - component: {fileID: 14348489}
+  - component: {fileID: 14348491}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: balloon
   m_TagString: Untagged
@@ -217,6 +227,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 --- !u!95 &745334642
 Animator:
@@ -241,13 +252,20 @@ Animator:
 =======
 --- !u!212 &14348489
 >>>>>>> Stashed changes
+=======
+--- !u!212 &14348489
+>>>>>>> Stashed changes
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 745334641}
+=======
+  m_GameObject: {fileID: 14348488}
+>>>>>>> Stashed changes
 =======
   m_GameObject: {fileID: 14348488}
 >>>>>>> Stashed changes
@@ -284,8 +302,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e4490ea2a286f448e89a7948cb96375f, type: 3}
+=======
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: bccc0626268db488099faa409c6095b3, type: 3}
+>>>>>>> Stashed changes
 =======
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bccc0626268db488099faa409c6095b3, type: 3}
@@ -301,7 +324,11 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &745334644
+=======
+--- !u!4 &14348490
+>>>>>>> Stashed changes
 =======
 --- !u!4 &14348490
 >>>>>>> Stashed changes
@@ -311,22 +338,31 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 745334641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 14348488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!95 &14348491
 Animator:
   serializedVersion: 3
@@ -346,6 +382,9 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &893098756
 GameObject:
