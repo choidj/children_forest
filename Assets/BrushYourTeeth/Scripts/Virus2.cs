@@ -10,10 +10,7 @@ public class Virus2 : MonoBehaviour
     public Animator OnClick;
     public Animator Virus2_Die;
 
-    private int Virus2_HP = 3;  //바이러스 HP
-
-    float Virus2DyingTime = 1.5f;
-    float Virus2_delta;
+    private int Virus2_HP = 3;  //???????? HP
 
 
     void Start()
@@ -28,7 +25,7 @@ public class Virus2 : MonoBehaviour
     }
 
 
-    private void OnMouseDown()  //바이러스 클릭 시
+    private void OnMouseDown()  //???????? ???? ??
     {
         if (Virus2_HP <= 0)
         {
@@ -42,7 +39,7 @@ public class Virus2 : MonoBehaviour
             OnClick.SetTrigger("OnClick");
 
             Virus2_HP -= 1;
-            Debug.Log("바이러스2 클릭성공");
+            Debug.Log("????????2 ????????");
         }
     }
 }

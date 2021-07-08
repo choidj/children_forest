@@ -9,17 +9,20 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/main_scene.unity
+    guid: 22a5e869bdab1497e8c59ad0467e8dd7
+  - enabled: 1
+    path: Assets/start_select/Scene/start_stage_scene.unity
+    guid: f8a0019c9723e4ae5975f62f00adcd55
+  - enabled: 1
+    path: Assets/start_select/Scene/select_stage_scene.unity
+    guid: f248880c943314f358e31fd9611d338d
+  - enabled: 1
     path: Assets/puzzle/Scenes/solve_puzzle_scene.unity
     guid: 87039fb9d06ce47c58bb2e09e670c08a
   - enabled: 1
     path: Assets/Shape_matching/Scenes/match_shape_scene.unity
     guid: c9259ca5d01484cd2ba9fd17e31d24ff
-  - enabled: 1
-    path: Assets/start_select/Scene/select_stage_scene.unity
-    guid: f248880c943314f358e31fd9611d338d
-  - enabled: 1
-    path: Assets/start_select/Scene/start_stage_scene.unity
-    guid: f8a0019c9723e4ae5975f62f00adcd55
   - enabled: 1
     path: Assets/fruit_putin/Scenes/put_fruits_scene.unity
     guid: cc8419e75507546a98fbd4f6581448ac
@@ -29,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mart/buy_mart_scene.unity
     guid: 6ee6478357c03db49ab7b3e6f18533bd
+  - enabled: 1
+    path: Assets/end_scene.unity
+    guid: a623bbcb2ebaa4466836b403706ca3d9
   m_configObjects: {}
