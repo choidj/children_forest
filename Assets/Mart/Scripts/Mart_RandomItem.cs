@@ -50,4 +50,10 @@ public class Mart_RandomItem : MonoBehaviour
         }
 
     }
+
+
+    public int Answer()
+    {
+        return RandomValue;
+    }
 }
