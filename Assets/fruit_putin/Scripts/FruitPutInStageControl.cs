@@ -8,7 +8,7 @@ public class FruitPutInStageControl : MonoBehaviour {
     public int mn_countFruits = 10;
     private Text mt_putFruitSize;
     private List<GameObject> ml_fruitList = new List<GameObject>();
-    public Sprite[] msl_changeSpritesImg = new Sprite[12];
+    public Sprite[] msl_changeSpritesImg = new Sprite[5];
 
     // When fruitPutIn stage start, random initializing position of fruits.
     void Start() {
@@ -18,7 +18,7 @@ public class FruitPutInStageControl : MonoBehaviour {
             GameObject fruit = Instantiate(mg_instanceFruit);
             fruit.transform.position = new Vector2(Random.Range(-8f, 8f),
                 Random.Range(-4f, 4f));
-            fruit.GetComponent<SpriteRenderer>().sprite = msl_changeSpritesImg[Random.Range(0, 11)];
+            fruit.GetComponent<SpriteRenderer>().sprite = msl_changeSpritesImg[Random.Range(0, 4)];
             ml_fruitList.Add(fruit);
         }
     }
