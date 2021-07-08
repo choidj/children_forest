@@ -12,10 +12,15 @@ public class Virus1 : MonoBehaviour
     private int Virus1_HP = 2;  //바이러스 HP
 
 
+    private bool CheckFlag;
+
+
     // Start is called before the first frame update
     void Start()
     {
         this.NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
+
+        CheckFlag = false;
     }
 
     // Update is called once per frame
@@ -28,11 +33,15 @@ public class Virus1 : MonoBehaviour
     
     private void OnMouseDown()  //바이러스 클릭 시
     {
-        if (Virus1_HP <= 0)
+        if (Virus1_HP == 0)
         {
+            if(CheckFlag == false)
+            {
+                CheckFlag = true;
+                NumberOfVirusLeft.GetComponent<Control_UI>().MinusVirus();
+            }
             Virus1_Die.SetTrigger("Virus1_Die");
             Destroy(gameObject, 1f);
-            NumberOfVirusLeft.GetComponent<Control_UI>().MinusVirus();
 
         }
         else

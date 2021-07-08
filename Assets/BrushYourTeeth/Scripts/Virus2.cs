@@ -12,10 +12,13 @@ public class Virus2 : MonoBehaviour
 
     private int Virus2_HP = 3;  //???????? HP
 
+    private bool CheckFlag;
+
 
     void Start()
     {
         this.NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
+        CheckFlag = false;
     }
 
     // Update is called once per frame
@@ -27,11 +30,15 @@ public class Virus2 : MonoBehaviour
 
     private void OnMouseDown()  //???????? ???? ??
     {
-        if (Virus2_HP <= 0)
+        if (Virus2_HP == 0)
         {
+            if (CheckFlag == false)
+            {
+                CheckFlag = true;
+                NumberOfVirusLeft.GetComponent<Control_UI>().MinusVirus();
+            }
             Virus2_Die.SetTrigger("Virus2_Die");
             Destroy(gameObject, 1f);
-            NumberOfVirusLeft.GetComponent<Control_UI>().MinusVirus();
 
         }
         else

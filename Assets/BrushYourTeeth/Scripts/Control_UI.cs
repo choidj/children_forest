@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -12,7 +13,7 @@ public class Control_UI : MonoBehaviour
     GameObject NumberOfVirusLeft;
     GameObject Virus1;
 
-    public int LeftVirus = 10;  //남은 바이러스 수
+    private int LeftVirus = 10;  //남은 바이러스 수
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class Control_UI : MonoBehaviour
     void Update()
     {
         this.NumberOfVirusLeft.GetComponent<Text>().text = "남은 바이러스 수 : " + this.LeftVirus;
+
+
+        if (this.LeftVirus == 0)
+        {
+            SceneManager.LoadScene("end_scene");
+        }
 
     }
 

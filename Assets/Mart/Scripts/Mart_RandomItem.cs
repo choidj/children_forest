@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Mart_RandomItem : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class Mart_RandomItem : MonoBehaviour
 
 
                 GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagFalse();
+            }
+            else if(leftTime == 0)
+            {
+                SceneManager.LoadScene("end_scene");
             }
 
 
