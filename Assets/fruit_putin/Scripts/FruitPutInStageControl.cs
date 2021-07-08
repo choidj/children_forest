@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class FruitPutInStageControl : MonoBehaviour {
     public GameObject mg_instanceFruit;
 
@@ -40,6 +40,6 @@ public class FruitPutInStageControl : MonoBehaviour {
         }
     }
     void changeEndingScene() {
-        ChangeScene.LoadScene("end_scene");
+        SceneManager.LoadScene("end_scene");
     }
 }
