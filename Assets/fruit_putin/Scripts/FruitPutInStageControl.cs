@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class FruitPutInStageControl : MonoBehaviour {
     public GameObject mg_instanceFruit;
+
     public int mn_countFruits = 10;
+    private bool mb_stopUpdating = true;
     private Text mt_putFruitSize;
     private List<GameObject> ml_fruitList = new List<GameObject>();
     public Sprite[] msl_changeSpritesImg = new Sprite[5];
@@ -32,5 +34,12 @@ public class FruitPutInStageControl : MonoBehaviour {
             }
         }
         mt_putFruitSize.text = n_countFruits.ToString();
+        if(n_countFruits == 0 && mb_stopUpdating) {
+            mb_stopUpdating = false;
+            Invoke("changeEndingScene", 2f);
+        }
+    }
+    void changeEndingScene() {
+        ChangeScene.LoadScene("end_scene");
     }
 }

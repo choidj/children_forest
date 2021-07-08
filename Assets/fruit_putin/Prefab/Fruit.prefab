@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e796d22038be4cea8b25573fb8f39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mg_playEffectObj: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
 --- !u!50 &3665218280073836626
 Rigidbody2D:
   serializedVersion: 4
