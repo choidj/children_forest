@@ -8,6 +8,12 @@ public class Matching : MonoBehaviour
     public bool mb_classifyWhetherAns = false;
     public Sprite[] msl_changeAnsImg = new Sprite[9];
 
+    private void Start() {
+        if(!mb_classifyWhetherAns)
+        {
+            transform.position = new Vector3(Random.Range(18, 26), Random.Range(3, 11), 0);
+        }
+    }
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
         if (cCollideObject.name[cCollideObject.name.Length - 1] == this.name[this.name.Length - 1])
