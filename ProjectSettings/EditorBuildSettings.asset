@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/puzzle/Scenes/solve_puzzle_scene.unity
     guid: 87039fb9d06ce47c58bb2e09e670c08a
   - enabled: 1
-    path: Assets/Shape_matching/Scenes/match_shape_scene.unity
+    path: Assets/Shape/Scenes/match_shape_scene.unity
     guid: c9259ca5d01484cd2ba9fd17e31d24ff
   - enabled: 1
     path: Assets/fruit_putin/Scenes/put_fruits_scene.unity

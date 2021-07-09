@@ -4,23 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Puzzle_Matching_Puzzle : MonoBehaviour{
-    public bool mb_classifyWhetherAns = false;
+    public bool mb_classifyWhetherAns = false; //matching되기 전 
     //public Sprite[] msa_changeAnsImg = new Sprite[9];
 
     private void Start(){
         if(!mb_classifyWhetherAns){
-            transform.position = new Vector3(Random.Range(18, 26), Random.Range(3, 11), 0);
+            transform.position = new Vector3(Random.Range(19, 26), Random.Range(3, 11), 0);//자리 랜덤 선정
         }
     }
 
     void OnTriggerEnter2D(Collider2D cCollideObject){
-        if (cCollideObject.name[cCollideObject.name.Length - 1] == this.name[this.name.Length - 1]){
-            if (mb_classifyWhetherAns){
+        if (cCollideObject.name[cCollideObject.name.Length - 1] == this.name[this.name.Length - 1]){//매칭퍼즐과 매칭퍼즐과모양이같은퍼즐의 이름 맨 뒤(숫자)가 같은 경우
+            if (mb_classifyWhetherAns){ //정답
+                //흐렷던 퍼즐조각을 선명하게 변경
                 Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
                 tempColor.a = 1f;
                 gameObject.GetComponent<SpriteRenderer>().color = tempColor;
             }
+<<<<<<< Updated upstream
             else{ 
+=======
+            else{ //오류
+>>>>>>> Stashed changes
                 Destroy(this.gameObject);
             }
         }

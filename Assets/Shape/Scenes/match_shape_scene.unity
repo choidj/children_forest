@@ -246,12 +246,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 1
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 21300000, guid: a2305d877fe9e4df2ab2c34101ee43ee, type: 3}
+  sNextSprite: {fileID: 21300000, guid: a2305d877fe9e4df2ab2c34101ee43ee, type: 3}
 --- !u!1 &54308069
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,12 +375,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 1
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 21300000, guid: 490c6a1f22ea344739393ef5b9c13256, type: 3}
+  sNextSprite: {fileID: 21300000, guid: 490c6a1f22ea344739393ef5b9c13256, type: 3}
 --- !u!1 &65443799
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +393,6 @@ GameObject:
   - component: {fileID: 65443802}
   - component: {fileID: 65443801}
   - component: {fileID: 65443800}
-  - component: {fileID: 65443805}
   - component: {fileID: 65443804}
   - component: {fileID: 65443806}
   m_Layer: 0
@@ -528,24 +527,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 0
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 0}
---- !u!114 &65443805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65443799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e445a8768ad8d4a89baecdc54d356b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sNextSprite: {fileID: 21300000, guid: a2305d877fe9e4df2ab2c34101ee43ee, type: 3}
 --- !u!114 &65443806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,12 +692,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 0
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 0}
+  sNextSprite: {fileID: 0}
 --- !u!114 &153842258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,7 +734,6 @@ GameObject:
   - component: {fileID: 496995778}
   - component: {fileID: 496995777}
   - component: {fileID: 496995776}
-  - component: {fileID: 496995781}
   - component: {fileID: 496995780}
   - component: {fileID: 496995782}
   m_Layer: 0
@@ -882,24 +868,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 0
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 0}
---- !u!114 &496995781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496995775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e445a8768ad8d4a89baecdc54d356b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sNextSprite: {fileID: 0}
 --- !u!114 &496995782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,12 +1142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 1
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 21300000, guid: 2a797f97a1b2b4ffc89154b78d73a53a, type: 3}
+  sNextSprite: {fileID: 21300000, guid: 2a797f97a1b2b4ffc89154b78d73a53a, type: 3}
 --- !u!1 &1306124815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,12 +1295,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 0
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 0}
+  sNextSprite: {fileID: 0}
 --- !u!114 &1306124821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,12 +1530,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb_classifyWhetherAns: 1
-  msl_changeAnsImg:
+  msa_changeAnsImg:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NextSprite: {fileID: 21300000, guid: 098a8ede44d97440e9f53a083638a8e5, type: 3}
+  sNextSprite: {fileID: 21300000, guid: 098a8ede44d97440e9f53a083638a8e5, type: 3}
 --- !u!1 &1787520556
 GameObject:
   m_ObjectHideFlags: 0
