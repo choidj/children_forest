@@ -2,68 +2,77 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mart_ControlUI : MonoBehaviour
-{
-    private bool[] Market_RandomItemArr = new bool[6];
-    private int randomValue;
+
+/*
+ * -Name : Mart_ControlUI.cs
+ * -Content : Manage random value generation and item change flags
+ * 
+ * -Variable 
+ * mba_MarketRandomItemArr : An arrangement to check if the item is in the cart.
+ * mn_RandomValue
+ * mb_ChangeItemFlag
+ * n_i
+ * 
+ * 
+ * -Function
+ * v_MartCheckRandomItemArr()
+ * n_MartRandomItemValue()
+ * n_HowManyleftArr()
+ * v_ChangeFlagTrue()
+ * v_ChangeFlagFalse()
+ * b_checkFlag()
+ * 
+ */
 
 
-    private bool ChangeItemFlag;
+public class Mart_ControlUI : MonoBehaviour{
+    private bool[] mba_MarketRandomItemArr = new bool[6];
+    private int mn_RandomValue;
+
+
+    private bool mb_ChangeItemFlag;
     
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        ChangeItemFlag = false;
+    void Start(){
+        mb_ChangeItemFlag = false;
 
-        for (int i = 0; i < 6; i++)
-        {
-            Market_RandomItemArr[i] = false;
+        for (int n_i = 0; n_i < 6; n_i++){
+            mba_MarketRandomItemArr[n_i] = false;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update(){
 
     }
 
     //트루값 입력 함수
-    public void Mart_CheckRandomItemArr(int num)
-    {
-        Market_RandomItemArr[num] = true;
+    public void v_MartCheckRandomItemArr(int num){
+        mba_MarketRandomItemArr[num] = true;
         Debug.Log(num + "번째 배열 트루값 입력");
 
     }
 
 
     //랜덤값 뽑는 함수
-    public int Mart_RandomItemValue()
-    {
+    public int n_MartRandomItemValue(){
 
-        while (true)
-        {
-            randomValue = Random.Range(0, 6);
-            if (Market_RandomItemArr[randomValue] == false)
-            {
+        while (true){
+            mn_RandomValue = Random.Range(0, 6);
+            if (mba_MarketRandomItemArr[mn_RandomValue] == false){
                 break;
             }
         }
-        return randomValue;
+        return mn_RandomValue;
     }
 
-    public int HowmanyleftArr()         //남은 false값
-    {
+    public int n_HowManyleftArr(){         //남은 false값
         int left = 0;
-        for (int i = 0; i < 6; i++)
-        {
-            if (Market_RandomItemArr[i] == true)
-            {
-                Debug.Log(i + "번째 배열값 true");
+        for (int n_i = 0; n_i < 6; n_i++){
+            if (mba_MarketRandomItemArr[n_i] == true){
+                Debug.Log(n_i + "번째 배열값 true");
             }
-            if (Market_RandomItemArr[i] == false)
-            {
-                Debug.Log(i + "번째 배열값 false");
+            if (mba_MarketRandomItemArr[n_i] == false){
+                Debug.Log(n_i + "번째 배열값 false");
                 left += 1;
             }
         }
@@ -71,27 +80,18 @@ public class Mart_ControlUI : MonoBehaviour
         return left;
     }
 
-
-    public void testqq()
-    {
-        Debug.Log("연결확인용~~~");
-    }
-
-    public void ChangeFlagTrue()
-    {
-        ChangeItemFlag = true;
+    public void v_ChangeFlagTrue(){
+        mb_ChangeItemFlag = true;
         Debug.Log("Flag값 True");
     }
 
-    public void ChangeFlagFalse()
-    {
-        ChangeItemFlag = false ;
+    public void v_ChangeFlagFalse(){
+        mb_ChangeItemFlag = false ;
         Debug.Log("Flag값 False");
     }
 
-    public bool checkFlag()
-    {
-        return ChangeItemFlag;
+    public bool b_checkFlag(){
+        return mb_ChangeItemFlag;
     }
 
 

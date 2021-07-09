@@ -4,61 +4,71 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Mart_RandomItem : MonoBehaviour
-{
 
-    GameObject RandomItem;
-    public Sprite[] sprites = new Sprite[6];
+/*
+ * -Name : Mart_RandomItem.cs
+ * -Content : Random selection of items, so that they are not duplicated
+ * 
+ * -Variable 
+ * mg_RandomItem
+ * mg_GameDirector
+ * mspa_SpriteImage : Sprite Image of Items
+ * mn_RandomValue : Random value storage variables for item selection
+ * mn_leftTime : Number of items remaining
+ * mb_ItemFlag : 
+ * 
+ * 
+ * 
+ * -Function
+ * n_Answer() : return the 'mn_RandomValue'
+ * 
+ * 
+ */
 
-    GameObject GameDirector;
-
-    int RandomValue;
-    int leftTime;
-    bool ItemFlag;
 
 
+public class Mart_RandomItem : MonoBehaviour{
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.GameDirector = GameObject.Find("GameDirector");
-        this.RandomItem = GameObject.Find("Mart_RandomItem");
+    GameObject mg_RandomItem;
+    GameObject mg_GameDirector;
 
-        RandomValue = GameDirector.GetComponent<Mart_ControlUI>().Mart_RandomItemValue();
-        this.RandomItem.GetComponent<SpriteRenderer>().sprite = sprites[RandomValue];
+    public Sprite[] mspa_SpriteImage = new Sprite[6];
 
-        ItemFlag = false;
+    int mn_RandomValue;
+    int mn_leftTime;
+
+    bool mb_ItemFlag;
+
+
+
+    void Start(){
+        this.mg_GameDirector = GameObject.Find("GameDirector");
+        this.mg_RandomItem = GameObject.Find("Mart_RandomItem");
+
+        mn_RandomValue = mg_GameDirector.GetComponent<Mart_ControlUI>().n_MartRandomItemValue();
+        this.mg_RandomItem.GetComponent<SpriteRenderer>().sprite = mspa_SpriteImage[mn_RandomValue];
+
+        mb_ItemFlag = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        ItemFlag = GameDirector.GetComponent<Mart_ControlUI>().checkFlag();
-        if (ItemFlag == true)
-        {
-            leftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            if(leftTime != 0)
-            {
-                RandomValue = GameDirector.GetComponent<Mart_ControlUI>().Mart_RandomItemValue();
-                this.RandomItem.GetComponent<SpriteRenderer>().sprite = sprites[RandomValue];
+    void Update(){
+        mb_ItemFlag = mg_GameDirector.GetComponent<Mart_ControlUI>().b_checkFlag();
+        if (mb_ItemFlag == true){
+            mn_leftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            if(mn_leftTime != 0){
+                mn_RandomValue = mg_GameDirector.GetComponent<Mart_ControlUI>().n_MartRandomItemValue();
+                this.mg_RandomItem.GetComponent<SpriteRenderer>().sprite = mspa_SpriteImage[mn_RandomValue];
 
 
-                GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagFalse();
+                mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagFalse();
             }
-            else if(leftTime == 0)
-            {
+            else if(mn_leftTime == 0){  // If you clear the game
                 SceneManager.LoadScene("end_scene");
-            }
-
-
-            
+            } 
         }
-
     }
 
-
-    public int Answer()
-    {
-        return RandomValue;
+    public int n_Answer(){
+        return mn_RandomValue;
     }
 }

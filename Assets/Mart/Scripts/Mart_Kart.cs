@@ -2,149 +2,144 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mart_Kart : MonoBehaviour
-{
-    GameObject GameDirector;
-    GameObject ShowOX;
-    GameObject Mart_RandomItem;
 
-    int answer;
-    int LeftTime;
+/*
+ * -Name : Mart_RandomItem.cs
+ * -Content : Random selection of items, so that they are not duplicated
+ * 
+ * -Variable 
+ * mg_GameDirector
+ * mg_ShowOX
+ * mg_MartRandomItem
+ * mn_answer   
+ * mn_LeftTime
+ * 
+ * 
+ * 
+ * 
+ * -Function
+ * OnTriggerEnter2D(Collider2D cCollidObj) : When an object conflicts
+ * 
+ * 
+ */
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.GameDirector = GameObject.Find("GameDirector");
-        this.ShowOX = GameObject.Find("ShowOX");
-        this.Mart_RandomItem = GameObject.Find("Mart_RandomItem");
+
+
+
+public class Mart_Kart : MonoBehaviour{
+    GameObject mg_GameDirector;
+    GameObject mg_ShowOX;
+    GameObject mg_MartRandomItem;
+
+    int mn_answer;
+    int mn_LeftTime;
+
+    void Start(){
+        this.mg_GameDirector = GameObject.Find("GameDirector");
+        this.mg_ShowOX = GameObject.Find("ShowOX");
+        this.mg_MartRandomItem = GameObject.Find("Mart_RandomItem");
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        answer = Mart_RandomItem.GetComponent<Mart_RandomItem>().Answer();
-
-
-
+    void Update(){
+        mn_answer = mg_MartRandomItem.GetComponent<Mart_RandomItem>().n_Answer();
     }
 
-    void OnTriggerEnter2D(Collider2D collidObj)
-    {
-        if (collidObj.tag == "Mart_Item1" && answer == 0)
-        {
+    void OnTriggerEnter2D(Collider2D cCollidObj){
+        if (cCollidObj.tag == "Mart_Item1" && mn_answer == 0){
             Debug.Log("Mart_Item1 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(0);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(0);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
-
-            //GameDirector.GetComponent<Mart_ControlUI>().testqq();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if(collidObj.tag == "Mart_Item1" && answer != 0)
-        {
+        if(cCollidObj.tag == "Mart_Item1" && mn_answer != 0){
             Debug.Log("오답");
-         
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
+
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
 
         }
-        if (collidObj.tag == "Mart_Item2" && answer == 1)
-        {
+        if (cCollidObj.tag == "Mart_Item2" && mn_answer == 1){
             Debug.Log("Mart_Item2 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(1);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(1);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if (collidObj.tag == "Mart_Item2" && answer != 1)
-        {
+        if (cCollidObj.tag == "Mart_Item2" && mn_answer != 1){
             Debug.Log("오답");
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
 
         }
-        if (collidObj.tag == "Mart_Item3" && answer == 2)
-        {
+        if (cCollidObj.tag == "Mart_Item3" && mn_answer == 2){
             Debug.Log("Mart_Item3 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(2);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(2);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if (collidObj.tag == "Mart_Item3" && answer != 2)
-        {
+        if (cCollidObj.tag == "Mart_Item3" && mn_answer != 2){
             Debug.Log("오답");
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
 
         }
-        if (collidObj.tag == "Mart_Item4" && answer == 3)
-        {
+        if (cCollidObj.tag == "Mart_Item4" && mn_answer == 3){
             Debug.Log("Mart_Item4 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(3);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(3);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if (collidObj.tag == "Mart_Item4" && answer != 3)
-        {
+        if (cCollidObj.tag == "Mart_Item4" && mn_answer != 3){
             Debug.Log("오답");
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
 
         }
-        if (collidObj.tag == "Mart_Item5" && answer == 4)
-        {
+        if (cCollidObj.tag == "Mart_Item5" && mn_answer == 4){
             Debug.Log("Mart_Item5 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(4);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(4);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if (collidObj.tag == "Mart_Item5" && answer != 4)
-        {
+        if (cCollidObj.tag == "Mart_Item5" && mn_answer != 4){
             Debug.Log("오답");
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
 
         }
-        if (collidObj.tag == "Mart_Item6" && answer == 5)
-        {
+        if (cCollidObj.tag == "Mart_Item6" && mn_answer == 5){
             Debug.Log("Mart_Item6 삭제");
 
-            GameDirector.GetComponent<Mart_ControlUI>().Mart_CheckRandomItemArr(5);
-            LeftTime = GameDirector.GetComponent<Mart_ControlUI>().HowmanyleftArr();
-            Destroy(collidObj.gameObject);
-            GameDirector.GetComponent<Mart_ControlUI>().ChangeFlagTrue();
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_MartCheckRandomItemArr(5);
+            mn_LeftTime = mg_GameDirector.GetComponent<Mart_ControlUI>().n_HowManyleftArr();
+            Destroy(cCollidObj.gameObject);
+            mg_GameDirector.GetComponent<Mart_ControlUI>().v_ChangeFlagTrue();
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowO();
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowO();
         }
-        if (collidObj.tag == "Mart_Item6" && answer != 5)
-        {
+        if (cCollidObj.tag == "Mart_Item6" && mn_answer != 5){
             Debug.Log("오답");
 
-            ShowOX.GetComponent<Mart_ControlOX>().ShowX();
-
+            mg_ShowOX.GetComponent<Mart_ControlOX>().v_ShowX();
         }
-
-
-
     }
-
-
 }
