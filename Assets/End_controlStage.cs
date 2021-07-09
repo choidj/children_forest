@@ -7,7 +7,7 @@ public class End_controlStage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start() {
-        Invoke("v_changeSelectStage", 2f);
+        Invoke("v_changeSelectStage", 1f);
     }
 
     void v_changeSelectStage() {
