@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Puzzle_Matching_Puzzle : MonoBehaviour{
     public bool mb_classifyWhetherAns = false; //matching되기 전 
     //public Sprite[] msa_changeAnsImg = new Sprite[9];
+    public AudioClip audiomatching;
+    public AudioClip audiounmatching;
+    AudioSource audioSource;
 
     private void Start(){
         if(!mb_classifyWhetherAns){
@@ -20,11 +23,19 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
                 Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
                 tempColor.a = 1f;
                 gameObject.GetComponent<SpriteRenderer>().color = tempColor;
+
+                Invoke("Awake", 1f); //Awake함수 호출
             }
             else{ //오류
 
                 Destroy(this.gameObject);
+                //Invoke("Awake", 1f); //Awake함수 호출
             }
         }
     }
+
+    void Awake()
+        {
+            this.audioSource = GetComponent<AudioSource>();
+        }
 }
