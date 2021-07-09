@@ -5,14 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Select_controlStages : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -26,18 +18,15 @@ public class Select_controlStages : MonoBehaviour
                 switch (strTmp[0])
                 {
                     case "brush":
-                        //need to name clean_teeth_scene..
                         SceneManager.LoadScene("clean_teeth_scene");
                         break;
                     case "mart":
                         SceneManager.LoadScene("buy_mart_scene");
                         break;
                     case "match":
-                        //need to name match_shape_scene..
                         SceneManager.LoadScene("match_shape_scene");
                         break;
                     case "puzzle":
-                        //need to name puzzle_scene..
                         SceneManager.LoadScene("solve_puzzle_scene");
                         break;
                     case "reading":
