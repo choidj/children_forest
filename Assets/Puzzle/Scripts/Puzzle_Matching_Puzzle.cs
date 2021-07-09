@@ -21,11 +21,8 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
                 tempColor.a = 1f;
                 gameObject.GetComponent<SpriteRenderer>().color = tempColor;
             }
-<<<<<<< Updated upstream
-            else{ 
-=======
             else{ //오류
->>>>>>> Stashed changes
+
                 Destroy(this.gameObject);
             }
         }
