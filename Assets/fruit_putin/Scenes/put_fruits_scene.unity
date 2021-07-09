@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mg_instanceFruit: {fileID: 4115919033891190577, guid: 53596d058c1d345799fb2bb0fe4ff79b, type: 3}
   mn_countFruits: 10
-  msl_changeSpritesImg:
+  msa_changeSpritesImg:
   - {fileID: 7207882119082248946, guid: c7e7ae624e43044b4a40b365576a16fd, type: 3}
   - {fileID: -7817259731008224619, guid: c7e7ae624e43044b4a40b365576a16fd, type: 3}
   - {fileID: 8459430566571322924, guid: c7e7ae624e43044b4a40b365576a16fd, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainToStageSelect : MonoBehaviour {
-    Button mb_changeStageButton;
+    Button mbt_changeStage;
 
     //when start button clicked, move to the scene of stage selection.
     public void OnClickButton() {
@@ -14,7 +14,7 @@ public class MainToStageSelect : MonoBehaviour {
 
     //dynamic initialize button.. 
     void Start() {
-        mb_changeStageButton = GetComponent<Button>();
-        mb_changeStageButton.onClick.AddListener(OnClickButton);
+        mbt_changeStage = GetComponent<Button>();
+        mbt_changeStage.onClick.AddListener(OnClickButton);
     }
 }

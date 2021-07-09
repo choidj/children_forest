@@ -17,12 +17,12 @@ public class StageSceneControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+            Ray ra_checkMouseDistance = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D h_hitDistanceCast2D = Physics2D.GetRayIntersection(ra_checkMouseDistance, Mathf.Infinity);
 
-            if (hit.collider != null && hit.collider.tag == "Stage")
+            if (h_hitDistanceCast2D.collider != null && h_hitDistanceCast2D.collider.tag == "Stage")
             {
-                string[] strTmp = hit.collider.name.Split('_');
+                string[] strTmp = h_hitDistanceCast2D.collider.name.Split('_');
                 switch (strTmp[0])
                 {
                     case "brush":
