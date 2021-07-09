@@ -28,7 +28,7 @@ using UnityEngine;
  */
 
 
-public class Virus2_Generator : MonoBehaviour
+public class BrushYourTeeth_Virus2Generator : MonoBehaviour
 {
     public GameObject mg_Virus2_Prefab;
     float mf_span = 4.0f;  // 생성 주기

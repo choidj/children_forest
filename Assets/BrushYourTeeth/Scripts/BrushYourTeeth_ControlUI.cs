@@ -29,7 +29,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class Control_UI : MonoBehaviour
+public class BrushYourTeeth_ControlUI : MonoBehaviour
 {
     GameObject mg_NumberOfVirusLeft;
 

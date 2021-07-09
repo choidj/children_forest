@@ -30,7 +30,7 @@ using UnityEngine;
 
 
 
-public class Virus1_Generator : MonoBehaviour
+public class BrushYourTeeth_Virus1Generator : MonoBehaviour
 {
     public GameObject mg_Virus1_Prefab;
     float mf_span = 3.0f;  // 생성 주기 변경시 이 부분 수정
