@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class backControl : MonoBehaviour
+public class Main_backControl : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

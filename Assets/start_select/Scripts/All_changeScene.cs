@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour
+public class All_changeScene : MonoBehaviour
 {
     public static string ms_moveNextScene;
 
@@ -12,7 +12,7 @@ public class ChangeScene : MonoBehaviour
     //    StartCoroutine(LoadScene());
     //}
 
-    public static void LoadScene(string sloadSceneName)
+    public static void v_loadScene(string sloadSceneName)
     {
         //ms_moveNextScene = s_loadSceneName;
         //SceneManager.LoadScene("LoadingScene");

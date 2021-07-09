@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class attachStartScene : MonoBehaviour
+public class Main_attachStartScene : MonoBehaviour
 {
     private void Awake()
     {

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndStageControl : MonoBehaviour
+public class End_controlStage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start() {
-        Invoke("nextStage", 2f);
+        Invoke("v_changeSelectStage", 2f);
     }
 
-    void nextStage() {
+    void v_changeSelectStage() {
         SceneManager.LoadScene("select_stage_scene");
     }
 }

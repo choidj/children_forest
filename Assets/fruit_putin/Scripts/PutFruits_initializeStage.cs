@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class FruitPutInStageControl : MonoBehaviour {
+public class PutFruits_initializeStage : MonoBehaviour {
     public GameObject mg_instanceFruit;
 
     public int mn_countFruits = 10;
@@ -41,10 +41,10 @@ public class FruitPutInStageControl : MonoBehaviour {
         if(n_countFruits == 0 && mb_stopUpdating) {
             mb_stopUpdating = false;
             // when the time goes 2 seconds later, call the changeEndingScene function..
-            Invoke("changeEndingScene", 2f);
+            Invoke("v_changeEndingScene", 2f);
         }
     }
-    void changeEndingScene() {
+    void v_changeEndingScene() {
         SceneManager.LoadScene("end_scene");
     }
 }

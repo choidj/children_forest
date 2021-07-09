@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class MainToStageSelect : MonoBehaviour {
+public class Start_controlMovingStartToSelect : MonoBehaviour {
     Button mbt_changeStage;
 
     //when start button clicked, move to the scene of stage selection.
