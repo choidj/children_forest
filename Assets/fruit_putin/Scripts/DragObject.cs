@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DragObject : MonoBehaviour {
     private void OnMouseDrag() {
-        Vector2 v_mousePosition = new Vector2(Input.mousePosition.x,
+        Vector2 v2_checkMousePos = new Vector2(Input.mousePosition.x,
         Input.mousePosition.y);
-        Vector2 v_worldObjPos = Camera.main.ScreenToWorldPoint(v_mousePosition);
-        this.transform.position = v_worldObjPos;
+        Vector2 v2_checkworldObjPos = Camera.main.ScreenToWorldPoint(v2_checkMousePos);
+        this.transform.position = v2_checkworldObjPos;
     }
 }
