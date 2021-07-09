@@ -3,26 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CheckPuzzle : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+public class Shape_CheckShape : MonoBehaviour{
     // Update is called once per frame
-    void Update()
-    {
-        if(transform.childCount <= 9)
-        {
+    void Update(){
+        if(transform.childCount <= 4){
             Destroy(transform.Find("arrow"));
-            Invoke("endStage", 1f);
+            Invoke("v_EndStage", 1f);
         }
     }
 
-    void endStage()
-    {
+    void v_EndStage(){
         SceneManager.LoadScene("end_scene");
     }
 }
