@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a043faba923747b44bc93898177b559c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Virus1_Prefab: {fileID: 8587484255708902674, guid: 433d08807fd7ad34ead5f8a4b7ac7a53, type: 3}
+  mg_Virus1_Prefab: {fileID: 8587484255708902674, guid: 433d08807fd7ad34ead5f8a4b7ac7a53, type: 3}
 --- !u!1 &1191316739
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd012492e68a80439774d255633f7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftVirus: 10
 --- !u!4 &1191316741
 Transform:
   m_ObjectHideFlags: 0
@@ -645,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47be9aae89560e84db6b1d72d1e46819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Virus2_Prefab: {fileID: 8128593663494113829, guid: 8439a18e801b16b44859f209ee850a81, type: 3}
+  mg_Virus2_Prefab: {fileID: 8128593663494113829, guid: 8439a18e801b16b44859f209ee850a81, type: 3}
 --- !u!4 &1847656695
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: -50}
+  m_AnchoredPosition: {x: -200, y: -50}
   m_SizeDelta: {x: 210, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028072402
@@ -752,4 +751,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd012492e68a80439774d255633f7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftVirus: 10

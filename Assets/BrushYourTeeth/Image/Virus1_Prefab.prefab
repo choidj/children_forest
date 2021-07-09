@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a40f70c603a5c843a020f3b9aef261e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick: {fileID: 1120749492795204136}
-  Virus1_Die: {fileID: 1120749492795204136}
+  man_OnClick: {fileID: 1120749492795204136}
+  man_Virus1_Die: {fileID: 1120749492795204136}
 --- !u!58 &1138851581127962025
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -6,43 +6,62 @@ using UnityEngine.SceneManagement;
 
 
 
+/*
+ * Name : BrushYourTeeth_ControlUI.cs
+ * Content : 남은 바이러스 수 표시하는 오브젝트("NumberOfVirusLeft") 컨트롤하는 스크립트
+ * 
+ * 
+ * 변수
+ * mg_NumberOfVirusLeft : 캔버스 하위 오브젝트, 남은 바이러스 수 업데이트를 위한 오브젝트
+ * mn_LeftVirus : 남은 바이러스 수 저장 변수
+ * 
+ * 
+ * 함수()
+ * 
+ * v_MinusVirus() : 남은 바이러스 수 감소하는 함수
+ * 
+ * 
+ * 
+ */
+
+
+
+
+
 
 public class Control_UI : MonoBehaviour
 {
+    GameObject mg_NumberOfVirusLeft;
 
-    GameObject NumberOfVirusLeft;
-    GameObject Virus1;
+    private int mn_LeftVirus = 10;  // 이를 조정하여 없앨 바이러스 값 변경시, 각 바이러스 생성개수를 따로 설정하였기에 그부분도 수정해야됨
 
-    private int LeftVirus = 10;  //남은 바이러스 수
 
-    // Start is called before the first frame update
     void Start()
     {
-        this.NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
+        this.mg_NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
 
     }
 
-    
-    public void MinusVirus()
-    {
-        this.LeftVirus -= 1;
-        Debug.Log("남은 바이러스 수 1 감소");
-        Debug.Log(this.LeftVirus);
-
-
-    }
     
     // Update is called once per frame
     void Update()
     {
-        this.NumberOfVirusLeft.GetComponent<Text>().text = "남은 바이러스 수 : " + this.LeftVirus;
+        this.mg_NumberOfVirusLeft.GetComponent<Text>().text = "남은 바이러스 수 : " + this.mn_LeftVirus;
 
 
-        if (this.LeftVirus == 0)
+        if (this.mn_LeftVirus == 0)
         {
             SceneManager.LoadScene("end_scene");
         }
 
+    }
+
+
+    public void v_MinusVirus()
+    {
+        this.mn_LeftVirus -= 1;     // 바이러스 수 감소
+        Debug.Log("남은 바이러스 수 1 감소");
+        Debug.Log(this.mn_LeftVirus);
     }
 
 }

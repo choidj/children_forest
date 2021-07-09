@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8188feda3fcfd4d98617f12ae3927e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick: {fileID: 8128593663494113831}
-  Virus2_Die: {fileID: 8128593663494113831}
+  man_OnClick: {fileID: 8128593663494113831}
+  man_Virus2_Die: {fileID: 8128593663494113831}
 --- !u!58 &8128593663494113850
 CircleCollider2D:
   m_ObjectHideFlags: 0
