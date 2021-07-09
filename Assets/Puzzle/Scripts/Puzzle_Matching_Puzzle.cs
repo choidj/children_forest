@@ -20,7 +20,7 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
                 tempColor.a = 1f;
                 gameObject.GetComponent<SpriteRenderer>().color = tempColor;
             }
-            else{
+            else{ 
                 Destroy(this.gameObject);
             }
         }
