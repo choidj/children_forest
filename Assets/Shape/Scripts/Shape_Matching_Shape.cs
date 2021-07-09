@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Matching_Shape : MonoBehaviour{
+public class Shape_Matching_Shape : MonoBehaviour{
     public bool mb_classifyWhetherAns = false;
     public Sprite[] msl_changeAnsImg = new Sprite[4];
     public Sprite NextSprite;

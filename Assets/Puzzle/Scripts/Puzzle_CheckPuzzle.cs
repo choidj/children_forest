@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CheckShape : MonoBehaviour{
+public class Puzzle_CheckPuzzle : MonoBehaviour{
     // Update is called once per frame
     void Update(){
-        if(transform.childCount <= 4){
+        if(transform.childCount <= 9){
             Destroy(transform.Find("arrow"));
-            Invoke("endStage", 1f);
+            Invoke("v_EndStage", 1f);
         }
     }
 
-    void endStage(){
+    void v_EndStage()
+    {
         SceneManager.LoadScene("end_scene");
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Matching_Puzzle : MonoBehaviour{
+public class Puzzle_Matching_Puzzle : MonoBehaviour{
     public bool mb_classifyWhetherAns = false;
     //public Sprite[] msa_changeAnsImg = new Sprite[9];
 
