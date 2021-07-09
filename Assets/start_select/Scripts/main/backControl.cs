@@ -16,10 +16,10 @@ public class backControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+            Ray ra_checkMouseDistance = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D h_hitDistanceCast2D = Physics2D.GetRayIntersection(ra_checkMouseDistance, Mathf.Infinity);
 
-            if (hit.collider != null && hit.collider.name == "backController")
+            if (h_hitDistanceCast2D.collider != null && h_hitDistanceCast2D.collider.name == "backController")
             {
                 SceneManager.LoadScene("select_stage_scene");
             }

@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public static string nextScene;
+    public static string ms_moveNextScene;
 
     //private void Start()
     //{
     //    StartCoroutine(LoadScene());
     //}
 
-    public static void LoadScene(string sceneName)
+    public static void LoadScene(string sloadSceneName)
     {
-        //nextScene = sceneName;
+        //ms_moveNextScene = s_loadSceneName;
         //SceneManager.LoadScene("LoadingScene");
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sloadSceneName);
     }
 
     //IEnumerator LoadScene()
