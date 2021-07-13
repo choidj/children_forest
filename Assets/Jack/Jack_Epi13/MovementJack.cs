@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class MovementJack : MonoBehaviour
 {
-    public Vector3 target = new Vector3(-2, -3.54f, 0);
+    float timer;
+    int waitingTime;
+
+    public Vector3 target = new Vector3(-2.1f, -3.57f, 0);
+
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        timer += Time.deltaTime;
+        if (timer > waitingTime)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        }
+
     }
 }
