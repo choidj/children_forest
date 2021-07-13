@@ -56,6 +56,8 @@ public class Jack13_MainScript : MonoBehaviour{
             Debug.Log("메인 스크립트[" + n_i + "] : " + msa_SplitText[n_i]);
         }
         mn_Sequence = -1;
+
+        v_NextScript();
     }
 
 
