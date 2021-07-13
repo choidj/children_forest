@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class MovementGiant : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    float timer;
+    int waitingTime;
 
-    // Update is called once per frame
+    public Vector3 target = new Vector3(-6, -0.43f, 0);
+
+    private void Start()
+    {
+        timer = 0.0f;
+        waitingTime = 1;
+    }
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (timer > waitingTime)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        }
+
     }
 }
