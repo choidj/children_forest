@@ -44,6 +44,7 @@ public class PutFruits_initializeStage : MonoBehaviour {
             Invoke("v_changeEndingScene", 2f);
         }
     }
+    //when the scene is completed, change this scene to ending scene..
     void v_changeEndingScene() {
         SceneManager.LoadScene("end_scene");
     }
