@@ -1,7 +1,7 @@
 /*
- * - Name : Jack3_JackScript.cs
+ * - Name : Jack3_MissionScript.cs
  * - Writer : 김명현
- * - Content : 잭과콩나무 에피소드3 - 잭 스크립트(대사) 관리 스크립트
+ * - Content : 잭과콩나무 에피소드3 - 미션 스크립트(나레이션) 관리 스크립트
  * 
  *             -사용법-
  *            1. ms_ScriptText 에 문장들을 입력한다.
@@ -12,17 +12,14 @@
  *            
  *            
  *            
- *            
- *            
  *            -작성 기록-
  *            2021-07-13 : 제작 완료
  *            
  *            
  *            
- *            
  * 
  * -Variable 
- * mg_JackScript : 스크립트를 보여주는 오브젝트
+ * mg_EventScript : 스크립트를 보여주는 메인 스크립트 오브젝트
  * ms_ScriptText : 스크립트를 통으로 넣어주는 스트링
  * msa_SplitText[] : 구분자를 기준으로 여기에 나눠서 저장된다.
  * n_i : for문용 변수
@@ -37,31 +34,29 @@
  */
 
 
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Jack3_JackScript : MonoBehaviour
+public class Jack3_MissionScript : MonoBehaviour
 {
-    GameObject mg_JackScript;   //연결할 스크립트 오브젝트 선언
+    GameObject mg_EventScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "장에 젖소를 팔러 가요.@좋아요 할아버지!";
+    private string ms_ScriptText = "젖소와 콩을 드래그하여 바꿔주세요";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
+
     // Start is called before the first frame update
     void Start(){
-        this.mg_JackScript = GameObject.Find("Jack3_JackScript");   //스크립트 오브젝트 연결
+        this.mg_EventScript = GameObject.Find("Jack3_Script");   //스크립트 오브젝트 연결
 
         //문자열을 구분자를 기준으로 나누고 제대로 나뉘었는지 확인한다.
         msa_SplitText = ms_ScriptText.Split('@');   //구분자를 수정할려면 이 부분을 수정
-        for (int n_i = 0; n_i < msa_SplitText.Length; n_i++)
-        {
-            Debug.Log("잭 스크립트[" + n_i + "] : " + msa_SplitText[n_i]);
+        for (int n_i = 0; n_i < msa_SplitText.Length; n_i++){
+            Debug.Log("미션 스크립트[" + n_i + "] : " + msa_SplitText[n_i]);
         }
         mn_Sequence = -1;
     }
@@ -73,19 +68,19 @@ public class Jack3_JackScript : MonoBehaviour
 
     //스크립트내용을 공백으로 설정해줌
     public void v_NoneScript(){
-        this.mg_JackScript.GetComponent<Text>().text = "";
+        this.mg_EventScript.GetComponent<Text>().text = "";
     }
 
     //다음 스크립트를 보여준다.
     public void v_NextScript(){
         mn_Sequence += 1;
         if (mn_Sequence < msa_SplitText.Length){
-            this.mg_JackScript.GetComponent<Text>().text = msa_SplitText[mn_Sequence];
+            this.mg_EventScript.GetComponent<Text>().text = msa_SplitText[mn_Sequence];
         }
         else if (mn_Sequence >= msa_SplitText.Length){
-            Debug.Log("잭 스크립트 현재순서 : " + mn_Sequence);
-            Debug.Log("잭 스크립트 최대 값 : " + msa_SplitText.Length);
-            Debug.Log("잭 스크립트 크기 초과");
+            Debug.Log("미션 스크립트 현재순서 : " + mn_Sequence);
+            Debug.Log("미션 스크립트 최대 값 : " + msa_SplitText.Length);
+            Debug.Log("미션 스크립트 크기 초과");
         }
     }
 }
