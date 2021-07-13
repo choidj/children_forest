@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &912899584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912899586}
+  - component: {fileID: 912899585}
+  m_Layer: 0
+  m_Name: testTTS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912899585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912899584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e68a0d1c2da4f7ea1bbb351c41c973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textAudio: {fileID: 0}
+  testText: test
+  apiURL: https://texttospeech.googleapis.com/v1/text:synthesize?&key=6960ad498d221baa1a254190fad3c6ae57db563a
+--- !u!4 &912899586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912899584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73908776, y: -0.47935477, z: -145.59076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987388335
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +278,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049694281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0354cf7604d4141deb6d51d8b4a58020, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc8292e23b654b708c71fbc6d857c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1049694283
