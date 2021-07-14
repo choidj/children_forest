@@ -5,18 +5,63 @@ using System.IO;
 using System.Net;
 using System;
 
-public class TTS : MonoBehaviour
+public enum Voice
 {
-    private string ms_useApiURL = "https://texttospeech.googleapis.com/v1beta1/text:synthesize?key=AIzaSyANPEwOXAhoxpeYwpJQBUkZRew42sI9ECU";
-    public AudioSource audioSource;
-    private SetTextToSpeech tts = new SetTextToSpeech();
-    //initialize the json object config to send a google tts api.
-    void Init() {
-        SetInput si_setInputData = new SetInput();
-        si_setInputData.text = "테스트테스트원투";
-        tts.input = si_setInputData;
+    KR_FEMALE_A,
+    KR_FEMALE_B,
+    KR_MALE_A,
+    KR_MALE_B,
+    EN_FEMALE_A,
+    EN_FEMALE_B,
+    EN_MALE_A,
+    EN_MALE_B
+}
 
+public class TTS {
+
+    [System.Serializable]
+    public class SetTextToSpeech {
+        public SetInput input;
+        public SetVoice voice;
+        public SetAudioConfig audioConfig;
+    }
+
+    [System.Serializable]
+    public class SetInput {
+        public string text;
+    }
+
+    [System.Serializable]
+    public class SetVoice {
+        public string languageCode;
+        public string name;
+        //ssmlGender mean which voice is man or woman...
+        public string ssmlGender;
+    }
+
+
+    [System.Serializable]
+    public class SetAudioConfig {
+        public string audioEncoding;
+        public float speakingRate;
+        public int pitch;
+        public int volumeGainDb;
+    }
+
+    [System.Serializable]
+    public class GetContent {
+        public string audioContent;
+    }
+
+    private string ms_useApiURL = "https://texttospeech.googleapis.com/v1beta1/text:synthesize?key=AIzaSyANPEwOXAhoxpeYwpJQBUkZRew42sI9ECU";
+    private SetTextToSpeech tts;
+    //constructor initialize these class..
+    //initialize the json object config to send a google tts api.
+    public TTS()
+    {
+        tts = new SetTextToSpeech();
         SetVoice sv_setVoiceConf = new SetVoice();
+        
         sv_setVoiceConf.languageCode = "ko-KR";
         sv_setVoiceConf.name = "ko-KR-Wavenet-A";
         sv_setVoiceConf.ssmlGender = "FEMALE";
@@ -29,9 +74,70 @@ public class TTS : MonoBehaviour
         sa_setAudioConf.volumeGainDb = 0;
         tts.audioConfig = sa_setAudioConf;
     }
+    public TTS(Voice gender)
+    {
+        tts = new SetTextToSpeech();
+        SetVoice sv_setVoiceConf = new SetVoice();
+        switch(gender) {
+            case Voice.KR_FEMALE_A:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-A";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.KR_FEMALE_B:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-B";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.EN_FEMALE_A:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-C";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.EN_FEMALE_B:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-E";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.KR_MALE_A:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-C";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.KR_MALE_B:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-D";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.EN_MALE_A:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-A";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.EN_MALE_B:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "ken-US-Wavenet-B";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+                
+        }
+        
+        tts.voice = sv_setVoiceConf;
+
+        SetAudioConfig sa_setAudioConf = new SetAudioConfig();
+        sa_setAudioConf.audioEncoding = "LINEAR16";
+        sa_setAudioConf.speakingRate = 0.8f;
+        sa_setAudioConf.pitch = 0;
+        sa_setAudioConf.volumeGainDb = 0;
+        tts.audioConfig = sa_setAudioConf;
+    }    
 
     //convert the received byte array to float array...
-    private void CreateAudio() {
+    public void CreateAudio(string speech, AudioSource asPlayAudioSource) {
+        SetInput si_setInputData = new SetInput();
+        si_setInputData.text = speech;
+        tts.input = si_setInputData;
+
         //After request HttpWebRequest, save the returned data in string format.
         var s_str = TextToSpeechPost(tts);
         
@@ -43,8 +149,7 @@ public class TTS : MonoBehaviour
         AudioClip ac_createAudioClip = AudioClip.Create("audioContent", fa_convertFloatArray.Length, 1, 44100, false);
         ac_createAudioClip.SetData(fa_convertFloatArray, 0);
 
-        AudioSource as_playAudioSource = FindObjectOfType<AudioSource>();
-        as_playAudioSource.PlayOneShot(ac_createAudioClip);
+        asPlayAudioSource.PlayOneShot(ac_createAudioClip);
     }
     
     private static float[] ConvertByteToFloat(byte[] baArray) {
@@ -56,11 +161,6 @@ public class TTS : MonoBehaviour
         return fa_tempFloatArr;
     }
     
-    void Start() {
-        Init();
-        CreateAudio();
-    }
-
     public string TextToSpeechPost(object oSendData) {
         //use JsonUtility. convert byte[] to send this string..
         string s_useJsonUTempStr = JsonUtility.ToJson(oSendData);
@@ -105,47 +205,4 @@ public class TTS : MonoBehaviour
             return null;
         }
     }
-
-[System.Serializable]
-public class SetTextToSpeech {
-    public SetInput input;
-    public SetVoice voice;
-    public SetAudioConfig audioConfig;
 }
-
-[System.Serializable]
-public class SetInput {
-    public string text;
-}
-
-[System.Serializable]
-public class SetVoice {
-    public string languageCode;
-    public string name;
-    //ssmlGender mean which voice is man or woman...
-    public string ssmlGender;
-}
-
-
-[System.Serializable]
-public class SetAudioConfig {
-    public string audioEncoding;
-    public float speakingRate;
-    public int pitch;
-    public int volumeGainDb;
-}
-
-[System.Serializable]
-public class GetContent {
-    public string audioContent;
-    }
-}
-
-
-
-    
-
-
-
-
-
