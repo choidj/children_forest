@@ -10,7 +10,7 @@ public class FixedStartScene : MonoBehaviour {
     static void FirstLoad()
 
     {
-
+        /*
         if (SceneManager.GetActiveScene().name.CompareTo("intro") != 0)
 
         {
@@ -18,7 +18,7 @@ public class FixedStartScene : MonoBehaviour {
             SceneManager.LoadScene("intro");
 
         }
-
+        */
     }
 
 }
