@@ -432,9 +432,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1342647592}
   - component: {fileID: 1342647591}
-  - component: {fileID: 1342647593}
   - component: {fileID: 1342647594}
   - component: {fileID: 1342647595}
+  - component: {fileID: 1342647593}
   m_Layer: 0
   m_Name: Jack
   m_TagString: Untagged
