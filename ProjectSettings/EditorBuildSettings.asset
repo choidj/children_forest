@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jack/Jack_Epi14/Jack_Epi14.unity
     guid: b87bd1fe530d24c069bf60b5b8f4a98c
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi9/Jack_Epi9.unity
+    guid: d0305444d21a24a33b71be5dc99fa561
   m_configObjects: {}

@@ -7,6 +7,9 @@ TagManager:
   - Jack
   - RunPos
   - Door
+  - PutFruitInBasket
+  - walkPos
+  - Closet
   layers:
   - Default
   - TransparentFX
