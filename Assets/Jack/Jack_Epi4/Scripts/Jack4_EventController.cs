@@ -118,7 +118,6 @@ public class Jack4_EventController : MonoBehaviour
     private bool StopClickFlag;
 
     //이벤트 성공확인을 위한 flag
-    private bool mb_Event1Flag;
     private bool mb_BeanToMother;
     private bool mb_BeanToWindow;
 
@@ -136,7 +135,6 @@ public class Jack4_EventController : MonoBehaviour
         //이벤트 flag
         mb_DontLoopEvent1 = false;
         mb_DontLoopEvent2 = false;
-        mb_Event1Flag = false;
         mb_BeanToMother = false;
         StopClickFlag = false;
         mb_BeanToWindow = false;
