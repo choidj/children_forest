@@ -5,14 +5,14 @@ using UnityEngine;
 public class MovementGiant : MonoBehaviour
 {
     float timer;
-    int waitingTime;
+    float waitingTime;
 
     public Vector3 target = new Vector3(-6, -0.43f, 0);
 
     private void Start()
     {
         timer = 0.0f;
-        waitingTime = 1;
+        waitingTime = 0.5f;
     }
     void Update()
     {

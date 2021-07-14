@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Intro/Intro.unity
     guid: eb4a6cfa919bc4630bf53d46ffcd4dc8
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi13/Jack_Epi13.unity
+    guid: af694925525674da7bc729a4ff4d9f59
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi14/Jack_Epi14.unity
+    guid: b87bd1fe530d24c069bf60b5b8f4a98c
   m_configObjects: {}
