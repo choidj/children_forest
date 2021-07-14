@@ -11,11 +11,8 @@ public class MovementJack : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > waitingTime)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
-        }
+        Vector3 velo = Vector3.zero;
+	    transform.position = Vector3.Slerp(transform.position, target, 0.1f);
 
     }
 }
