@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Drag_Jack : MonoBehaviour
-{
+{   
     void OnTriggerEnter2D(Collider2D cCollideObject){
         OnMouseDrag();
         

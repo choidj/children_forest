@@ -5,15 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scene/main_scene.unity
     guid: 22a5e869bdab1497e8c59ad0467e8dd7
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/start_select/Scene/select_stage_scene.unity
     guid: f248880c943314f358e31fd9611d338d
@@ -41,7 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jack/Jack_Epi13/Jack_Epi13.unity
     guid: af694925525674da7bc729a4ff4d9f59
-  - enabled: 1
+  - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi8/Jack_Epi8.unity
+    guid: bf8a5efe3e8d84ccea1a720269609fb6
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi14/Jack_Epi14.unity
+    guid: 11b0d057e449b49f3a0a98592112e01a
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi9/Jack_Epi9.unity
+    guid: 272e97d223ad54a3f9a639af08f96556
   m_configObjects: {}
