@@ -1,0 +1,257 @@
+/*
+ * - Name : Jack9_EventController.cs
+ * - Writer : 김명현
+ * - Content : 잭과콩나무 에피소드9 - 이벤트 관리 스크립트
+ *            게임진행 이벤트를 총괄적으로 관리하기 위한 스크립트
+ * 
+ *            
+ *            
+ *            
+ *            
+ *            -작성 기록-
+ *            2021-07-14 : 제작 완료
+ *            
+ *            
+ *            
+ * 
+ * -Variable 
+ * 
+ * 게임 디렉터 오브젝트에 접근하기 위한 오브젝트
+ * mg_ScriptManager
+ * 
+ * 어머니 말풍선 관련 오브젝트
+ * mg_GenMotherSpeechBubble
+ * mg_MotherSpeech
+ * 
+ * 잭 말풍선 관련 오브젝트
+ * mg_GenGiantSpeechBubble
+ * mg_JackSpeech
+ * 
+ * 이벤트 관리 변수
+ * mb_EventFlag : 이벤트를 한번만 작동하기 위한 flag
+ * mn_EventSequence : 이벤트 순서를 관리하는 변수
+ * 
+ * 마우스 드래그 관련 오브젝트
+ * mg_Bean
+ * 
+ * 마우스 클릭 제한 flag
+ * StopClickFlag
+ * 
+ * 이벤트 성공확인을 위한 flag
+ * mb_BeanToMother
+ * mb_CowToGF
+ * 
+ * 
+ * -Function
+ * 
+ * Flag 변경 함수
+ * v_ChangeFlagFalse()
+ * v_ChangeFlagTrue()
+ * 
+ * 메인 스크립트 함수
+ * v_NextMainScript()
+ * v_NoneMainScript()
+ * 
+ * 이벤트 스크립트 함수
+ * v_NextEventScript()
+ * v_NoneEventScript()
+ * 
+ * 잭 스크립트 함수
+ * v_NextJackScript()
+ * v_NoneJackScript()
+ * 
+ * 어머니 스크립트 함수
+ * v_NextMotherScript()
+ * v_NoneMotherScript()
+ * 
+ * 말풍선 생성 함수
+ * v_GenJackSpeechBubble()
+ * 
+ * 말풍선 삭제 함수
+ * v_RemoveJackSpeechBubble()
+ * 
+ * 
+ * flag true 처리 함수
+ * 
+ * 
+ */
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Jack9_EventController : MonoBehaviour
+{
+    //게임 디렉터 오브젝트에 접근하기 위한 오브젝트
+    GameObject mg_ScriptManager;
+    GameObject mg_GenScript;
+
+
+    //잭 말풍선 관련 오브젝트
+    GameObject mg_GenGiantSpeechBubble;
+
+    //이벤트 관리를 위한 변수
+    private bool mb_DontLoopEvent1;
+    private bool mb_DontLoopEvent2;
+    private bool mb_EventFlag;  //이벤트를 한번만 작동하기 위한 flag
+    private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
+
+    public GameObject mg_GiantSpeech;
+
+    //마우스 클릭 제한
+    private bool StopClickFlag;
+
+    //이벤트를위한 flag
+    private bool IsSackDestroy;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //오브젝트 연결
+        this.mg_ScriptManager = GameObject.Find("GameDirector");
+
+
+        //이벤트 flag
+        mb_DontLoopEvent1 = false;
+        mb_DontLoopEvent2 = false;
+        StopClickFlag = false;
+        IsSackDestroy = false;
+
+        //이벤트 관련
+        v_ChangeFlagFalse();
+        mn_EventSequence = 0;
+
+
+
+        //이벤트 시작
+        v_NextMainScript();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (StopClickFlag == false)
+            {
+                mn_EventSequence += 1;
+            }
+            v_ChangeFlagTrue();
+        }
+
+        if(mn_EventSequence == 1 && this.mb_EventFlag == true)
+        {
+            v_ChangeFlagFalse();
+
+            v_NoneMainScript();
+
+            v_GenGiantSpeechBubble();
+            v_NextGiantScript();
+        }
+        else if (mn_EventSequence == 2 && this.mb_EventFlag == true)
+        {
+            v_ChangeFlagFalse();
+
+            v_RemoveGiantSpeechBubble();
+
+            v_NextMainScript();
+
+            mb_DontLoopEvent1 = true;
+        }
+        else if (mn_EventSequence == 3 && this.mb_EventFlag == true && mb_DontLoopEvent1 == true)
+        {
+            v_ChangeFlagFalse();
+
+            v_NextEventScript();
+
+            StopClickFlag = true;
+
+            mb_DontLoopEvent1 = false;
+            mb_DontLoopEvent2 = true;
+        }
+        else if (mn_EventSequence == 3 && IsSackDestroy == true && mb_DontLoopEvent2 == true)
+        {
+            v_ChangeFlagFalse();
+            StopClickFlag = false;
+            mb_DontLoopEvent2 = false;
+
+            v_NextMainScript();
+
+            this.mg_ScriptManager.GetComponent<Jack9_Gentreasure>().v_GenTreasure();
+
+        }
+        else if (mn_EventSequence == 4 && IsSackDestroy == true)
+        {
+            v_ChangeFlagFalse();
+
+
+            Debug.Log("시나리오 클리어");
+
+        }
+    }
+
+
+    //Flag 변경 함수
+    private void v_ChangeFlagFalse()
+    {
+        this.mb_EventFlag = false;
+    }
+    private void v_ChangeFlagTrue()
+    {
+        this.mb_EventFlag = true;
+    }
+
+    //메인 스크립트 함수
+    private void v_NextMainScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_MainScript>().v_NextScript();
+    }
+    private void v_NoneMainScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_MainScript>().v_NoneScript();
+    }
+
+    //이벤트 스크립트 함수
+    private void v_NextEventScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_MissionScript>().v_NextScript();
+    }
+    private void v_NoneEventScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_MissionScript>().v_NoneScript();
+    }
+    
+    //거인 스크립트 함수
+    private void v_NextGiantScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_GiantScript>().v_NextScript();
+    }
+    private void v_NoneGiantScript()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_GiantScript>().v_NoneScript();
+    }
+    
+    //말풍선 생성 함수
+    private void v_GenGiantSpeechBubble()
+    {
+        mg_GenGiantSpeechBubble = Instantiate(mg_GiantSpeech) as GameObject;
+        mg_GenGiantSpeechBubble.transform.position = new Vector3(0, 3.3f, 0);
+    }
+
+    //말풍선 삭제 함수
+    private void v_RemoveGiantSpeechBubble()
+    {
+        this.mg_ScriptManager.GetComponent<Jack9_GiantScript>().v_NoneScript();
+        Destroy(this.mg_GenGiantSpeechBubble);
+    }
+
+    public void v_IsSackDestroy()
+    {
+        IsSackDestroy = true;
+    }
+
+
+}
