@@ -9,13 +9,13 @@ public class Blink : MonoBehaviour
     float waitingTime;
     void Start(){
         timer = 0.0f;
-        waitingTime = 3f;
+        waitingTime = 4f;
     }
     public void Update()
     {
         timer += Time.deltaTime;
         if(timer > waitingTime){
-            if (f_time < 0.5f){
+            if (f_time < 0.3f){
                 GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
             else{

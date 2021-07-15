@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragAx : MonoBehaviour
 {   
-    GameObject Click,Ax, Jack;
+    GameObject Ax, Jack;
     SpriteRenderer rend;
     void Start() {
         Ax = GameObject.Find("Ax");
