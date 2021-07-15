@@ -16,7 +16,7 @@ public class Blink : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > waitingTime){
             if (f_time < 0.5f){
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
             else{
                 GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
