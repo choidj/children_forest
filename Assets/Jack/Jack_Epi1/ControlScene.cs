@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public string ms_loadScene;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +15,6 @@ public class ControlScene : MonoBehaviour
         }
     }
     void clickedMouse() {
-        SceneManager.LoadScene("Jack_Epi2");
+        SceneManager.LoadScene(ms_loadScene);
     }
 }
