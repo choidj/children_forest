@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class MoveMom : MonoBehaviour
 {
-    public GameObject Mom;
-    public GameObject Ax;
-    public Vector3 target;
+    GameObject Ax, Jack, Mom;
+    Vector3 MomPos;
+    void Start() {
+        Ax = GameObject.Find("Ax");
+        Jack = GameObject.Find("Jack");
+        Mom = GameObject.Find("Mom");
+        MomPos = new Vector3(-3,-1.14f,0);
+    }
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        Mom.transform.position = Vector3.MoveTowards(Mom.transform.position, MomPos, 0.1f);
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
         if (cCollideObject.tag == "Ax"){

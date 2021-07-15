@@ -789,9 +789,10 @@ GameObject:
   - component: {fileID: 1256789460}
   - component: {fileID: 1256789459}
   - component: {fileID: 1256789461}
+  - component: {fileID: 1256789462}
   m_Layer: 0
   m_Name: Jack
-  m_TagString: Untagged
+  m_TagString: Jack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -885,8 +886,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 4}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1256789462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256789458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f173f3e994c47f3ac5ab40a53e735c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Jack: {fileID: 0}
+  Ax: {fileID: 0}
 --- !u!1 &1374989375
 GameObject:
   m_ObjectHideFlags: 0
