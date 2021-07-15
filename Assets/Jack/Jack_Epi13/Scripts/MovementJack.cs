@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MovementJack : MonoBehaviour
 {
-    float timer;
-    int waitingTime;
-
-    public Vector3 target = new Vector3(-2.1f, -3.57f, 0);
+    public Vector3 target;
 
     void Update()
     {

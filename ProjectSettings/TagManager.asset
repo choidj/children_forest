@@ -7,6 +7,14 @@ TagManager:
   - Jack
   - RunPos
   - Door
+  - PutFruitInBasket
+  - Stage
+  - Closet
+  - walkPos
+  - Jack3_Cow
+  - Jack3_Bean
+  - Mom
+  - Ax
   layers:
   - Default
   - TransparentFX
