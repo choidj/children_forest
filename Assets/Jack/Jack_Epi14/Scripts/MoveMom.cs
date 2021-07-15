@@ -6,7 +6,14 @@ public class MoveMom : MonoBehaviour
 {
     GameObject Ax, Jack, Mom;
     Vector3 MomPos;
+
+    float timer;
+    float waitingTime;
+
     void Start() {
+        timer = 0.0f;
+        waitingTime = 2f;
+        
         Ax = GameObject.Find("Ax");
         Jack = GameObject.Find("Jack");
         Mom = GameObject.Find("Mom");
@@ -14,7 +21,11 @@ public class MoveMom : MonoBehaviour
     }
     void Update()
     {
-        Mom.transform.position = Vector3.MoveTowards(Mom.transform.position, MomPos, 0.1f);
+        timer += Time.deltaTime;
+        if (timer > waitingTime){
+            Mom.transform.position = Vector3.MoveTowards(Mom.transform.position, MomPos, 0.1f);
+        }
+        
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
         if (cCollideObject.tag == "Ax"){

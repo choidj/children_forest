@@ -11,8 +11,7 @@ public class MovementGiant : MonoBehaviour
 
     private void Start()
     {
-        timer = 0.0f;
-        waitingTime = 0.5f;
+
     }
     void Update()
     {

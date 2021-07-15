@@ -9,7 +9,7 @@ public class Blink : MonoBehaviour
     float waitingTime;
     void Start(){
         timer = 0.0f;
-        waitingTime = 2f;
+        waitingTime = 3f;
     }
     public void Update()
     {
