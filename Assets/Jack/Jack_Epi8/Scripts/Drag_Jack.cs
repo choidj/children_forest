@@ -1,13 +1,13 @@
 /*
  * - Name : Drag_Jack.cs
- * - Writer : ÀÌÀ±±³
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå8 - Àè µå·¡±× ½ºÅ©¸³Æ®
+ * - Writer : ì´ìœ¤êµ
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ8 - ì­ ë“œë˜ê·¸ ìŠ¤í¬ë¦½íŠ¸
  * 
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-14 : Á¦ÀÛ ¿Ï·á
- * OnTriggerEnter2D(Collider2D cCollideObject) :¿ÀºêÁ§Æ®¿¡ ¿¬°áµÈ Æ®¸®°Å ¾È¿¡ ´Ù¸¥ ¿ÀºêÁ§Æ®°¡ µé¾î°¬À» ¶§ È£ÃâµÊ (2D ¹°¸®¸¸)
- * OnMouseDrag() : °ÔÀÓ¿ÀºêÁ§Æ®¸¦ µå·¡±×·Î ÀÌµ¿½ÃÅ°´Â ÇÔ¼ö
- * OnTriggerEnter2D(Collider2D other) : ¿ÀºêÁ§Æ®°£ Ãæµ¹ÀÌ ÀÏ¾î³¯¶§ Ã³À½ ÇÑ¹ø¸¸ È£ÃâµÇ´Â ÇÔ¼ö
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-14 : ì œì‘ ì™„ë£Œ
+ * OnTriggerEnter2D(Collider2D cCollideObject) :ì˜¤ë¸Œì íŠ¸ì— ì—°ê²°ëœ íŠ¸ë¦¬ê±° ì•ˆì— ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ê°€ ë“¤ì–´ê°”ì„ ë•Œ í˜¸ì¶œë¨ (2D ë¬¼ë¦¬ë§Œ)
+ * OnMouseDrag() : ê²Œì„ì˜¤ë¸Œì íŠ¸ë¥¼ ë“œë˜ê·¸ë¡œ ì´ë™ì‹œí‚¤ëŠ” í•¨ìˆ˜
+ * OnTriggerEnter2D(Collider2D other) : ì˜¤ë¸Œì íŠ¸ê°„ ì¶©ëŒì´ ì¼ì–´ë‚ ë•Œ ì²˜ìŒ í•œë²ˆë§Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
  * 
  */
 using System.Collections;
@@ -17,8 +17,8 @@ using UnityEngine.SceneManagement;
 public class Drag_Jack : MonoBehaviour{   
     void OnTriggerEnter2D(Collider2D cCollideObject){
         OnMouseDrag();
-        if(cCollideObject.tag == "Closet"){ //Ãæµ¹ ¿ÀºêÁ§Æ®ÀÇ ÅÂ±×°¡ ¿ÊÀåÀÌ¸é -> JackÀÌ ¿ÊÀå µÚ¿¡ ¼ûÀ¸¸é
-            SceneManager.LoadScene("Jack_Epi9"); //´ÙÀ½ ¾À Epi19·Î ÀÌµ¿
+        if(cCollideObject.tag == "Closet"){ //ì¶©ëŒ ì˜¤ë¸Œì íŠ¸ì˜ íƒœê·¸ê°€ ì˜·ì¥ì´ë©´ -> Jackì´ ì˜·ì¥ ë’¤ì— ìˆ¨ìœ¼ë©´
+            SceneManager.LoadScene("Jack_Epi9"); //ë‹¤ìŒ ì”¬ Epi19ë¡œ ì´ë™
         }
     }
     void OnMouseDrag(){

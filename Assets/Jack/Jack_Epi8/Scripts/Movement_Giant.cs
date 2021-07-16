@@ -1,12 +1,12 @@
 /*
  * - Name : Movement_Giant.cs
- * - Writer : ÀÌÀ±±³
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå8 - °ÅÀÎ ÀÌµ¿ ½ºÅ©¸³Æ®
+ * - Writer : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * - Content : ï¿½ï¿½ï¿½ï¿½á³ªï¿½ï¿½ ï¿½ï¿½ï¿½Ç¼Òµï¿½8 - ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®
  * 
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-14 : Á¦ÀÛ ¿Ï·á
+ *            -ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½-
+ *            2021-07-14 : ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½
  *
- * MoveTowards() : µî¼Ó ÀÌµ¿, ¸Å°³º¯¼ö·Î {ÇöÀçÀ§Ä¡, ¸ñÇ¥À§Ä¡, ¼Óµµ}¸¦ ÀÔ·Â  
+ * MoveTowards() : ï¿½ï¿½ï¿½ ï¿½Ìµï¿½, ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡, ï¿½ï¿½Ç¥ï¿½ï¿½Ä¡, ï¿½Óµï¿½}ï¿½ï¿½ ï¿½Ô·ï¿½  
  *            
  */
 
@@ -15,10 +15,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement_Giant : MonoBehaviour{   
-    /* °ÅÀÎ ÀÌµ¿½ÃÅ°´Â ¿ÀºêÁ§Æ® */
-    public GameObject mg_targetPosition; // walkPos ¿ÀºêÁ§Æ®·Î ÁöÁ¤ÇØÁà¼­ ±× À§Ä¡·Î °ÅÀÎ ÀÌµ¿½ÃÅ´
+    /* ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® */
+    public GameObject mg_targetPosition; // walkPos ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¼­ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å´
     void Update(){
         transform.position = Vector3.MoveTowards(gameObject.transform.position, 
-                                                    mg_targetPosition.transform.position, 0.1f); //°ÅÀÎ ÀÌµ¿ 
+                                                    mg_targetPosition.transform.position, 0.1f); //ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ 
     }
 }

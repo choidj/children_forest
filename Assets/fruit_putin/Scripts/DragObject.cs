@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DragObject : MonoBehaviour {
+    private TTS mtts_tellFruitName;
     private void OnMouseDrag() {
         Vector2 v2_checkMousePos = new Vector2(Input.mousePosition.x,
         Input.mousePosition.y);
