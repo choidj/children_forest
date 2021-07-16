@@ -97,7 +97,7 @@ public class TTS {
         return instance;
     }
     //convert the received byte array to float array...
-    public void CreateAudio(string speech, AudioSource asPlayAudioSource) {
+    public AudioClip CreateAudio(string speech) {
         SetInput si_setInputData = new SetInput();
         si_setInputData.text = speech;
         tts.input = si_setInputData;
@@ -112,8 +112,7 @@ public class TTS {
 
         AudioClip ac_createAudioClip = AudioClip.Create("audioContent", fa_convertFloatArray.Length, 1, 44100, false);
         ac_createAudioClip.SetData(fa_convertFloatArray, 0);
-
-        asPlayAudioSource.PlayOneShot(ac_createAudioClip);
+        return ac_createAudioClip;
     }
     
     private static float[] ConvertByteToFloat(byte[] baArray) {
