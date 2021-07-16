@@ -32,8 +32,4 @@ public class DragAx : MonoBehaviour
             mf_checkGetAxe = true;
         }
     }
-    // void Update() {
-    //     if(mf_checkGetAxe)
-    //         transform.position = Jack.transform.position;
-    // }
 }
