@@ -1,82 +1,82 @@
-/*
+ï»¿/*
  * - Name : Jack3_EventController.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå3 - ÀÌº¥Æ® °ü¸® ½ºÅ©¸³Æ®
- *            °ÔÀÓÁøÇà ÀÌº¥Æ®¸¦ ÃÑ°ıÀûÀ¸·Î °ü¸®ÇÏ±â À§ÇÑ ½ºÅ©¸³Æ®
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ3 - ì´ë²¤íŠ¸ ê´€ë¦¬ ìŠ¤í¬ë¦½íŠ¸
+ *            ê²Œì„ì§„í–‰ ì´ë²¤íŠ¸ë¥¼ ì´ê´„ì ìœ¼ë¡œ ê´€ë¦¬í•˜ê¸° ìœ„í•œ ìŠ¤í¬ë¦½íŠ¸
  * 
  *            
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-13 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-13 : ì œì‘ ì™„ë£Œ
  *            
  *            
  *            
  * 
  * -Variable 
  * 
- * °ÔÀÓ µğ·ºÅÍ ¿ÀºêÁ§Æ®¿¡ Á¢±ÙÇÏ±â À§ÇÑ ¿ÀºêÁ§Æ®
+ * ê²Œì„ ë””ë ‰í„° ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼í•˜ê¸° ìœ„í•œ ì˜¤ë¸Œì íŠ¸
  * mg_ScriptManager
  * 
- * ÇÒ¾Æ¹öÁö ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+ * í• ì•„ë²„ì§€ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
  * mg_GenGFSpeechBubble
  * mg_GFSpeech
  * 
- * Àè ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+ * ì­ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
  * mg_GenJackSpeechBubble
  * mg_JackSpeech
  * 
- * ÀÌº¥Æ® °ü¸® º¯¼ö
- * mb_EventFlag : ÀÌº¥Æ®¸¦ ÇÑ¹ø¸¸ ÀÛµ¿ÇÏ±â À§ÇÑ flag
- * mn_EventSequence : ÀÌº¥Æ® ¼ø¼­¸¦ °ü¸®ÇÏ´Â º¯¼ö
+ * ì´ë²¤íŠ¸ ê´€ë¦¬ ë³€ìˆ˜
+ * mb_EventFlag : ì´ë²¤íŠ¸ë¥¼ í•œë²ˆë§Œ ì‘ë™í•˜ê¸° ìœ„í•œ flag
+ * mn_EventSequence : ì´ë²¤íŠ¸ ìˆœì„œë¥¼ ê´€ë¦¬í•˜ëŠ” ë³€ìˆ˜
  * 
- * ¸¶¿ì½º µå·¡±× °ü·Ã ¿ÀºêÁ§Æ®
+ * ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
  * mg_Cow
  * mg_Bean
  * 
- * ÀÌº¥Æ® ¼º°øÈ®ÀÎÀ» À§ÇÑ flag
+ * ì´ë²¤íŠ¸ ì„±ê³µí™•ì¸ì„ ìœ„í•œ flag
  * mb_BeanToJack
  * mb_CowToGF
  * 
  * 
  * -Function
  * 
- * Flag º¯°æ ÇÔ¼ö
+ * Flag ë³€ê²½ í•¨ìˆ˜
  * v_ChangeFlagFalse()
  * v_ChangeFlagTrue()
  * 
- * ¸ŞÀÎ ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextMainScript()
  * v_NoneMainScript()
  * 
- * ÀÌº¥Æ® ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ì´ë²¤íŠ¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextEventScript()
  * v_NoneEventScript()
  * 
- * Àè ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ì­ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextJackScript()
  * v_NoneJackScript()
  * 
- * ÇÒ¾Æ¹öÁö ½ºÅ©¸³Æ® ÇÔ¼ö
+ * í• ì•„ë²„ì§€ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextGFScript()
  * v_NoneGFScript()
  * 
- * ¸»Ç³¼± »ı¼º ÇÔ¼ö
+ * ë§í’ì„  ìƒì„± í•¨ìˆ˜
  * v_GenGFSpeechBubble()
  * v_GenJackSpeechBubble()
  * 
- * ¸»Ç³¼± »èÁ¦ ÇÔ¼ö
+ * ë§í’ì„  ì‚­ì œ í•¨ìˆ˜
  * v_RemoveGFSpeechBubble()
  * v_RemoveJackSpeechBubble()
  * 
- * µå·¡±× È°¼ºÈ­
+ * ë“œë˜ê·¸ í™œì„±í™”
  * v_TurnOnMouseDrag()
  * 
- * µå·¡±× ºñÈ°¼ºÈ­
+ * ë“œë˜ê·¸ ë¹„í™œì„±í™”
  * v_TurnOFFMouseDrag()
  * 
- * flag true Ã³¸® ÇÔ¼ö
+ * flag true ì²˜ë¦¬ í•¨ìˆ˜
  * v_BeanToJack()
  * v_CowToGF()
  * 
@@ -88,49 +88,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Jack3_EventController : MonoBehaviour
 {
-    //°ÔÀÓ µğ·ºÅÍ ¿ÀºêÁ§Æ®¿¡ Á¢±ÙÇÏ±â À§ÇÑ ¿ÀºêÁ§Æ®
+    //ê²Œì„ ë””ë ‰í„° ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼í•˜ê¸° ìœ„í•œ ì˜¤ë¸Œì íŠ¸
     GameObject mg_ScriptManager;
 
-    //È­»ìÇ¥ ¿ÀºêÁ§Æ®
+    //í™”ì‚´í‘œ ì˜¤ë¸Œì íŠ¸
     GameObject mg_Arrow1;
     GameObject mg_Arrow2;
     GameObject mg_Arrow3;
     GameObject mg_Arrow4;
     public GameObject mg_ArrowPrefab;
 
-    //ÇÒ¾Æ¹öÁö ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+    //í• ì•„ë²„ì§€ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
     GameObject mg_GenGFSpeechBubble;
     public GameObject mg_GFSpeech;
 
-    //Àè ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+    //ì­ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
     GameObject mg_GenJackSpeechBubble;
     public GameObject mg_JackSpeech;
 
-    //ÀÌº¥Æ® °ü¸®¸¦ À§ÇÑ º¯¼ö
-    private bool mb_EventFlag;  //ÀÌº¥Æ®¸¦ ÇÑ¹ø¸¸ ÀÛµ¿ÇÏ±â À§ÇÑ flag
-    private int mn_EventSequence;   //ÀÌº¥Æ® ¼ø¼­¸¦ °ü¸®ÇÏ´Â º¯¼ö
+    //ì´ë²¤íŠ¸ ê´€ë¦¬ë¥¼ ìœ„í•œ ë³€ìˆ˜
+    private bool mb_EventFlag;  //ì´ë²¤íŠ¸ë¥¼ í•œë²ˆë§Œ ì‘ë™í•˜ê¸° ìœ„í•œ flag
+    private int mn_EventSequence;   //ì´ë²¤íŠ¸ ìˆœì„œë¥¼ ê´€ë¦¬í•˜ëŠ” ë³€ìˆ˜
     private bool mb_DragCowFlag;
     private bool mb_DragBeanFlag;
     private bool isGenArrow1;
     private bool DontLoopEvent;
 
-    //¸¶¿ì½º µå·¡±× °ü·Ã ¿ÀºêÁ§Æ®
+    //ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
     GameObject mg_Cow;
     GameObject mg_Bean;
 
 
-    //ÀÌº¥Æ® ¼º°øÈ®ÀÎÀ» À§ÇÑ flag
+    //ì´ë²¤íŠ¸ ì„±ê³µí™•ì¸ì„ ìœ„í•œ flag
     bool mb_BeanToJack;
     private bool mb_CowToGF;
 
 
 
     void Start(){
-        //¿ÀºêÁ§Æ® ¿¬°á
+        //ì˜¤ë¸Œì íŠ¸ ì—°ê²°
         this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");
         this.mg_Cow = GameObject.Find("Jack3_Cow");
         this.mg_Bean = GameObject.Find("Jack3_Bean");
@@ -159,7 +159,7 @@ public class Jack3_EventController : MonoBehaviour
 
         if (mb_CowToGF == true && mb_BeanToJack == true)
         {
-            Debug.Log("½Ã³ª¸®¿À ¿Ï·á");
+            SceneManager.LoadScene("Jack_Epi4");
         }
         if(mb_CowToGF == true && mb_BeanToJack == false)
         {
@@ -171,7 +171,7 @@ public class Jack3_EventController : MonoBehaviour
             v_DragBeanFalgFalse();
         }
 
-        //¼Ò µå·¡±×½Ã È­»ìÇ¥ Ã³¸® ºÎºĞ
+        //ì†Œ ë“œë˜ê·¸ì‹œ í™”ì‚´í‘œ ì²˜ë¦¬ ë¶€ë¶„
         if(mb_DragCowFlag == true && mn_EventSequence >= 8 && mb_DragBeanFlag == false)
         {
             v_RemoveArrowToCow();
@@ -197,7 +197,7 @@ public class Jack3_EventController : MonoBehaviour
                 v_GenArrowToBean();
             }
         }
-        //Äá µå·¡±× Ã³¸®
+        //ì½© ë“œë˜ê·¸ ì²˜ë¦¬
         if(mb_DragBeanFlag == true && mn_EventSequence >= 8 && mb_DragCowFlag == false)
         {
             v_RemoveArrowToBean();
@@ -226,7 +226,7 @@ public class Jack3_EventController : MonoBehaviour
 
 
 
-        //ÀüÃ¼ÀûÀÎ ÀÌº¥Æ®
+        //ì „ì²´ì ì¸ ì´ë²¤íŠ¸
         if (mn_EventSequence == 1 && this.mb_EventFlag == true){
             v_ChangeFlagFalse();
 
@@ -292,7 +292,7 @@ public class Jack3_EventController : MonoBehaviour
         }
     }
 
-    //Flag º¯°æ ÇÔ¼ö
+    //Flag ë³€ê²½ í•¨ìˆ˜
     private void v_ChangeFlagFalse(){
         this.mb_EventFlag = false;
     }
@@ -300,7 +300,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mb_EventFlag = true;
     }
 
-    //¸ŞÀÎ ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextMainScript(){
         this.mg_ScriptManager.GetComponent<Jack3_MainScript>().v_NextScript();
     }
@@ -308,7 +308,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack3_MainScript>().v_NoneScript();
     }
 
-    //ÀÌº¥Æ® ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ì´ë²¤íŠ¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextEventScript(){
         this.mg_ScriptManager.GetComponent<Jack3_MissionScript>().v_NextScript();
     }
@@ -316,7 +316,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack3_MissionScript>().v_NoneScript();
     }
 
-    //Àè ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ì­ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextJackScript(){
         this.mg_ScriptManager.GetComponent<Jack3_JackScript>().v_NextScript();
     }
@@ -324,7 +324,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack3_JackScript>().v_NoneScript();
     }
 
-    //ÇÒ¾Æ¹öÁö ½ºÅ©¸³Æ® ÇÔ¼ö
+    //í• ì•„ë²„ì§€ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextGFScript(){
         this.mg_ScriptManager.GetComponent<Jack3_GFScript>().v_NextScript();
     }
@@ -332,7 +332,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack3_GFScript>().v_NoneScript();
     }
 
-    //¸»Ç³¼± »ı¼º ÇÔ¼ö
+    //ë§í’ì„  ìƒì„± í•¨ìˆ˜
     private void v_GenGFSpeechBubble(){
         mg_GenGFSpeechBubble = Instantiate(mg_GFSpeech) as GameObject;
         mg_GenGFSpeechBubble.transform.position = new Vector3(4, 0.5f, 0);
@@ -342,7 +342,7 @@ public class Jack3_EventController : MonoBehaviour
         mg_GenJackSpeechBubble.transform.position = new Vector3(-0.5f, -1, 0);
     }
 
-    //¸»Ç³¼± »èÁ¦ ÇÔ¼ö
+    //ë§í’ì„  ì‚­ì œ í•¨ìˆ˜
     private void v_RemoveGFSpeechBubble(){
         this.mg_ScriptManager.GetComponent<Jack3_GFScript>().v_NoneScript();
         Destroy(this.mg_GenGFSpeechBubble);
@@ -352,7 +352,7 @@ public class Jack3_EventController : MonoBehaviour
         Destroy(this.mg_GenJackSpeechBubble);
     }
 
-    //µå·¡±× È°¼ºÈ­
+    //ë“œë˜ê·¸ í™œì„±í™”
     private void v_TurnOnMouseDrag()
     {
         this.mg_Cow.GetComponent<Jack3_MouseDrag>().v_ChangeFlagTrue();
@@ -364,7 +364,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_Bean.GetComponent<Jack3_MouseDrag>().v_ChangeFlagTrue();
     }
 
-    //µå·¡±× ºñÈ°¼ºÈ­
+    //ë“œë˜ê·¸ ë¹„í™œì„±í™”
     private void v_TurnOFFMouseDrag()
     {
         this.mg_Cow.GetComponent<Jack3_MouseDrag>().v_ChangeFlagFalse();

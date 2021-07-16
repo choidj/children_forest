@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ControlScene : MonoBehaviour
 {
-    //잘보이나~~~
     public string ms_loadScene;
     // Update is called once per frame
     void Update()

@@ -1,28 +1,28 @@
-/*
+ï»¿/*
  * - Name : Jack3_GrandFather.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå3 - ÇÒ¾Æ¹öÁö ¿ÀºêÁ§Æ® ½ºÅ©¸³Æ®
- *            ÇÒ¾Æ¹öÁö¿Í ¼ÒÀÇ °´Ã¼ Ãæµ¹Ã³¸®¸¦ À§ÇÑ ½ºÅ©¸³Æ®
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ3 - í• ì•„ë²„ì§€ ì˜¤ë¸Œì íŠ¸ ìŠ¤í¬ë¦½íŠ¸
+ *            í• ì•„ë²„ì§€ì™€ ì†Œì˜ ê°ì²´ ì¶©ëŒì²˜ë¦¬ë¥¼ ìœ„í•œ ìŠ¤í¬ë¦½íŠ¸
  * 
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-13 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-13 : ì œì‘ ì™„ë£Œ
  *            
  *            
  *            
  * 
  * - Variable
  * 
- * °¨µ¶ ¿ÀºêÁ§Æ® ¿¬°áÀ» À§ÇÑ ¿ÀºêÁ§Æ®
+ * ê°ë… ì˜¤ë¸Œì íŠ¸ ì—°ê²°ì„ ìœ„í•œ ì˜¤ë¸Œì íŠ¸
  * mg_EventManager
  * 
  * 
  * 
  * - Function
  * 
- * Ãæµ¹°¨Áö ÇÔ¼ö
+ * ì¶©ëŒê°ì§€ í•¨ìˆ˜
  * OnTriggerEnter2D(Collider2D cCollidObj) 
  * 
  * 
@@ -51,7 +51,7 @@ public class Jack3_GrandFather : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D cCollidObj)
     {
-        Debug.Log("Ãæµ¹ °¨Áö");
+        Debug.Log("ì¶©ëŒ ê°ì§€");
         if (cCollidObj.tag == "Jack3_Cow")
         {
             Destroy(cCollidObj.gameObject);

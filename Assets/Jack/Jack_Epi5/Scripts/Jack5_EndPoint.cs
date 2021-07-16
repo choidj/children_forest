@@ -1,27 +1,27 @@
-/*
+ï»¿/*
  * - Name : Jack5_EndPoint.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå5 - Äá³ª¹« ³¡ÁöÁ¡ ¿ÀºêÁ§Æ® ½ºÅ©¸³Æ®
- *            Äá°ú ¾î¸Ó´Ï°´Ã¼ Ãæµ¹Ã³¸®¸¦ À§ÇÑ ½ºÅ©¸³Æ®
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ5 - ì½©ë‚˜ë¬´ ëì§€ì  ì˜¤ë¸Œì íŠ¸ ìŠ¤í¬ë¦½íŠ¸
+ *            ì½©ê³¼ ì–´ë¨¸ë‹ˆê°ì²´ ì¶©ëŒì²˜ë¦¬ë¥¼ ìœ„í•œ ìŠ¤í¬ë¦½íŠ¸
  * 
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-15 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-15 : ì œì‘ ì™„ë£Œ
  *            
  *            
  *            
  * 
  * - Variable
  * 
- * °¨µ¶ ¿ÀºêÁ§Æ® ¿¬°áÀ» À§ÇÑ ¿ÀºêÁ§Æ®
+ * ê°ë… ì˜¤ë¸Œì íŠ¸ ì—°ê²°ì„ ìœ„í•œ ì˜¤ë¸Œì íŠ¸
  * mg_EventManager
  * 
  * 
  * - Function
  * 
- * Ãæµ¹°¨Áö ÇÔ¼ö
+ * ì¶©ëŒê°ì§€ í•¨ìˆ˜
  * OnTriggerEnter2D(Collider2D cCollidObj) 
  * 
  * 
@@ -31,6 +31,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Jack5_EndPoint : MonoBehaviour
 {
@@ -51,6 +53,6 @@ public class Jack5_EndPoint : MonoBehaviour
     void OnTriggerEnter2D(Collider2D cCollidObj)
     {
         Destroy(cCollidObj.gameObject);
-        Debug.Log("¿¡ÇÇ¼Òµå Å¬¸®¾î");
+        SceneManager.LoadScene("Jack_Epi6");
     }
 }

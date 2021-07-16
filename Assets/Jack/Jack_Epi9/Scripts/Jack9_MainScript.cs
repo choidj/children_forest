@@ -1,34 +1,34 @@
-/*
+ï»¿/*
  * - Name : Jack9_MainScript.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå9 - ¸ÞÀÎ ½ºÅ©¸³Æ®(³ª·¹ÀÌ¼Ç) °ü¸® ½ºÅ©¸³Æ®
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ìž­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ9 - ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸(ë‚˜ë ˆì´ì…˜) ê´€ë¦¬ ìŠ¤í¬ë¦½íŠ¸
  * 
- *             -»ç¿ë¹ý-
- *            1. ms_ScriptText ¿¡ ¹®ÀåµéÀ» ÀÔ·ÂÇÑ´Ù.
- *            2. ±¸ºÐÀÚ´Â @·Î ÇØµÎ¾úÀ¸´Ï ±¸ºÐÀÚ¸¦ Ãß°¡ÇØÁØ´Ù.
- *            3. ·Î±×¸¦ ÅëÇØ Á¦´ë·Î ³ª´µ¾ú´ÂÁö È®ÀÎÇÑ´Ù.
- *            4. v_NextScript()¸¦ ÅëÇØ ´ÙÀ½ ½ºÅ©¸³Æ®¸¦ Ãâ·ÂÇÒ¼ö ÀÖ´Ù.
- *            5. v_NoneScript()¸¦ ÅëÇØ ½ºÅ©¸³Æ®³»¿ëÀ» °ø¹éÀ¸·Î ¼³Á¤ÇÒ¼ö ÀÖ´Ù.
+ *             -ì‚¬ìš©ë²•-
+ *            1. ms_ScriptText ì— ë¬¸ìž¥ë“¤ì„ ìž…ë ¥í•œë‹¤.
+ *            2. êµ¬ë¶„ìžëŠ” @ë¡œ í•´ë‘ì—ˆìœ¼ë‹ˆ êµ¬ë¶„ìžë¥¼ ì¶”ê°€í•´ì¤€ë‹¤.
+ *            3. ë¡œê·¸ë¥¼ í†µí•´ ì œëŒ€ë¡œ ë‚˜ë‰˜ì—ˆëŠ”ì§€ í™•ì¸í•œë‹¤.
+ *            4. v_NextScript()ë¥¼ í†µí•´ ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì¶œë ¥í• ìˆ˜ ìžˆë‹¤.
+ *            5. v_NoneScript()ë¥¼ í†µí•´ ìŠ¤í¬ë¦½íŠ¸ë‚´ìš©ì„ ê³µë°±ìœ¼ë¡œ ì„¤ì •í• ìˆ˜ ìžˆë‹¤.
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-15 : Á¦ÀÛ ¿Ï·á
+ *            -ìž‘ì„± ê¸°ë¡-
+ *            2021-07-15 : ì œìž‘ ì™„ë£Œ
  *            
  *            
  *            
  * 
  * -Variable 
- * mg_MainScript : ½ºÅ©¸³Æ®¸¦ º¸¿©ÁÖ´Â ¸ÞÀÎ ½ºÅ©¸³Æ® ¿ÀºêÁ§Æ®
- * ms_ScriptText : ½ºÅ©¸³Æ®¸¦ ÅëÀ¸·Î ³Ö¾îÁÖ´Â ½ºÆ®¸µ
- * msa_SplitText[] : ±¸ºÐÀÚ¸¦ ±âÁØÀ¸·Î ¿©±â¿¡ ³ª´²¼­ ÀúÀåµÈ´Ù.
- * n_i : for¹®¿ë º¯¼ö
- * mn_Sequence : ½ºÅ©¸³Æ® ÀÐÀ» ¼ø¼­ º¯¼ö
+ * mg_MainScript : ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë³´ì—¬ì£¼ëŠ” ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ ì˜¤ë¸Œì íŠ¸
+ * ms_ScriptText : ìŠ¤í¬ë¦½íŠ¸ë¥¼ í†µìœ¼ë¡œ ë„£ì–´ì£¼ëŠ” ìŠ¤íŠ¸ë§
+ * msa_SplitText[] : êµ¬ë¶„ìžë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì—¬ê¸°ì— ë‚˜ëˆ ì„œ ì €ìž¥ëœë‹¤.
+ * n_i : forë¬¸ìš© ë³€ìˆ˜
+ * mn_Sequence : ìŠ¤í¬ë¦½íŠ¸ ì½ì„ ìˆœì„œ ë³€ìˆ˜
  * 
  * 
  * -Function
- * v_NoneScript() : ½ºÅ©¸³Æ®¸¦ °ø¹éÀ¸·Î ¼³Á¤ÇØÁØ´Ù.
- * v_NextScript() : ´ÙÀ½ ½ºÅ©¸³Æ®¸¦ º¸¿©ÁØ´Ù.
+ * v_NoneScript() : ìŠ¤í¬ë¦½íŠ¸ë¥¼ ê³µë°±ìœ¼ë¡œ ì„¤ì •í•´ì¤€ë‹¤.
+ * v_NextScript() : ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë³´ì—¬ì¤€ë‹¤.
  * 
  * 
  */
@@ -42,23 +42,23 @@ using UnityEngine.UI;
 
 public class Jack9_MainScript : MonoBehaviour
 {
-    GameObject mg_MainScript;   //¿¬°áÇÒ ½ºÅ©¸³Æ® ¿ÀºêÁ§Æ® ¼±¾ð
+    GameObject mg_MainScript;   //ì—°ê²°í•  ìŠ¤í¬ë¦½íŠ¸ ì˜¤ë¸Œì íŠ¸ ì„ ì–¸
 
-    //ms_ScriptText ¿¡ ¹®ÀåÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.
-    private string ms_ScriptText = "°ÅÀÎÀº Ä¿´Ù¶õ ÀÚ·ç¸¦ °®°í ¿Ô¾î¿ä.@°ÅÀÎÀº ¹¬Á÷ÇÑ ÀÚ·ç¸¦ ½ñ¾Æ ºÎ¾ú¾î¿ä.@ÀÚ·ç ¾È¿¡´Â ¹øÂ½¹øÂ½ ºû³ª´Â ±ÝÈ­°¡ ÇÑ°¡µæ, È²±Ý ¾ËÀ» ³º´Â ´ßÀÌ ÇÑ¸¶¸®, ¾Æ¸§´Ù¿î À½¾ÇÀ» µé·ÁÁÖ´Â ¸¶¹ý ÇÏÇÁ°¡ µé¾î ÀÖ¾ú¾î¿ä.";
+    //ms_ScriptText ì— ë¬¸ìž¥ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.
+    private string ms_ScriptText = "ê±°ì¸ì€ ì»¤ë‹¤ëž€ ìžë£¨ë¥¼ ê°–ê³  ì™”ì–´ìš”.@ê±°ì¸ì€ ë¬µì§í•œ ìžë£¨ë¥¼ ìŸì•„ ë¶€ì—ˆì–´ìš”.@ìžë£¨ ì•ˆì—ëŠ” ë²ˆì©ë²ˆì© ë¹›ë‚˜ëŠ” ê¸ˆí™”ê°€ í•œê°€ë“, í™©ê¸ˆ ì•Œì„ ë‚³ëŠ” ë‹­ì´ í•œë§ˆë¦¬, ì•„ë¦„ë‹¤ìš´ ìŒì•…ì„ ë“¤ë ¤ì£¼ëŠ” ë§ˆë²• í•˜í”„ê°€ ë“¤ì–´ ìžˆì—ˆì–´ìš”.";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.mg_MainScript = GameObject.Find("MainScript");   //½ºÅ©¸³Æ® ¿ÀºêÁ§Æ® ¿¬°á
+        this.mg_MainScript = GameObject.Find("MainScript");   //ìŠ¤í¬ë¦½íŠ¸ ì˜¤ë¸Œì íŠ¸ ì—°ê²°
 
-        //¹®ÀÚ¿­À» ±¸ºÐÀÚ¸¦ ±âÁØÀ¸·Î ³ª´©°í Á¦´ë·Î ³ª´µ¾ú´ÂÁö È®ÀÎÇÑ´Ù.
-        msa_SplitText = ms_ScriptText.Split('@');   //±¸ºÐÀÚ¸¦ ¼öÁ¤ÇÒ·Á¸é ÀÌ ºÎºÐÀ» ¼öÁ¤
+        //ë¬¸ìžì—´ì„ êµ¬ë¶„ìžë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë‚˜ëˆ„ê³  ì œëŒ€ë¡œ ë‚˜ë‰˜ì—ˆëŠ”ì§€ í™•ì¸í•œë‹¤.
+        msa_SplitText = ms_ScriptText.Split('@');   //êµ¬ë¶„ìžë¥¼ ìˆ˜ì •í• ë ¤ë©´ ì´ ë¶€ë¶„ì„ ìˆ˜ì •
         for (int n_i = 0; n_i < msa_SplitText.Length; n_i++)
         {
-            Debug.Log("¸ÞÀÎ ½ºÅ©¸³Æ®[" + n_i + "] : " + msa_SplitText[n_i]);
+            Debug.Log("ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸[" + n_i + "] : " + msa_SplitText[n_i]);
         }
         mn_Sequence = -1;
     }
@@ -69,13 +69,13 @@ public class Jack9_MainScript : MonoBehaviour
         
     }
 
-    //½ºÅ©¸³Æ®³»¿ëÀ» °ø¹éÀ¸·Î ¼³Á¤ÇØÁÜ
+    //ìŠ¤í¬ë¦½íŠ¸ë‚´ìš©ì„ ê³µë°±ìœ¼ë¡œ ì„¤ì •í•´ì¤Œ
     public void v_NoneScript()
     {
         this.mg_MainScript.GetComponent<Text>().text = "";
     }
 
-    //´ÙÀ½ ½ºÅ©¸³Æ®¸¦ º¸¿©ÁØ´Ù.
+    //ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë³´ì—¬ì¤€ë‹¤.
     public void v_NextScript()
     {
         mn_Sequence += 1;
@@ -85,9 +85,9 @@ public class Jack9_MainScript : MonoBehaviour
         }
         else if (mn_Sequence >= msa_SplitText.Length)
         {
-            Debug.Log("¸ÞÀÎ ½ºÅ©¸³Æ® ÇöÀç¼ø¼­ : " + mn_Sequence);
-            Debug.Log("¸ÞÀÎ ½ºÅ©¸³Æ® ÃÖ´ë °ª : " + msa_SplitText.Length);
-            Debug.Log("¸ÞÀÎ ½ºÅ©¸³Æ® Å©±â ÃÊ°ú");
+            Debug.Log("ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í˜„ìž¬ìˆœì„œ : " + mn_Sequence);
+            Debug.Log("ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ ìµœëŒ€ ê°’ : " + msa_SplitText.Length);
+            Debug.Log("ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í¬ê¸° ì´ˆê³¼");
         }
     }
 }
