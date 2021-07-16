@@ -240,8 +240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 41, y: -342}
-  m_SizeDelta: {x: 972.4666, y: 167.223}
+  m_AnchoredPosition: {x: 41, y: -366.1322}
+  m_SizeDelta: {x: 972.4666, y: 215.4874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331572566
 MonoBehaviour:
@@ -292,8 +292,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u201C\uD734, \uD070\uC77C \uB0A0 \uBED4\uD588\uB124.\u201D\n\n\uC7AD\uACFC
-    \uC5B4\uBA38\uB2C8\uB294 \uBCF4\uBB3C\uB4E4\uC744 \uC9D1\uC73C\uB85C \uAC00\uC838\uAC14\uC5B4\uC694.\n\uC7AD\uC740
-    \uAE08\uD654\uB85C \uC816\uC18C\uB4E4\uC744 \uB2E4\uC2DC \uC0C0\uC5B4\uC694.\n\uB2ED\uC740
+    \uC5B4\uBA38\uB2C8\uB294 \uBCF4\uBB3C\uB4E4\uC744 \uC9D1\uC73C\uB85C \uAC00\uC838\uAC14\uC5B4\uC694.\n\uB2ED\uC740
     \uBC88\uCA4D\uBC88\uCA4D \uD669\uAE08 \uC54C\uC744 \uB0B3\uACE0, \uD558\uD504\uB294
     \uC544\uB984\uB2E4\uC6B4 \uC74C\uC545\uC744 \uB4E4\uB824\uC8FC\uC5C8\uC9C0\uC694.\n\uBD80\uC790\uAC00
     \uB41C \uC7AD\uACFC \uC5B4\uBA38\uB2C8\uB294 \uC624\uB798\uC624\uB798 \uD589\uBCF5\uD558\uAC8C
@@ -316,7 +315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 889764733}
   - component: {fileID: 889764732}
-  - component: {fileID: 889764734}
   m_Layer: 0
   m_Name: Jack
   m_TagString: Untagged
@@ -389,25 +387,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &889764734
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889764731}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 73d9dceb5b3f44d8ea97bd2fb47ba957, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &927891403
 GameObject:
   m_ObjectHideFlags: 0
