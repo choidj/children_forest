@@ -23,12 +23,12 @@ public class MoveMom : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer > waitingTime){
-            Mom.transform.position = Vector3.MoveTowards(Mom.transform.position, MomPos, 0.1f);
+            Mom.transform.position = Vector3.MoveTowards(Mom.transform.position, MomPos, 2f * Time.deltaTime);
         }
         
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
-        if (cCollideObject.tag == "Ax"){
+        if (cCollideObject.tag == "Mom"){
             Color tempColor = Ax.GetComponent<SpriteRenderer>().color;
             tempColor.a = 1f;
             Ax.GetComponent<SpriteRenderer>().color = tempColor;
