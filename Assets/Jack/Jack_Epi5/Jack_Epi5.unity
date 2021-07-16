@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 899377213}
   - component: {fileID: 899377215}
   - component: {fileID: 899377214}
+  - component: {fileID: 899377216}
   m_Layer: 5
   m_Name: MainScript
   m_TagString: Untagged
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -546,6 +547,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899377212}
   m_CullTransparentMesh: 1
+--- !u!114 &899377216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899377212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1118075266
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mg_JackSpeech: {fileID: 8192831654892856486, guid: 0ca683481044936489b4ee36eaaf4e59, type: 3}
+  mg_ArrowPrefab: {fileID: 2339531997062097324, guid: 17032ed4463c5644c879dfa28f3f854d, type: 3}
 --- !u!114 &1118075270
 MonoBehaviour:
   m_ObjectHideFlags: 0

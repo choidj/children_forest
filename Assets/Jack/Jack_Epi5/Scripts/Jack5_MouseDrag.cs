@@ -42,10 +42,12 @@ public class Jack5_MouseDrag : MonoBehaviour
 {
     private bool mb_flag;
 
+    GameObject mg_ScriptManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.mg_ScriptManager = GameObject.Find("GameDirector");
     }
 
     // Update is called once per frame
@@ -62,10 +64,15 @@ public class Jack5_MouseDrag : MonoBehaviour
     //드래그할 경우 마우스위치따라 오브젝트 이동
     private void OnMouseDrag()
     {
+        if (mb_flag == true)
+        {
             Vector2 mv2_mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
+            this.mg_ScriptManager.GetComponent<Jack5_EventController>().v_DragFalgTrue();
+        }
+            
     }
 
     //마우스에서 손을 뗄 경우 원래위치로 돌아가게끔 설정
@@ -77,9 +84,10 @@ public class Jack5_MouseDrag : MonoBehaviour
         {
             this.transform.position = new Vector3(-6.22f, -3.69f, 0);
         }
+        this.mg_ScriptManager.GetComponent<Jack5_EventController>().v_DragFalgFalse();
 
     }
-
+    
     public void v_ChangeFlagTrue()
     {
         mb_flag = true;
@@ -88,4 +96,5 @@ public class Jack5_MouseDrag : MonoBehaviour
     {
         mb_flag = false;
     }
+    
 }
