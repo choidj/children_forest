@@ -1,14 +1,14 @@
-/*
+ï»¿/*
  * - Name : Jack4_MissionScript.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå4 - ¸¶¿ì½º µå·¡±× ½ºÅ©¸³Æ®
- *            ¿ÀºêÁ§Æ®¸¦ µå·¡±×ÇÒ °æ¿ì ¸¶¿ì½ºÆ÷ÀÎÆ®µû¶ó °´Ã¼ ÀÌµ¿
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ4 - ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ ìŠ¤í¬ë¦½íŠ¸
+ *            ì˜¤ë¸Œì íŠ¸ë¥¼ ë“œë˜ê·¸í•  ê²½ìš° ë§ˆìš°ìŠ¤í¬ì¸íŠ¸ë”°ë¼ ê°ì²´ ì´ë™
  * 
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-14 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-14 : ì œì‘ ì™„ë£Œ
  *            
  *            
  *            
@@ -16,17 +16,17 @@
  * - Variable 
  * mv2_mouseDragPosition
  * mv2_worldObjectPosition
- * mb_flag : ¿øÇÏ´Â½ÃÁ¡¿¡ µå·¡±×¸¦ È°¼ºÈ­ÇÏ±â À§ÇÑ flag
- * mb_BeanPositionFlag : flag¸¦ ÅëÇØ ÄáÀÇ À§Ä¡¸¦ ´Ù¸£°Ô ¼³Á¤
+ * mb_flag : ì›í•˜ëŠ”ì‹œì ì— ë“œë˜ê·¸ë¥¼ í™œì„±í™”í•˜ê¸° ìœ„í•œ flag
+ * mb_BeanPositionFlag : flagë¥¼ í†µí•´ ì½©ì˜ ìœ„ì¹˜ë¥¼ ë‹¤ë¥´ê²Œ ì„¤ì •
  * 
  * - Function
  * 
- * ¸¶¿ì½º Á¶ÀÛ ÇÔ¼ö
+ * ë§ˆìš°ìŠ¤ ì¡°ì‘ í•¨ìˆ˜
  * OnMouseDown() : touch the object
  * OnMouseDrag() : drag
  * OnMouseUp() : When you take your hands off the mouse.
  * 
- * ÇÃ·¡±× ¼³Á¤ ÇÔ¼ö
+ * í”Œë˜ê·¸ ì„¤ì • í•¨ìˆ˜
  * v_ChangeFlagTrue()
  * v_ChangeFlagTrue()
  * 
@@ -63,7 +63,7 @@ public class Jack4_MouseDrag : MonoBehaviour
 
     }
 
-    //µå·¡±×ÇÒ °æ¿ì ¸¶¿ì½ºÀ§Ä¡µû¶ó ¿ÀºêÁ§Æ® ÀÌµ¿
+    //ë“œë˜ê·¸í•  ê²½ìš° ë§ˆìš°ìŠ¤ìœ„ì¹˜ë”°ë¼ ì˜¤ë¸Œì íŠ¸ ì´ë™
     private void OnMouseDrag()
     {
         if (mb_flag == true)
@@ -71,14 +71,14 @@ public class Jack4_MouseDrag : MonoBehaviour
             Vector2 mv2_mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
             this.transform.position = mv2_worldObjectPosition;
-            Debug.Log("¿ÀºêÁ§Æ® µå·¡±×");
+            Debug.Log("ì˜¤ë¸Œì íŠ¸ ë“œë˜ê·¸");
         }
     }
 
-    //¸¶¿ì½º¿¡¼­ ¼ÕÀ» ¶¿ °æ¿ì ¿ø·¡À§Ä¡·Î µ¹¾Æ°¡°Ô²û ¼³Á¤
+    //ë§ˆìš°ìŠ¤ì—ì„œ ì†ì„ ë—„ ê²½ìš° ì›ë˜ìœ„ì¹˜ë¡œ ëŒì•„ê°€ê²Œë” ì„¤ì •
     private void OnMouseUp()
     {
-        Debug.Log("¿ÀºêÁ§Æ®¿¡¼­ ¼Õ ¶À");
+        Debug.Log("ì˜¤ë¸Œì íŠ¸ì—ì„œ ì† ë—Œ");
 
         if (this.tag == "Bean")
         {
