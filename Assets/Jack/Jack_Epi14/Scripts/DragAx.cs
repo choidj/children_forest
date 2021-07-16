@@ -21,7 +21,7 @@ public class DragAx : MonoBehaviour{
     public GameObject mg_Ax; //도끼
     public GameObject mg_Click; //미션을 위한 클릭
     public ScriptControl sc;
-    private bool mf_checkGetAxe = false;
+    private bool mb_checkGetAxe = false;
     SpriteRenderer rend;
     void Start() {
         mg_Click = GameObject.Find("Click"); //Click 게임 오브젝트를 찾아서 mg_Click 변수에 저장
@@ -30,17 +30,17 @@ public class DragAx : MonoBehaviour{
     public void OnMouseDrag(){
         Vector2 v2mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 v2worldObjPos = Camera.main.ScreenToWorldPoint(v2mousePosition);
-        Destroy(Click);
+        Destroy(mg_Click);
         this.transform.position = v2worldObjPos;
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
-        if (cCollideObject.tag == "Jack" && !mf_checkGetAxe){
+        if (cCollideObject.tag == "Jack" && !mb_checkGetAxe){
             // Debug.Log(transfrom.gameObject.name);
             rend =  mg_Jack.GetComponent<SpriteRenderer>();
             rend.flipX = false;
             transform.position = mg_Jack.transform.position;
             sc.setNextScript();
-            mf_checkGetAxe = true;
+            mb_checkGetAxe = true;
         }
     }
 }

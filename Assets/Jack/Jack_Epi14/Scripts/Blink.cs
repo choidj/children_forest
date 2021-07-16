@@ -27,7 +27,7 @@ public class Blink : MonoBehaviour
     public void Update()
     {
         mf_timer += Time.deltaTime;
-        if(mf_timer > f_waitingTime){
+        if(mf_timer > mf_waitingTime){
             if (mf_time < 0.3f){
                 GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }

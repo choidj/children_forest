@@ -46,6 +46,7 @@ public class Jack13_MainScript : MonoBehaviour
 
     //ms_ScriptText 에 문장을 입력해주세요.
     private string ms_ScriptText = "잭을 발견한 거인은 고함을 외쳤어요.@“어떤 놈이 내 보물을 훔쳐 가느냐! 이녀석 거기 서!”@거인이 쿵쾅쿵쾅 잭의 뒤를 바짝 쫓았어요.@잭은 정신없이 콩나무 줄기를 타고 아래로 아래로 재빨리 내려갔어요.@“잡히기만 하면 가만 안둬!”";
+    private string[] msa_SplitText;
     private int mn_Sequence;
 
 
