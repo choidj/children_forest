@@ -6,7 +6,7 @@
   *            -작성 기록-
   *            2021-07-14 : 제작 완료
   *
-  * MoveTowards() : 등속 이동, 매개변수로 {현재위치, 목표위치, 속도}를 입력  
+  * 
   *            
   */
 
@@ -16,23 +16,20 @@ using UnityEngine;
 
 public class BlinkAni : MonoBehaviour
 {
-    float f_time;
+    float f_currtime; //깜빡거리는 속도
     // Update is called once per frame
     public void Update()
     {
         /*깜빡깜빡 거리는 효과*/
-        
-        if (f_time < 0.5f)
-        {
+        if (f_currtime < 0.5f){
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
-        else
-        {
+        else{
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-            if (f_time > 1f)
-                f_time = 0;
+            if (f_currtime > 1f)
+                f_currtime = 0;
         }
-        f_time += Time.deltaTime;
+        f_currtime += Time.deltaTime;
     }
 
 }

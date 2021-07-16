@@ -6,9 +6,8 @@
  *            -작성 기록-
  *            2021-07-15 : 제작 완료
  *
- * OnTriggerEnter2D(Collider2D cCollideObject) :오브젝트에 연결된 트리거 안에 다른 오브젝트가 들어갔을 때 호출됨 (2D 물리만)
+ * OnTriggerEnter2D(Collider2D cCollideObject) :오브젝트간 충돌이 일어날때 처음 한번만 호출되는 함수
  * OnMouseDrag() : 게임오브젝트를 드래그로 이동시키는 함수
- * OnTriggerEnter2D(Collider2D other) : 오브젝트간 충돌이 일어날때 처음 한번만 호출되는 함수
  * 
  *            
  */

@@ -1,3 +1,14 @@
+/*
+  * - Name : Movement_Giant.cs
+  * - Writer : 이윤교
+  * - Content : 잭과콩나무 에피소드14 - 화살표 깜빡이는 효과 스크립트
+  * 
+  *            -작성 기록-
+  *            2021-07-15 : 제작 완료
+  *
+  *
+  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +34,7 @@ public class ScriptControl : MonoBehaviour
         return instance;
     }
     public const int mn_setScriptNum = 5;
-    public string[] ms_setScriptText = new string[mn_setScriptNum];
+        public string[] ms_setScriptText = new string[mn_setScriptNum];
     private int mn_checkCurrentScr = 0;
     private Text mt_setText;
     private GameObject mg_setGameObject;

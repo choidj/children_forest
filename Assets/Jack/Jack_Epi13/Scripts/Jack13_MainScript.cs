@@ -40,7 +40,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Jack5_MainScript : MonoBehaviour
+public class Jack13_MainScript : MonoBehaviour
 {
     GameObject mg_MainScript;   //연결할 스크립트 오브젝트 선언
 
