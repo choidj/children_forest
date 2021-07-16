@@ -18,6 +18,7 @@ public enum Voice
 }
 
 public class TTS {
+    //This is a single tone class...
 
     [System.Serializable]
     public class SetTextToSpeech {
@@ -60,12 +61,7 @@ public class TTS {
     public TTS()
     {
         tts = new SetTextToSpeech();
-        SetVoice sv_setVoiceConf = new SetVoice();
-        
-        sv_setVoiceConf.languageCode = "ko-KR";
-        sv_setVoiceConf.name = "ko-KR-Wavenet-A";
-        sv_setVoiceConf.ssmlGender = "FEMALE";
-        tts.voice = sv_setVoiceConf;
+        setVoice(Voice.KR_FEMALE_A);
 
         SetAudioConfig sa_setAudioConf = new SetAudioConfig();
         sa_setAudioConf.audioEncoding = "LINEAR16";
@@ -77,52 +73,8 @@ public class TTS {
     public TTS(Voice gender)
     {
         tts = new SetTextToSpeech();
-        SetVoice sv_setVoiceConf = new SetVoice();
-        switch(gender) {
-            case Voice.KR_FEMALE_A:
-                sv_setVoiceConf.languageCode = "ko-KR";
-                sv_setVoiceConf.name = "ko-KR-Wavenet-A";
-                sv_setVoiceConf.ssmlGender = "FEMALE";
-                break;
-            case Voice.KR_FEMALE_B:
-                sv_setVoiceConf.languageCode = "ko-KR";
-                sv_setVoiceConf.name = "ko-KR-Wavenet-B";
-                sv_setVoiceConf.ssmlGender = "FEMALE";
-                break;
-            case Voice.EN_FEMALE_A:
-                sv_setVoiceConf.languageCode = "en-US";
-                sv_setVoiceConf.name = "en-US-Wavenet-C";
-                sv_setVoiceConf.ssmlGender = "FEMALE";
-                break;
-            case Voice.EN_FEMALE_B:
-                sv_setVoiceConf.languageCode = "en-US";
-                sv_setVoiceConf.name = "en-US-Wavenet-E";
-                sv_setVoiceConf.ssmlGender = "FEMALE";
-                break;
-            case Voice.KR_MALE_A:
-                sv_setVoiceConf.languageCode = "ko-KR";
-                sv_setVoiceConf.name = "ko-KR-Wavenet-C";
-                sv_setVoiceConf.ssmlGender = "MALE";
-                break;
-            case Voice.KR_MALE_B:
-                sv_setVoiceConf.languageCode = "ko-KR";
-                sv_setVoiceConf.name = "ko-KR-Wavenet-D";
-                sv_setVoiceConf.ssmlGender = "MALE";
-                break;
-            case Voice.EN_MALE_A:
-                sv_setVoiceConf.languageCode = "en-US";
-                sv_setVoiceConf.name = "en-US-Wavenet-A";
-                sv_setVoiceConf.ssmlGender = "MALE";
-                break;
-            case Voice.EN_MALE_B:
-                sv_setVoiceConf.languageCode = "en-US";
-                sv_setVoiceConf.name = "ken-US-Wavenet-B";
-                sv_setVoiceConf.ssmlGender = "MALE";
-                break;
-                
-        }
-        
-        tts.voice = sv_setVoiceConf;
+
+        setVoice(gender);
 
         SetAudioConfig sa_setAudioConf = new SetAudioConfig();
         sa_setAudioConf.audioEncoding = "LINEAR16";
@@ -131,7 +83,19 @@ public class TTS {
         sa_setAudioConf.volumeGainDb = 0;
         tts.audioConfig = sa_setAudioConf;
     }    
-
+    private static TTS instance = null;
+    public static TTS GetInstance(Voice gender)
+    {
+        // 만약 instance가 존재하지 않을 경우 새로 생성한다.
+        if (instance is null)
+        {
+            instance = new TTS(gender);
+        }
+        else
+            instance.setVoice(gender);
+        // instance를 반환한다.
+        return instance;
+    }
     //convert the received byte array to float array...
     public void CreateAudio(string speech, AudioSource asPlayAudioSource) {
         SetInput si_setInputData = new SetInput();
@@ -204,5 +168,52 @@ public class TTS {
             }
             return null;
         }
+    }
+    void setVoice(Voice srcVoice) {
+        SetVoice sv_setVoiceConf = new SetVoice();
+        switch(srcVoice) {
+            case Voice.KR_FEMALE_A:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-A";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.KR_FEMALE_B:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-B";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.EN_FEMALE_A:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-C";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.EN_FEMALE_B:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-E";
+                sv_setVoiceConf.ssmlGender = "FEMALE";
+                break;
+            case Voice.KR_MALE_A:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-C";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.KR_MALE_B:
+                sv_setVoiceConf.languageCode = "ko-KR";
+                sv_setVoiceConf.name = "ko-KR-Wavenet-D";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.EN_MALE_A:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "en-US-Wavenet-A";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;
+            case Voice.EN_MALE_B:
+                sv_setVoiceConf.languageCode = "en-US";
+                sv_setVoiceConf.name = "ken-US-Wavenet-B";
+                sv_setVoiceConf.ssmlGender = "MALE";
+                break;   
+        }
+        
+        tts.voice = sv_setVoiceConf;
     }
 }
