@@ -90,6 +90,7 @@ public class Jack5_EventController : MonoBehaviour
     //이벤트 관리를 위한 변수
     private bool mb_EventFlag;  //이벤트를 한번만 작동하기 위한 flag
     private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
+    private bool mb_DragFlag;
 
     //마우스 드래그 관련 오브젝트
     GameObject mg_Jack;
@@ -97,7 +98,10 @@ public class Jack5_EventController : MonoBehaviour
     //마우스 클릭 제한
     private bool StopClickFlag;
 
-    //이벤트 성공확인을 위한 flag
+    //화살표 오브젝트
+    GameObject mg_Arrow1;
+    GameObject mg_Arrow2;
+    public GameObject mg_ArrowPrefab;
 
 
 
@@ -115,6 +119,7 @@ public class Jack5_EventController : MonoBehaviour
         //이벤트 관련
         v_ChangeFlagFalse();
         mn_EventSequence = 0;
+        mb_DragFlag = false;
 
 
         //이벤트 시작
@@ -179,9 +184,19 @@ public class Jack5_EventController : MonoBehaviour
             v_TurnOnMouseDrag();
 
             v_NextEventScript();
+
         }
 
-
+        if (mb_DragFlag == false && mn_EventSequence >= 6)
+        {
+            v_GenArrowToJack();
+            v_RemoveArrowToEndPoint();
+        }
+        else if (mb_DragFlag == true && mn_EventSequence >= 6)
+        {
+            v_RemoveArrowToJack();
+            v_GenArrowToEndPoint();
+        }
     }
 
 
@@ -249,5 +264,49 @@ public class Jack5_EventController : MonoBehaviour
     private void v_TurnOFFMouseDrag()
     {
         this.mg_Jack.GetComponent<Jack5_MouseDrag>().v_ChangeFlagFalse();
+    }
+
+    public void v_GenArrowToJack()
+    {
+        if (mg_Arrow1 == null)
+        {
+            mg_Arrow1 = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_Arrow1.transform.position = new Vector3(-4.8f, -2.5f, 0);
+            mg_Arrow1.GetComponent<SpriteRenderer>().flipX = true;
+        }
+    }
+    public void v_GenArrowToEndPoint()
+    {
+        if (mg_Arrow2 == null)
+        {
+            mg_Arrow2 = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_Arrow2.transform.position = new Vector3(3.1f, 3.6f, 0);
+            mg_Arrow2.GetComponent<SpriteRenderer>().flipX = false;
+            mg_Arrow2.GetComponent<SpriteRenderer>().flipY = true;
+        }
+    }
+
+    public void v_RemoveArrowToJack()
+    {
+        if (mg_Arrow1 != null)
+        {
+            Destroy(mg_Arrow1);
+        }
+    }
+    public void v_RemoveArrowToEndPoint()
+    {
+        if (mg_Arrow2 != null)
+        {
+            Destroy(mg_Arrow2);
+        }
+    }
+
+    public void v_DragFalgTrue()
+    {
+        mb_DragFlag = true;
+    }
+    public void v_DragFalgFalse()
+    {
+        mb_DragFlag = false;
     }
 }

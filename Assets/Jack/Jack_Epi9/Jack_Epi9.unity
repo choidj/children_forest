@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mg_GiantSpeech: {fileID: 7688593062601609341, guid: 3784d968d13705049b1da38446cecf3b, type: 3}
+  mg_ArrowPrefab: {fileID: 4304068478564004920, guid: 645eb5bd746b2c64eaf5ae5042d8a987, type: 3}
 --- !u!4 &780206281
 Transform:
   m_ObjectHideFlags: 0
