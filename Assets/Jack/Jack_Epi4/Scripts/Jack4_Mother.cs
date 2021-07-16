@@ -37,6 +37,8 @@ public class Jack4_Mother : MonoBehaviour
     GameObject mg_EventManager;
     GameObject mg_Bean;
 
+    public Sprite[] MotherImage = new Sprite[2];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,5 +62,10 @@ public class Jack4_Mother : MonoBehaviour
             this.mg_EventManager.GetComponent<Jack4_EventController>().v_BeanToMother();
             this.mg_Bean.GetComponent<Jack4_MouseDrag>().v_BeanPositionFlagTrue();
         }
+    }
+
+    public void ChangeMotherAngry()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = MotherImage[1];
     }
 }
