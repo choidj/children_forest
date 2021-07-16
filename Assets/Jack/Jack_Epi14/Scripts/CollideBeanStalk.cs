@@ -56,7 +56,7 @@ public class CollideBeanStalk : MonoBehaviour
 
                 if( temp <= 0.02f && !mb_checkEnd) {
                     Destroy(mg_giant);
-                    Invoke("endScene", 1f); //1초 후 endScene 함수 수행
+                    Invoke("gotoEpi15Scene", 1f); //1초 후 endScene 함수 수행
                     mb_checkEnd = true; //Epi14 내용 끝
                 }
             }
@@ -70,7 +70,7 @@ public class CollideBeanStalk : MonoBehaviour
         }
 
     }
-    void endScene() {
-        SceneManager.LoadScene("end_scene"); //end_scene 씬 로드
+    void gotoEpi15Scene() {
+        SceneManager.LoadScene("Jack_Epi15"); //end_scene 씬 로드
     }
 }
