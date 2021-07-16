@@ -1,5 +1,5 @@
 /*
-  * - Name : Movement_Giant.cs
+  * - Name : Blink.cs
   * - Writer : 이윤교
   * - Content : 잭과콩나무 에피소드14 - 화살표 깜빡이는 효과 스크립트
   * 

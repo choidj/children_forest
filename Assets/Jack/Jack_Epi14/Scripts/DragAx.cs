@@ -1,5 +1,5 @@
 /*
-  * - Name : Movement_Giant.cs
+  * - Name : DragAx.cs
   * - Writer : 이윤교
   * - Content : 잭과콩나무 에피소드14 - 도끼 움직이는 스크립트
   * 

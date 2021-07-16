@@ -1,10 +1,10 @@
 /*
-  * - Name : Movement_Giant.cs
+  * - Name : ScriptControl.cs
   * - Writer : 이윤교
-  * - Content : 잭과콩나무 에피소드14 - 화살표 깜빡이는 효과 스크립트
+  * - Content : 잭과콩나무 에피소드14 - ScriptControl
   * 
   *            -작성 기록-
-  *            2021-07-15 : 제작 완료
+  *            2021-07-16 : 제작 완료
   * Find 함수
         ㄴ GameObject 타입의 함수로서 클래스 함수라 GameObject.Find(String) 식으로 사용 된다. 
         ㄴ 현재 씬에서 인수와 일치하는 이름을 가진 오브젝트를 찾아 리턴해준다.

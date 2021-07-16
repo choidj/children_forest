@@ -1,5 +1,5 @@
 /*
-  * - Name : Movement_Giant.cs
+  * - Name : CollideBeanStalk.cs
   * - Writer : 이윤교
   * - Content : 잭과콩나무 에피소드14 - 콩나무 도끼질 하며 자르기 스크립트
   * 
@@ -18,9 +18,9 @@ using UnityEngine.SceneManagement;
 public class CollideBeanStalk : MonoBehaviour
 {
     private GameObject mg_Click; //미션유도클릭 오브젝트
-    private GameObject giant; //거인 오브젝트
+    private GameObject mg_giant; //거인 오브젝트
     private int mn_checkAxing = 0; //도끼질 한 후 콩나무 잘린 모습 순서
-    private bool mb_checkEnd = false;
+    private bool mb_checkEnd = false; //Epi14 내용 끝났는지 확인
     
     private ScriptControl sc;
 
@@ -49,28 +49,28 @@ public class CollideBeanStalk : MonoBehaviour
         float temp = 0f;
         if(mn_checkAxing > 8) {
             //giant fall.. to y : -1
-            if (!mb_checkEnd){
-                Destroy(mg_Click);
-                giant.transform.position = Vector2.MoveTowards(giant.transform.position,   new Vector2(2f, 0.3f), 2f * Time.deltaTime);
+            if (!mb_checkEnd){ //Epi14 내용 진행중이면
+                Destroy(mg_Click); //미션오브젝트 없애기
+                mg_giant.transform.position = Vector2.MoveTowards(giant.transform.position,   new Vector2(2f, 0.3f), 2f * Time.deltaTime);
                 temp = Mathf.Abs(giant.transform.position.y - 0.3f);
 
                 if( temp <= 0.02f && !mb_checkEnd) {
                     Destroy(giant);
-                    Invoke("endScene", 1f);
-                    mb_checkEnd = true;
+                    Invoke("endScene", 1f); //1초 후 endScene 함수 수행
+                    mb_checkEnd = true; //Epi14 내용 끝
                 }
             }
 
         }
-        else if(mn_checkAxing == 8) {
-            giant = transform.Find("giant").gameObject;
-            giant.SetActive(true);
-            sc.setNextScript();
+        else if(mn_checkAxing == 8) { //콩나무가 다 잘렸으면
+            mg_giant = transform.Find("giant").gameObject; //거인오브젝트 찾아서
+            mg_giant.SetActive(true); //활성화
+            sc.setNextScript(); //다음 스크립트 불러오기
             mn_checkAxing++;
         }
 
     }
     void endScene() {
-        SceneManager.LoadScene("end_scene");
+        SceneManager.LoadScene("end_scene"); //end_scene 씬 로드
     }
 }
