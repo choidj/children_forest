@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 408612170}
   - component: {fileID: 408612169}
-  - component: {fileID: 408612171}
   m_Layer: 0
   m_Name: 3
   m_TagString: Bean
@@ -242,8 +241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 626, y: -78.52832}
-  m_SizeDelta: {x: 1200, y: 120}
+  m_AnchoredPosition: {x: 465.30402, y: -145.86755}
+  m_SizeDelta: {x: 878.608, y: 254.6785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546877004
 MonoBehaviour:
@@ -1279,7 +1278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1374989377}
   - component: {fileID: 1374989376}
-  - component: {fileID: 1374989378}
   m_Layer: 0
   m_Name: 7
   m_TagString: Bean
@@ -1792,7 +1790,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1923308063}
   - component: {fileID: 1923308062}
-  - component: {fileID: 1923308064}
   m_Layer: 0
   m_Name: 6
   m_TagString: Bean
