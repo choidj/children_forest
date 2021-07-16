@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 41, y: -83.61145}
+  m_AnchoredPosition: {x: 41, y: -117}
   m_SizeDelta: {x: 972.4666, y: 167.223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603655702
@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 1736472602}
   - component: {fileID: 1736472604}
   - component: {fileID: 1736472603}
+  - component: {fileID: 1736472605}
   m_Layer: 0
   m_Name: Jack
   m_TagString: Jack
@@ -1187,6 +1188,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 4}
   m_EdgeRadius: 0
+--- !u!95 &1736472605
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736472598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 320761d72c3ee4b20b413181b30c0eec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2040363936
 GameObject:
   m_ObjectHideFlags: 0

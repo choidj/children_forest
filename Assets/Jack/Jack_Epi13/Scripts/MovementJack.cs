@@ -15,8 +15,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementJack : MonoBehaviour{
+    bool mb_posCheck = false; //원하는 위치에 도달했는지 확인
     public Vector3 v3_target; //원하는 위치 지정
     void Update(){
 	    transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.2f);
+        mb_posCheck = true;
     }
 }
