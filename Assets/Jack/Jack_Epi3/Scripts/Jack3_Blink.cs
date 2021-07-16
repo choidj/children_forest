@@ -36,15 +36,4 @@ public class Jack3_Blink : MonoBehaviour
         }
         f_time += Time.deltaTime;
     }
-
-    public void v_StopBlink()
-    {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-    }
-
-    public void v_HideBlink()
-    {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-    }
-
 }
