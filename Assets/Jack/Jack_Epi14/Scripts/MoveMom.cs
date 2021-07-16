@@ -42,7 +42,7 @@ public class MoveMom : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
         if (cCollideObject.tag == "Mom"){ //엄마가 등장하게 되면 도끼 생성
-            Color tempColor = Ax.GetComponent<SpriteRenderer>().color;
+            Color tempColor = mg_Ax.GetComponent<SpriteRenderer>().color;
             tempColor.a = 1f;
             mg_Ax.GetComponent<SpriteRenderer>().color = tempColor;
         }
