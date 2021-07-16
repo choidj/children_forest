@@ -20,7 +20,7 @@ public class DragAx : MonoBehaviour{
     public GameObject mg_Jack; //잭
     public GameObject mg_Click; //미션을 위한 클릭
     public ScriptControl sc;
-    private bool mb_checkGetAxe = false;
+    private bool mb_checkGetAxe = false; //잭의 도끼 습득 유무
     SpriteRenderer rend;
     void Start() {
         mg_Jack = GameObject.Find("Jack"); 
@@ -30,14 +30,14 @@ public class DragAx : MonoBehaviour{
     public void OnMouseDrag(){
         Vector2 v2mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 v2worldObjPos = Camera.main.ScreenToWorldPoint(v2mousePosition);
-        Destroy(mg_Click);
+        Destroy(mg_Click); //도끼를 드래그 하면 미션유도클릭 없애기
         this.transform.position = v2worldObjPos;
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){
-        if (cCollideObject.tag == "Jack" && !mb_checkGetAxe){
+        if (cCollideObject.tag == "Jack" && !mb_checkGetAxe){ //잭이 도끼를 가지게 되면
             // Debug.Log(transfrom.gameObject.name);
             rend =  mg_Jack.GetComponent<SpriteRenderer>();
-            rend.flipX = false;
+            rend.flipX = false; //잭이 콩나무 바라보기
             transform.position = mg_Jack.transform.position;
             sc.setNextScript();
             mb_checkGetAxe = true;

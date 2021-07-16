@@ -115,8 +115,6 @@ public class Jack3_EventController : MonoBehaviour
     private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
     private bool mb_DragCowFlag;
     private bool mb_DragBeanFlag;
-    private bool isGenArrow1;
-    private bool DontLoopEvent;
 
     //마우스 드래그 관련 오브젝트
     GameObject mg_Cow;
@@ -139,8 +137,6 @@ public class Jack3_EventController : MonoBehaviour
         mb_CowToGF = false;
         mb_DragCowFlag = false;
         mb_DragBeanFlag = false;
-        isGenArrow1 = false;
-        DontLoopEvent = false;
 
         v_ChangeFlagFalse();
         mn_EventSequence = 0;
