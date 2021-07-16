@@ -108,6 +108,11 @@ public class Jack9_EventController : MonoBehaviour
     //이벤트를위한 flag
     private bool IsSackDestroy;
 
+    //화살표 오브젝트
+    GameObject mg_Arrow1;
+    GameObject mg_Arrow2;
+    public GameObject mg_ArrowPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -127,7 +132,6 @@ public class Jack9_EventController : MonoBehaviour
         mn_EventSequence = 0;
 
 
-
         //이벤트 시작
         v_NextMainScript();
 
@@ -136,6 +140,9 @@ public class Jack9_EventController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (Input.GetMouseButtonDown(0))
         {
             if (StopClickFlag == false)
@@ -174,6 +181,9 @@ public class Jack9_EventController : MonoBehaviour
 
             mb_DontLoopEvent1 = false;
             mb_DontLoopEvent2 = true;
+
+            v_GenArrowToSack1();
+            v_GenArrowToSack2();
         }
         else if (mn_EventSequence == 3 && IsSackDestroy == true && mb_DontLoopEvent2 == true)
         {
@@ -185,6 +195,8 @@ public class Jack9_EventController : MonoBehaviour
 
             this.mg_ScriptManager.GetComponent<Jack9_Gentreasure>().v_GenTreasure();
 
+            v_RemoveArrowToSack1();
+            v_RemoveArrowToSack2();
         }
         else if (mn_EventSequence == 4 && IsSackDestroy == true)
         {
@@ -256,5 +268,36 @@ public class Jack9_EventController : MonoBehaviour
         IsSackDestroy = true;
     }
 
+    public void v_GenArrowToSack1()
+    {
+        if (mg_Arrow1 == null)
+        {
+            mg_Arrow1 = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_Arrow1.transform.position = new Vector3(-0.87f, -0.57f, 0);
+        }
+    }
+    public void v_GenArrowToSack2()
+    {
+        if (mg_Arrow2 == null)
+        {
+            mg_Arrow2 = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_Arrow2.transform.position = new Vector3(5, -0.57f, 0);
+            mg_Arrow2.GetComponent<SpriteRenderer>().flipX = true;
+        }
+    }
 
+    public void v_RemoveArrowToSack1()
+    {
+        if (mg_Arrow1 != null)
+        {
+            Destroy(mg_Arrow1);
+        }
+    }
+    public void v_RemoveArrowToSack2()
+    {
+        if (mg_Arrow2 != null)
+        {
+            Destroy(mg_Arrow2);
+        }
+    }
 }
