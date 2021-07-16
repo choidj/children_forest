@@ -51,11 +51,11 @@ public class CollideBeanStalk : MonoBehaviour
             //giant fall.. to y : -1
             if (!mb_checkEnd){ //Epi14 내용 진행중이면
                 Destroy(mg_Click); //미션오브젝트 없애기
-                mg_giant.transform.position = Vector2.MoveTowards(giant.transform.position,   new Vector2(2f, 0.3f), 2f * Time.deltaTime);
-                temp = Mathf.Abs(giant.transform.position.y - 0.3f);
+                mg_giant.transform.position = Vector2.MoveTowards(mg_giant.transform.position,   new Vector2(2f, 0.3f), 2f * Time.deltaTime);
+                temp = Mathf.Abs(mg_giant.transform.position.y - 0.3f);
 
                 if( temp <= 0.02f && !mb_checkEnd) {
-                    Destroy(giant);
+                    Destroy(mg_giant);
                     Invoke("endScene", 1f); //1초 후 endScene 함수 수행
                     mb_checkEnd = true; //Epi14 내용 끝
                 }
