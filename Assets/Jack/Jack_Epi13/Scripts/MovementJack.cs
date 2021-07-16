@@ -1,12 +1,12 @@
 /*
  * - Name : Movement_Jack.cs
- * - Writer : ÀÌÀ±±³
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå13 - Àè ÀÌµ¿ ½ºÅ©¸³Æ®
+ * - Writer : ì´ìœ¤êµ
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ13 - ì­ ì´ë™ ìŠ¤í¬ë¦½íŠ¸
  * 
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-15 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-15 : ì œì‘ ì™„ë£Œ
  *
- * MoveTowards() : µî¼Ó ÀÌµ¿, ¸Å°³º¯¼ö·Î {ÇöÀçÀ§Ä¡, ¸ñÇ¥À§Ä¡, ¼Óµµ}¸¦ ÀÔ·Â           
+ * MoveTowards() : ë“±ì† ì´ë™, ë§¤ê°œë³€ìˆ˜ë¡œ {í˜„ì¬ìœ„ì¹˜, ëª©í‘œìœ„ì¹˜, ì†ë„}ë¥¼ ì…ë ¥           
  *            
  */
 
@@ -14,12 +14,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementJack : MonoBehaviour
-{
-    public Vector3 v3_target; //¿øÇÏ´Â À§Ä¡ ÁöÁ¤
-
+public class MovementJack : MonoBehaviour{
+    public Vector3 v3_target; //ì›í•˜ëŠ” ìœ„ì¹˜ ì§€ì •
     void Update(){
 	    transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.2f);
-
     }
 }

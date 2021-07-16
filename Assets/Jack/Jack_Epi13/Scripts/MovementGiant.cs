@@ -1,12 +1,12 @@
 /*
  * - Name : Movement_Giant.cs
- * - Writer : ÀÌÀ±±³
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå13 - °ÅÀÎ ÀÌµ¿ ½ºÅ©¸³Æ®
+ * - Writer : ì´ìœ¤êµ
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ13 - ê±°ì¸ ì´ë™ ìŠ¤í¬ë¦½íŠ¸
  * 
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-15 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-15 : ì œì‘ ì™„ë£Œ
  *
- * MoveTowards() : µî¼Ó ÀÌµ¿, ¸Å°³º¯¼ö·Î {ÇöÀçÀ§Ä¡, ¸ñÇ¥À§Ä¡, ¼Óµµ}¸¦ ÀÔ·Â           
+ * MoveTowards() : ë“±ì† ì´ë™, ë§¤ê°œë³€ìˆ˜ë¡œ {í˜„ì¬ìœ„ì¹˜, ëª©í‘œìœ„ì¹˜, ì†ë„}ë¥¼ ì…ë ¥           
  *            
  */
 
@@ -15,16 +15,14 @@ using System.Collections.Generic;
 using UnityEngine;
 public class MovementGiant : MonoBehaviour
 {
-    float mf_timer; //ÇöÀç ½Ã°£
-    float mf_waitingTime; //¿øÇÏ´Â ½Ã°£ ÁöÁ¤
-
-    public Vector3 v3_target; //¿øÇÏ´Â À§Ä¡ ÁöÁ¤
+    float mf_timer; //í˜„ì¬ ì‹œê°„
+    float mf_waitingTime; //ì›í•˜ëŠ” ì‹œê°„ ì§€ì •
+    public Vector3 v3_target; //ì›í•˜ëŠ” ìœ„ì¹˜ ì§€ì •
     void Update(){
-        /*deltaTimeÀ» ÀÌ¿ëÇØ¼­ ½Ã°£ Áö¿¬*/ 
+        /*deltaTimeì„ ì´ìš©í•´ì„œ ì‹œê°„ ì§€ì—°*/ 
         mf_timer += Time.deltaTime;
-        if (mf_timer > mf_waitingTime){ //-> ¿øÇÏ´Â ½Ã°£(ÃÊ) ÀÌÈÄ ÇÔ¼ö ½ÇÇà
-            transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.1f); //°ÅÀÎÀÌµ¿
+        if (mf_timer > mf_waitingTime){ //-> ì›í•˜ëŠ” ì‹œê°„(ì´ˆ) ì´í›„ í•¨ìˆ˜ ì‹¤í–‰
+            transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.1f); //ê±°ì¸ì´ë™
         }
-
     }
 }
