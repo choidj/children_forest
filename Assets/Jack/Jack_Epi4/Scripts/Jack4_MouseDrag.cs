@@ -45,11 +45,15 @@ public class Jack4_MouseDrag : MonoBehaviour
     private bool mb_flag;
     private bool mb_BeanPositionFlag;
 
+    GameObject mg_ScriptManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         mb_BeanPositionFlag = false;
+
+        this.mg_ScriptManager = GameObject.Find("GameDirector");
     }
 
     // Update is called once per frame
@@ -73,6 +77,11 @@ public class Jack4_MouseDrag : MonoBehaviour
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
         }
+
+        if(this.tag == "Bean")
+        {
+            this.mg_ScriptManager.GetComponent<Jack4_EventController>().DragFalgTrue();
+        }
     }
 
     //마우스에서 손을 뗄 경우 원래위치로 돌아가게끔 설정
@@ -90,6 +99,7 @@ public class Jack4_MouseDrag : MonoBehaviour
             {
                 this.transform.position = new Vector3(5.2f, -3.5f, 0);
             }
+            this.mg_ScriptManager.GetComponent<Jack4_EventController>().DragFalgFalse();
         }
 
     }

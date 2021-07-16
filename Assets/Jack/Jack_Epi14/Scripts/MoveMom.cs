@@ -1,5 +1,5 @@
 /*
-  * - Name : Movement_Giant.cs
+  * - Name : MoveMom.cs
   * - Writer : 이윤교
   * - Content : 잭과콩나무 에피소드14 - 엄마 이동 스크립트
   * 
