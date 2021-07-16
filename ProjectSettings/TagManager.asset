@@ -7,6 +7,12 @@ TagManager:
   - Jack
   - RunPos
   - Door
+  - PutFruitInBasket
+  - Stage
+  - Bean
+  - Ax
+  - Mom
+  - Button
   layers:
   - Default
   - TransparentFX

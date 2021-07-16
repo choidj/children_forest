@@ -30,7 +30,7 @@ public class Select_controlStages : MonoBehaviour
                         SceneManager.LoadScene("solve_puzzle_scene");
                         break;
                     case "reading":
-                        SceneManager.LoadScene("reading_scene");
+                        SceneManager.LoadScene("Jack_Epi1");
                         break;
                     case "fruit":
                         SceneManager.LoadScene("put_fruits_scene");

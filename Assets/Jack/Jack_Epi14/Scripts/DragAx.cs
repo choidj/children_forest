@@ -18,12 +18,12 @@ using UnityEngine.UI;
 
 public class DragAx : MonoBehaviour{   
     public GameObject mg_Jack; //잭
-    public GameObject mg_Ax; //도끼
-    public GameObject mg_Click; //미션유도클릭
+    public GameObject mg_Click; //미션을 위한 클릭
     public ScriptControl sc;
     private bool mb_checkGetAxe = false; //잭의 도끼 습득 유무
     SpriteRenderer rend;
     void Start() {
+        mg_Jack = GameObject.Find("Jack"); 
         mg_Click = GameObject.Find("Click"); //Click 게임 오브젝트를 찾아서 mg_Click 변수에 저장
         sc = ScriptControl.GetInstance();
     }
