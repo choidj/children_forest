@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 331779154}
   - component: {fileID: 331779156}
   - component: {fileID: 331779155}
+  - component: {fileID: 331779157}
   m_Layer: 5
   m_Name: Jack3_Script
   m_TagString: Untagged
@@ -491,6 +492,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331779153}
   m_CullTransparentMesh: 1
+--- !u!114 &331779157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331779153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &738385241
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f442adba6019b340890697b902db03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mg_ArrowPrefab: {fileID: 3548232359028367037, guid: c35eff97fb9f1fb40829946eaf1a28d0, type: 3}
   mg_GFSpeech: {fileID: 7453365856918644861, guid: 46ced7628d7ea844287ade3b8d3b142d, type: 3}
   mg_JackSpeech: {fileID: 5372921749522760305, guid: 4950cf57b9cdbff40bceed8f1b128c9f, type: 3}
 --- !u!114 &738385245
@@ -1199,7 +1216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919226265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.77, y: -4.09, z: 0}
+  m_LocalPosition: {x: 5, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

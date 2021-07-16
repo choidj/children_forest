@@ -95,6 +95,13 @@ public class Jack3_EventController : MonoBehaviour
     //게임 디렉터 오브젝트에 접근하기 위한 오브젝트
     GameObject mg_ScriptManager;
 
+    //화살표 오브젝트
+    GameObject mg_Arrow1;
+    GameObject mg_Arrow2;
+    GameObject mg_Arrow3;
+    GameObject mg_Arrow4;
+    public GameObject mg_ArrowPrefab;
+
     //할아버지 말풍선 관련 오브젝트
     GameObject mg_GenGFSpeechBubble;
     public GameObject mg_GFSpeech;
@@ -106,6 +113,10 @@ public class Jack3_EventController : MonoBehaviour
     //이벤트 관리를 위한 변수
     private bool mb_EventFlag;  //이벤트를 한번만 작동하기 위한 flag
     private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
+    private bool mb_DragCowFlag;
+    private bool mb_DragBeanFlag;
+    private bool isGenArrow1;
+    private bool DontLoopEvent;
 
     //마우스 드래그 관련 오브젝트
     GameObject mg_Cow;
@@ -113,7 +124,7 @@ public class Jack3_EventController : MonoBehaviour
 
 
     //이벤트 성공확인을 위한 flag
-    private bool mb_BeanToJack;
+    bool mb_BeanToJack;
     private bool mb_CowToGF;
 
 
@@ -126,6 +137,10 @@ public class Jack3_EventController : MonoBehaviour
 
         mb_BeanToJack = false;
         mb_CowToGF = false;
+        mb_DragCowFlag = false;
+        mb_DragBeanFlag = false;
+        isGenArrow1 = false;
+        DontLoopEvent = false;
 
         v_ChangeFlagFalse();
         mn_EventSequence = 0;
@@ -146,7 +161,72 @@ public class Jack3_EventController : MonoBehaviour
         {
             Debug.Log("시나리오 완료");
         }
+        if(mb_CowToGF == true && mb_BeanToJack == false)
+        {
+            this.mg_Bean.GetComponent<Jack3_MouseDrag>().v_ChangeFlagTrue();
+            v_NotDragCow();
+        }
+        if(mb_BeanToJack == true)
+        {
+            v_DragBeanFalgFalse();
+        }
 
+        //소 드래그시 화살표 처리 부분
+        if(mb_DragCowFlag == true && mn_EventSequence >= 8 && mb_DragBeanFlag == false)
+        {
+            v_RemoveArrowToCow();
+            if (mg_Arrow3 == null)
+            {
+                v_GenArrowToGF();
+            }
+            if(mg_Arrow1 != null)
+            {
+                v_RemoveArrowToBean();
+            }
+        }
+        else if(mb_DragCowFlag == false && mn_EventSequence >= 8 && mb_DragBeanFlag == false)
+        {
+            v_RemoveArrowToGF();
+
+            if(this.mg_Arrow2 == null && mn_EventSequence >= 9 && mb_CowToGF == false )
+            {
+                v_GenArrowToCow();
+            }
+            if (this.mg_Arrow1 == null && mn_EventSequence >= 9 && mb_BeanToJack == false)
+            {
+                v_GenArrowToBean();
+            }
+        }
+        //콩 드래그 처리
+        if(mb_DragBeanFlag == true && mn_EventSequence >= 8 && mb_DragCowFlag == false)
+        {
+            v_RemoveArrowToBean();
+            if(mg_Arrow4 == null)
+            {
+                v_GenArrowToJack();
+            }
+            if(mg_Arrow2 != null)
+            {
+                v_RemoveArrowToCow();
+            }
+        }
+        else if(mb_DragBeanFlag == false && mn_EventSequence >= 8 && mb_DragCowFlag == false)
+        {
+            v_RemoveArrowToJack();
+
+            if (this.mg_Arrow2 == null && mn_EventSequence >= 9 && mb_CowToGF == false)
+            {
+                v_GenArrowToCow();
+            }
+            if (this.mg_Arrow1 == null && mn_EventSequence >= 9 && mb_BeanToJack == false)
+            {
+                v_GenArrowToBean();
+            }
+        }
+
+
+
+        //전체적인 이벤트
         if (mn_EventSequence == 1 && this.mb_EventFlag == true){
             v_ChangeFlagFalse();
 
@@ -207,6 +287,8 @@ public class Jack3_EventController : MonoBehaviour
 
             v_TurnOnMouseDrag();
 
+            v_GenArrowToBean();
+            v_GenArrowToCow();   
         }
     }
 
@@ -297,5 +379,88 @@ public class Jack3_EventController : MonoBehaviour
     public void v_CowToGF()
     {
         mb_CowToGF = true;
+    }
+
+    public void v_GenArrowToBean()
+    {
+        mg_Arrow1 = Instantiate(mg_ArrowPrefab) as GameObject;
+        mg_Arrow1.transform.position = new Vector3(3.5f, -2.5f, 0);
+        //mg_Arrow1.transform.position = new Vector3(6.1f, -3, 0);
+    }
+
+    public void v_GenArrowToCow()
+    {
+        mg_Arrow2 = Instantiate(mg_ArrowPrefab) as GameObject;
+        mg_Arrow2.transform.position = new Vector3(-3.5f, -1, 0);
+        mg_Arrow2.GetComponent<SpriteRenderer>().flipX = true;   
+    }
+
+    public void v_GenArrowToGF()
+    {
+        mg_Arrow3 = Instantiate(mg_ArrowPrefab) as GameObject;
+        mg_Arrow3.transform.position = new Vector3(5.5f, 0, 0);
+    }
+
+    public void v_GenArrowToJack()
+    {
+        mg_Arrow4 = Instantiate(mg_ArrowPrefab) as GameObject;
+        mg_Arrow4.transform.position = new Vector3(-1.5f, -2, 0);
+        mg_Arrow4.GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    public void v_RemoveArrowToGF()
+    {
+        if(mg_Arrow3 != null)
+        {
+            Destroy(mg_Arrow3);
+        }
+    }
+    public void v_RemoveArrowToJack()
+    {
+        if (mg_Arrow4 != null)
+        {
+            Destroy(mg_Arrow4);
+        }
+    }
+    public void v_RemoveArrowToBean()
+    {
+        Destroy(this.mg_Arrow1);
+    }
+
+    public void v_RemoveArrowToCow()
+    {
+        Destroy(this.mg_Arrow2);
+    }
+
+    public void v_MoveBeanToGF()
+    {
+        mg_Arrow1.transform.position = new Vector3(5.5f, 0, 0);
+    }
+
+    public void v_MoveGFToBean()
+    {
+        mg_Arrow1.transform.position = new Vector3(6.1f, -3, 0);
+
+
+    }
+
+    public void v_DragCow()
+    {
+        mb_DragCowFlag = true;
+    }
+
+    public void v_NotDragCow()
+    {
+        mb_DragCowFlag = false;
+    }
+
+    public void v_DragBeanFlagTrue()
+    {
+        mb_DragBeanFlag = true;
+    }
+
+    public void v_DragBeanFalgFalse()
+    {
+        mb_DragBeanFlag = false;
     }
 }

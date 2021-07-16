@@ -41,17 +41,20 @@ using UnityEngine.EventSystems;
 public class Jack3_MouseDrag : MonoBehaviour
 {
     private bool mb_flag;
+    GameObject mg_ScriptManager;
 
     // Start is called before the first frame update
     void Start()
     {
         mb_flag = false;
+
+        this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnMouseDown(){
@@ -67,6 +70,15 @@ public class Jack3_MouseDrag : MonoBehaviour
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
         }
+        
+        if(this.gameObject.tag == "Jack3_Cow")
+        {
+            mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragCow();
+        }
+        else if (this.gameObject.tag == "Jack3_Bean")
+        {
+            mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragBeanFlagTrue();
+        }
     }
 
     //마우스에서 손을 뗄 경우 원래위치로 돌아가게끔 설정
@@ -75,11 +87,12 @@ public class Jack3_MouseDrag : MonoBehaviour
 
         if (this.tag == "Jack3_Cow"){
             this.transform.position = new Vector3(-6.7f, -3.26f, 0);
+            mg_ScriptManager.GetComponent<Jack3_EventController>().v_NotDragCow();
         }
         else if (this.tag == "Jack3_Bean"){
-            this.transform.position = new Vector3(7.77f, -4.09f, 0);
+            this.transform.position = new Vector3(5f, -3.5f, 0);
+            mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragBeanFalgFalse();
         }
-
     }
 
     public void v_ChangeFlagTrue(){
@@ -88,4 +101,5 @@ public class Jack3_MouseDrag : MonoBehaviour
     public void v_ChangeFlagFalse(){
         mb_flag = false;
     }
+
 }

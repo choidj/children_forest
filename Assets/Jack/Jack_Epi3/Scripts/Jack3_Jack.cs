@@ -54,6 +54,7 @@ public class Jack3_Jack : MonoBehaviour
         {
             Destroy(cCollidObj.gameObject);
             this.mg_EventManager.GetComponent<Jack3_EventController>().v_BeanToJack();
+            this.mg_EventManager.GetComponent<Jack3_EventController>().v_RemoveArrowToBean();
         }
     }
 }

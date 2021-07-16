@@ -56,7 +56,8 @@ public class Jack3_GrandFather : MonoBehaviour
         {
             Destroy(cCollidObj.gameObject);
             this.mg_EventManager.GetComponent<Jack3_EventController>().v_CowToGF();
-            this.mg_EventManager.GetComponent<Jack3_EventController>().v_DragBean();
+            this.mg_EventManager.GetComponent<Jack3_EventController>().v_RemoveArrowToCow();
+            //this.mg_EventManager.GetComponent<Jack3_EventController>().v_DragBean();
         }
     }
 }
