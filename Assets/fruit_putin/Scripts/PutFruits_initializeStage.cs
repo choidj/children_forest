@@ -26,6 +26,7 @@ public class PutFruits_initializeStage : MonoBehaviour {
 
         mt_putFruitSize = GameObject.Find("PutFruitSize").GetComponent<Text>();
         mt_putFruitSize.text = mn_countFruits.ToString();
+        
         for (int i = 0; i < mn_countFruits; i++) {
             GameObject fruit = Instantiate(mg_instanceFruit);
             fruit.transform.position = new Vector2(Random.Range(-8f, 8f),
