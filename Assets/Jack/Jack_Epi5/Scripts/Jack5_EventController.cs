@@ -1,70 +1,70 @@
-/*
+ï»¿/*
  * - Name : Jack5_EventController.cs
- * - Writer : ±è¸íÇö
- * - Content : Àè°úÄá³ª¹« ¿¡ÇÇ¼Òµå4 - ÀÌº¥Æ® °ü¸® ½ºÅ©¸³Æ®
- *            °ÔÀÓÁøÇà ÀÌº¥Æ®¸¦ ÃÑ°ıÀûÀ¸·Î °ü¸®ÇÏ±â À§ÇÑ ½ºÅ©¸³Æ®
+ * - Writer : ê¹€ëª…í˜„
+ * - Content : ì­ê³¼ì½©ë‚˜ë¬´ ì—í”¼ì†Œë“œ4 - ì´ë²¤íŠ¸ ê´€ë¦¬ ìŠ¤í¬ë¦½íŠ¸
+ *            ê²Œì„ì§„í–‰ ì´ë²¤íŠ¸ë¥¼ ì´ê´„ì ìœ¼ë¡œ ê´€ë¦¬í•˜ê¸° ìœ„í•œ ìŠ¤í¬ë¦½íŠ¸
  * 
  *            
  *            
  *            
  *            
- *            -ÀÛ¼º ±â·Ï-
- *            2021-07-14 : Á¦ÀÛ ¿Ï·á
+ *            -ì‘ì„± ê¸°ë¡-
+ *            2021-07-14 : ì œì‘ ì™„ë£Œ
  *            
  *            
  *            
  * 
  * -Variable 
  * 
- * °ÔÀÓ µğ·ºÅÍ ¿ÀºêÁ§Æ®¿¡ Á¢±ÙÇÏ±â À§ÇÑ ¿ÀºêÁ§Æ®
+ * ê²Œì„ ë””ë ‰í„° ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼í•˜ê¸° ìœ„í•œ ì˜¤ë¸Œì íŠ¸
  * mg_ScriptManager
  * 
- * Àè ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+ * ì­ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
  * mg_GenJackSpeechBubble
  * mg_JackSpeech
  * 
- * ÀÌº¥Æ® °ü¸® º¯¼ö
- * mb_EventFlag : ÀÌº¥Æ®¸¦ ÇÑ¹ø¸¸ ÀÛµ¿ÇÏ±â À§ÇÑ flag
- * mn_EventSequence : ÀÌº¥Æ® ¼ø¼­¸¦ °ü¸®ÇÏ´Â º¯¼ö
+ * ì´ë²¤íŠ¸ ê´€ë¦¬ ë³€ìˆ˜
+ * mb_EventFlag : ì´ë²¤íŠ¸ë¥¼ í•œë²ˆë§Œ ì‘ë™í•˜ê¸° ìœ„í•œ flag
+ * mn_EventSequence : ì´ë²¤íŠ¸ ìˆœì„œë¥¼ ê´€ë¦¬í•˜ëŠ” ë³€ìˆ˜
  * 
- * ¸¶¿ì½º µå·¡±× °ü·Ã ¿ÀºêÁ§Æ®
+ * ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
  * mg_Bean
  * 
- * ¸¶¿ì½º Å¬¸¯ Á¦ÇÑ flag
+ * ë§ˆìš°ìŠ¤ í´ë¦­ ì œí•œ flag
  * StopClickFlag
  * 
- * ÀÌº¥Æ® ¼º°øÈ®ÀÎÀ» À§ÇÑ flag
+ * ì´ë²¤íŠ¸ ì„±ê³µí™•ì¸ì„ ìœ„í•œ flag
  * 
  * 
  * -Function
  * 
- * Flag º¯°æ ÇÔ¼ö
+ * Flag ë³€ê²½ í•¨ìˆ˜
  * v_ChangeFlagFalse()
  * v_ChangeFlagTrue()
  * 
- * ¸ŞÀÎ ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextMainScript()
  * v_NoneMainScript()
  * 
- * ÀÌº¥Æ® ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ì´ë²¤íŠ¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextEventScript()
  * v_NoneEventScript()
  * 
- * Àè ½ºÅ©¸³Æ® ÇÔ¼ö
+ * ì­ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
  * v_NextJackScript()
  * v_NoneJackScript()
  * 
  * 
- * ¸»Ç³¼± »ı¼º ÇÔ¼ö
+ * ë§í’ì„  ìƒì„± í•¨ìˆ˜
  * v_GenJackSpeechBubble()
  * 
- * ¸»Ç³¼± »èÁ¦ ÇÔ¼ö
+ * ë§í’ì„  ì‚­ì œ í•¨ìˆ˜
  * v_RemoveJackSpeechBubble()
  * 
- * µå·¡±× È°¼ºÈ­
+ * ë“œë˜ê·¸ í™œì„±í™”
  * v_TurnOnMouseDrag()
  * 
- * µå·¡±× ºñÈ°¼ºÈ­
+ * ë“œë˜ê·¸ ë¹„í™œì„±í™”
  * v_TurnOFFMouseDrag()
  * 
  * 
@@ -80,24 +80,24 @@ using UnityEngine.UI;
 
 public class Jack5_EventController : MonoBehaviour
 {
-    //°ÔÀÓ µğ·ºÅÍ ¿ÀºêÁ§Æ®¿¡ Á¢±ÙÇÏ±â À§ÇÑ ¿ÀºêÁ§Æ®
+    //ê²Œì„ ë””ë ‰í„° ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼í•˜ê¸° ìœ„í•œ ì˜¤ë¸Œì íŠ¸
     GameObject mg_ScriptManager;
 
-    //Àè ¸»Ç³¼± °ü·Ã ¿ÀºêÁ§Æ®
+    //ì­ ë§í’ì„  ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
     GameObject mg_GenJackSpeechBubble;
     public GameObject mg_JackSpeech;
 
-    //ÀÌº¥Æ® °ü¸®¸¦ À§ÇÑ º¯¼ö
-    private bool mb_EventFlag;  //ÀÌº¥Æ®¸¦ ÇÑ¹ø¸¸ ÀÛµ¿ÇÏ±â À§ÇÑ flag
-    private int mn_EventSequence;   //ÀÌº¥Æ® ¼ø¼­¸¦ °ü¸®ÇÏ´Â º¯¼ö
+    //ì´ë²¤íŠ¸ ê´€ë¦¬ë¥¼ ìœ„í•œ ë³€ìˆ˜
+    private bool mb_EventFlag;  //ì´ë²¤íŠ¸ë¥¼ í•œë²ˆë§Œ ì‘ë™í•˜ê¸° ìœ„í•œ flag
+    private int mn_EventSequence;   //ì´ë²¤íŠ¸ ìˆœì„œë¥¼ ê´€ë¦¬í•˜ëŠ” ë³€ìˆ˜
 
-    //¸¶¿ì½º µå·¡±× °ü·Ã ¿ÀºêÁ§Æ®
+    //ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ ê´€ë ¨ ì˜¤ë¸Œì íŠ¸
     GameObject mg_Jack;
 
-    //¸¶¿ì½º Å¬¸¯ Á¦ÇÑ
+    //ë§ˆìš°ìŠ¤ í´ë¦­ ì œí•œ
     private bool StopClickFlag;
 
-    //ÀÌº¥Æ® ¼º°øÈ®ÀÎÀ» À§ÇÑ flag
+    //ì´ë²¤íŠ¸ ì„±ê³µí™•ì¸ì„ ìœ„í•œ flag
 
 
 
@@ -105,22 +105,22 @@ public class Jack5_EventController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //¿ÀºêÁ§Æ® ¿¬°á
+        //ì˜¤ë¸Œì íŠ¸ ì—°ê²°
         this.mg_ScriptManager = GameObject.Find("GameDirector");
         this.mg_Jack = GameObject.Find("Jack");
 
-        //ÀÌº¥Æ® flag
+        //ì´ë²¤íŠ¸ flag
         StopClickFlag = false;
 
-        //ÀÌº¥Æ® °ü·Ã
+        //ì´ë²¤íŠ¸ ê´€ë ¨
         v_ChangeFlagFalse();
         mn_EventSequence = 0;
 
 
-        //ÀÌº¥Æ® ½ÃÀÛ
+        //ì´ë²¤íŠ¸ ì‹œì‘
         v_NextMainScript();
 
-        //µå·¡±× ±İÁö ÇÔ¼ö
+        //ë“œë˜ê·¸ ê¸ˆì§€ í•¨ìˆ˜
         v_TurnOFFMouseDrag();
 
     }
@@ -185,7 +185,7 @@ public class Jack5_EventController : MonoBehaviour
     }
 
 
-    //Flag º¯°æ ÇÔ¼ö
+    //Flag ë³€ê²½ í•¨ìˆ˜
     private void v_ChangeFlagFalse()
     {
         this.mb_EventFlag = false;
@@ -195,7 +195,7 @@ public class Jack5_EventController : MonoBehaviour
         this.mb_EventFlag = true;
     }
 
-    //¸ŞÀÎ ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ë©”ì¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextMainScript()
     {
         this.mg_ScriptManager.GetComponent<Jack5_MainScript>().v_NextScript();
@@ -205,7 +205,7 @@ public class Jack5_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack5_MainScript>().v_NoneScript();
     }
 
-    //ÀÌº¥Æ® ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ì´ë²¤íŠ¸ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextEventScript()
     {
         this.mg_ScriptManager.GetComponent<Jack5_MissionScript>().v_NextScript();
@@ -215,7 +215,7 @@ public class Jack5_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack5_MissionScript>().v_NoneScript();
     }
     
-    //Àè ½ºÅ©¸³Æ® ÇÔ¼ö
+    //ì­ ìŠ¤í¬ë¦½íŠ¸ í•¨ìˆ˜
     private void v_NextJackScript()
     {
         this.mg_ScriptManager.GetComponent<Jack5_JackScript>().v_NextScript();
@@ -225,27 +225,27 @@ public class Jack5_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack5_JackScript>().v_NoneScript();
     }
 
-    //¸»Ç³¼± »ı¼º ÇÔ¼ö
+    //ë§í’ì„  ìƒì„± í•¨ìˆ˜
     private void v_GenJackSpeechBubble()
     {
         mg_GenJackSpeechBubble = Instantiate(mg_JackSpeech) as GameObject;
         mg_GenJackSpeechBubble.transform.position = new Vector3(-3, -1, 0);
     }
 
-    //¸»Ç³¼± »èÁ¦ ÇÔ¼ö
+    //ë§í’ì„  ì‚­ì œ í•¨ìˆ˜
     private void v_RemoveJackSpeechBubble()
     {
         this.mg_ScriptManager.GetComponent<Jack5_JackScript>().v_NoneScript();
         Destroy(this.mg_GenJackSpeechBubble);
     }
 
-    //µå·¡±× È°¼ºÈ­
+    //ë“œë˜ê·¸ í™œì„±í™”
     private void v_TurnOnMouseDrag()
     {
         this.mg_Jack.GetComponent<Jack5_MouseDrag>().v_ChangeFlagTrue();
     }
 
-    //µå·¡±× ºñÈ°¼ºÈ­
+    //ë“œë˜ê·¸ ë¹„í™œì„±í™”
     private void v_TurnOFFMouseDrag()
     {
         this.mg_Jack.GetComponent<Jack5_MouseDrag>().v_ChangeFlagFalse();

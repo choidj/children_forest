@@ -1,23 +1,23 @@
-/*
+﻿/*
  * - Name : Jack9_Sack.cs
- * - Writer : �����
- * - Content : ����ᳪ�� ���Ǽҵ�9 - �ڷ� �̺�Ʈ���� ��ũ��Ʈ
- *              �ڷ縦 ������ Ŭ���� ��� �ڷ簡 ������ �۵�
+ * - Writer : 김명현
+ * - Content : 잭과콩나무 에피소드9 - 자루 이벤트관련 스크립트
+ *              자루를 여러번 클릭할 경우 자루가 터지게 작동
  * 
  *            
  *            
  *            
- *            -�ۼ� ���-
- *            2021-07-15 : ���� �Ϸ�
+ *            -작성 기록-
+ *            2021-07-15 : 제작 완료
  *            
  *            
  *            
  * 
  * - Variable 
- * mn_SackTouchCount : �Ͷ߸������� �ʿ��� ��ġ Ƚ��
+ * mn_SackTouchCount : 터뜨리기위해 필요한 터치 횟수
  * 
  * -Function
- * OnMouseDown() : Ŭ���� �۵� �Լ�
+ * OnMouseDown() : 클릭시 작동 함수
  * 
  */
 
