@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Collision_nextpage : MonoBehaviour
 {
+    public string ms_nameNextScene;
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
-        SceneManager.LoadScene("end_scene");
+        SceneManager.LoadScene(ms_nameNextScene);
     }
 }

@@ -11,5 +11,9 @@ public class HarpJackCollision: MonoBehaviour
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
         GameObject g_talk = Instantiate(mg_talk_Prefab) as GameObject;
+        Invoke("changeNextScene", 3f);
+    }
+    void changeNextScene() {
+        SceneManager.LoadScene("Jack_Epi13");
     }
 }

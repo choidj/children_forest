@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2bedc9b1c004c2bac24001a1606118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ms_loadScene: end_scene
+  ms_loadScene: Jack_Epi7
 --- !u!61 &2146970424
 BoxCollider2D:
   m_ObjectHideFlags: 0

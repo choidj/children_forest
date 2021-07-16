@@ -33,18 +33,45 @@ EditorBuildSettings:
     path: Assets/Intro/Intro.unity
     guid: eb4a6cfa919bc4630bf53d46ffcd4dc8
   - enabled: 1
-    path: Assets/Jack/Jack_Epi13/Jack_Epi13.unity
-    guid: af694925525674da7bc729a4ff4d9f59
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Jack/Jack_Epi1/Jack_Epi1.unity
+    guid: c0983cbfe5ecf4c74bc713283c6c57fc
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi2/Jack_Epi2.unity
+    guid: 05f19a0547b716645ae2af22d63531ca
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi3/Jack_Epi3.unity
+    guid: c2d99abb4d674c14387d1478c7a474ec
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi4/Jack_Epi4.unity
+    guid: d47cd4a55862a0a41a8b6a31f413a633
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi5/Jack_Epi5.unity
+    guid: 3d50560618a30fe4b881994a88f6efb0
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi6/Jack_Epi6.unity
+    guid: 3035328d37df64f33835f557e101dbbc
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi7/Jack_Epi7.unity
+    guid: ea3682f67aaadf74c9dc9309290dba3e
   - enabled: 1
     path: Assets/Jack/Jack_Epi8/Jack_Epi8.unity
     guid: bf8a5efe3e8d84ccea1a720269609fb6
   - enabled: 1
-    path: Assets/Jack/Jack_Epi14/Jack_Epi14.unity
-    guid: 11b0d057e449b49f3a0a98592112e01a
-  - enabled: 1
     path: Assets/Jack/Jack_Epi9/Jack_Epi9.unity
     guid: 272e97d223ad54a3f9a639af08f96556
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi10/Jack_Epi10.unity
+    guid: bb1147457d8ef451e9eac9fdf9ba238d
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi11/Jack_Epi11.unity
+    guid: 80aec3792d8a8489ba4a11e7afae70b5
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi12/Jack_Epi12.unity
+    guid: 022079e1e889ade4683a58243ae5ad39
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi13/Jack_Epi13.unity
+    guid: af694925525674da7bc729a4ff4d9f59
+  - enabled: 1
+    path: Assets/Jack/Jack_Epi14/Jack_Epi14.unity
+    guid: 11b0d057e449b49f3a0a98592112e01a
   m_configObjects: {}
