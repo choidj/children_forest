@@ -1,27 +1,27 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 /*
  * Name : BrushYourTeeth_Virus2Generator.cs
- * Content : ¹ÙÀÌ·¯½º2 »ı¼º ½ºÅ©¸³Æ®
+ * Content : ë°”ì´ëŸ¬ìŠ¤2 ìƒì„± ìŠ¤í¬ë¦½íŠ¸
  * 
  * 
- * º¯¼ö
- * mg_Virus2_Prefab : ¹ÙÀÌ·¯½º1 ÇÁ¸®ÆÕÀ» ºÒ·¯¿Í »ı¼º
- * mf_span : »ı¼º ÁÖ±â
- * mf_delta : ½Ã°£ÀÌ ¾ó¸¶³ª Èê·¶´ÂÁö È®ÀÎÀ» À§ÇÑ ½Ã°£À» Àç´Â º¯¼ö
- * mn_mn_virus2_cnt : ÃÑ »ı¼ºµÈ ¹ÙÀÌ·¯½º Ä«¿îÆ®¸¦ À§ÇÑ º¯¼ö
- * ma2f_Virus2Position : ¹ÙÀÌ·¯½º »ı¼ºÀ§Ä¡¸¦ ÀúÀåÇÏ´Â 2Â÷¿ø ¹è¿­
+ * ë³€ìˆ˜
+ * mg_Virus2_Prefab : ë°”ì´ëŸ¬ìŠ¤1 í”„ë¦¬íŒ¹ì„ ë¶ˆëŸ¬ì™€ ìƒì„±
+ * mf_span : ìƒì„± ì£¼ê¸°
+ * mf_delta : ì‹œê°„ì´ ì–¼ë§ˆë‚˜ í˜ë €ëŠ”ì§€ í™•ì¸ì„ ìœ„í•œ ì‹œê°„ì„ ì¬ëŠ” ë³€ìˆ˜
+ * mn_mn_virus2_cnt : ì´ ìƒì„±ëœ ë°”ì´ëŸ¬ìŠ¤ ì¹´ìš´íŠ¸ë¥¼ ìœ„í•œ ë³€ìˆ˜
+ * ma2f_Virus2Position : ë°”ì´ëŸ¬ìŠ¤ ìƒì„±ìœ„ì¹˜ë¥¼ ì €ì¥í•˜ëŠ” 2ì°¨ì› ë°°ì—´
  * 
- * n_i : for¹® Ä«¿îÆ®¸¦ À§ÇÑ º¯¼ö
- * n_j : »óµ¿
+ * n_i : forë¬¸ ì¹´ìš´íŠ¸ë¥¼ ìœ„í•œ ë³€ìˆ˜
+ * n_j : ìƒë™
  * 
- * n_Virus2PositionX : ¹ÙÀÌ·¯½º1 À§Ä¡ X°ª
- * n_Virus2PositionY :¹ÙÀÌ·¯½º1 À§Ä¡ Y°ª
+ * n_Virus2PositionX : ë°”ì´ëŸ¬ìŠ¤1 ìœ„ì¹˜ Xê°’
+ * n_Virus2PositionY :ë°”ì´ëŸ¬ìŠ¤1 ìœ„ì¹˜ Yê°’
  * 
- * g_GenerateVirus1 : ÇÁ¸®ÆÕÀ» ÅëÇØ »ı¼ºÇÏ´Â ¹ÙÀÌ·¯½º1 ¿ÀºêÁ§Æ®
+ * g_GenerateVirus1 : í”„ë¦¬íŒ¹ì„ í†µí•´ ìƒì„±í•˜ëŠ” ë°”ì´ëŸ¬ìŠ¤1 ì˜¤ë¸Œì íŠ¸
  * 
  * 
  * 
@@ -31,9 +31,9 @@ using UnityEngine;
 public class BrushYourTeeth_Virus2Generator : MonoBehaviour
 {
     public GameObject mg_Virus2_Prefab;
-    float mf_span = 4.0f;  // »ı¼º ÁÖ±â
-    float mf_delta = 0;    //½Ã°£ Àç´Â º¯¼ö
-    int mn_virus2_cnt = 1; //ÃÑ »ı¼ºµÈ ¹ÙÀÌ·¯½º Ä«¿îÆ®¿ë º¯¼ö
+    float mf_span = 4.0f;  // ìƒì„± ì£¼ê¸°
+    float mf_delta = 0;    //ì‹œê°„ ì¬ëŠ” ë³€ìˆ˜
+    int mn_virus2_cnt = 1; //ì´ ìƒì„±ëœ ë°”ì´ëŸ¬ìŠ¤ ì¹´ìš´íŠ¸ìš© ë³€ìˆ˜
 
 
     float[,] ma2f_Virus2Position = new float[5, 2];
@@ -45,9 +45,9 @@ public class BrushYourTeeth_Virus2Generator : MonoBehaviour
 
 
 
-        while (true)        //¹ÙÀÌ·¯½º »ı¼º À§Ä¡ ¼³Á¤
+        while (true)        //ë°”ì´ëŸ¬ìŠ¤ ìƒì„± ìœ„ì¹˜ ì„¤ì •
         {
-            for (int n_i = 0; n_i < 5; n_i++)         //¹ÙÀÌ·¯½º¸¦ »ı¼ºÇÒ ·£´ı À§Ä¡¸¦ ma2f_Virus2Position¹è¿­¿¡ ÀúÀå
+            for (int n_i = 0; n_i < 5; n_i++)         //ë°”ì´ëŸ¬ìŠ¤ë¥¼ ìƒì„±í•  ëœë¤ ìœ„ì¹˜ë¥¼ ma2f_Virus2Positionë°°ì—´ì— ì €ì¥
             {
                 int n_Virus2PositionX = Random.Range(-4, 4);
                 float n_Virus2PositionY = Random.Range(-0.6f, -3.3f);
@@ -59,7 +59,7 @@ public class BrushYourTeeth_Virus2Generator : MonoBehaviour
             
 
             
-            for (int n_i = 0; n_i < 4; n_i++)         //Áßº¹µÈ À§Ä¡¿¡ ³ª¿ÀÁö ¾Ê°Ô²û Àç¼³Á¤
+            for (int n_i = 0; n_i < 4; n_i++)         //ì¤‘ë³µëœ ìœ„ì¹˜ì— ë‚˜ì˜¤ì§€ ì•Šê²Œë” ì¬ì„¤ì •
             {
                 for (int n_j = 1; n_j < 5; n_j++)
                 {
@@ -90,7 +90,7 @@ public class BrushYourTeeth_Virus2Generator : MonoBehaviour
 
         GameObject g_GenerateVirus1 = Instantiate(mg_Virus2_Prefab) as GameObject;
         g_GenerateVirus1.transform.position = new Vector3(ma2f_Virus2Position[0, 0], ma2f_Virus2Position[0, 1], 0);
-        Debug.Log("¹ÙÀÌ·¯½º2 1¹øÂ° À§Ä¡ : " + ma2f_Virus2Position[0, 0] + " " + ma2f_Virus2Position[0, 1]);
+        Debug.Log("ë°”ì´ëŸ¬ìŠ¤2 1ë²ˆì§¸ ìœ„ì¹˜ : " + ma2f_Virus2Position[0, 0] + " " + ma2f_Virus2Position[0, 1]);
 
 
     }
@@ -105,7 +105,7 @@ public class BrushYourTeeth_Virus2Generator : MonoBehaviour
             this.mf_delta = 0;
             GameObject g_GenerateVirus1 = Instantiate(mg_Virus2_Prefab) as GameObject;
             g_GenerateVirus1.transform.position = new Vector3(ma2f_Virus2Position[mn_virus2_cnt, 0], ma2f_Virus2Position[mn_virus2_cnt, 1], 0);
-            Debug.Log("¹ÙÀÌ·¯½º2 " + (mn_virus2_cnt + 1) + "¹øÂ° À§Ä¡ : " + ma2f_Virus2Position[mn_virus2_cnt, 0] + " " + ma2f_Virus2Position[mn_virus2_cnt, 1]);
+            Debug.Log("ë°”ì´ëŸ¬ìŠ¤2 " + (mn_virus2_cnt + 1) + "ë²ˆì§¸ ìœ„ì¹˜ : " + ma2f_Virus2Position[mn_virus2_cnt, 0] + " " + ma2f_Virus2Position[mn_virus2_cnt, 1]);
             mn_virus2_cnt++;
         }
 

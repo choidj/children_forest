@@ -1,3 +1,25 @@
+ï»¿/*
+ * - Name : BrushYourTeeth_ControlUI.cs
+ * - Writer : ê¹€ëª…í˜„
+ * 
+ * - Content : ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ í‘œì‹œí•˜ëŠ” ì˜¤ë¸Œì íŠ¸("NumberOfVirusLeft") ì»¨íŠ¸ë¡¤í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
+ *            
+ *            
+ *            -ìˆ˜ì • ê¸°ë¡-
+ *            2021-07-07 : ì œì‘ ì™„ë£Œ
+ *            2021-07-16 : íŒŒì¼ ì¸ì½”ë”© ìˆ˜ì •
+ *                  
+ * 
+ * - Variable 
+ * mg_NumberOfVirusLeft : ìº”ë²„ìŠ¤ í•˜ìœ„ ì˜¤ë¸Œì íŠ¸, ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ ì—…ë°ì´íŠ¸ë¥¼ ìœ„í•œ ì˜¤ë¸Œì íŠ¸
+ * mn_LeftVirus : ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ ì €ì¥ ë³€ìˆ˜
+ * 
+ * 
+ * -Function()
+ * v_MinusVirus() : ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ ê°ì†Œí•˜ëŠ” í•¨ìˆ˜
+ * 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,35 +27,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-
-/*
- * Name : BrushYourTeeth_ControlUI.cs
- * Content : ³²Àº ¹ÙÀÌ·¯½º ¼ö Ç¥½ÃÇÏ´Â ¿ÀºêÁ§Æ®("NumberOfVirusLeft") ÄÁÆ®·ÑÇÏ´Â ½ºÅ©¸³Æ®
- * 
- * 
- * º¯¼ö
- * mg_NumberOfVirusLeft : Äµ¹ö½º ÇÏÀ§ ¿ÀºêÁ§Æ®, ³²Àº ¹ÙÀÌ·¯½º ¼ö ¾÷µ¥ÀÌÆ®¸¦ À§ÇÑ ¿ÀºêÁ§Æ®
- * mn_LeftVirus : ³²Àº ¹ÙÀÌ·¯½º ¼ö ÀúÀå º¯¼ö
- * 
- * 
- * ÇÔ¼ö()
- * 
- * v_MinusVirus() : ³²Àº ¹ÙÀÌ·¯½º ¼ö °¨¼ÒÇÏ´Â ÇÔ¼ö
- * 
- * 
- * 
- */
-
-
-
-
-
-
 public class BrushYourTeeth_ControlUI : MonoBehaviour
 {
     GameObject mg_NumberOfVirusLeft;
 
-    private int mn_LeftVirus = 10;  // ÀÌ¸¦ Á¶Á¤ÇÏ¿© ¾ø¾Ù ¹ÙÀÌ·¯½º °ª º¯°æ½Ã, °¢ ¹ÙÀÌ·¯½º »ı¼º°³¼ö¸¦ µû·Î ¼³Á¤ÇÏ¿´±â¿¡ ±×ºÎºĞµµ ¼öÁ¤ÇØ¾ßµÊ
+    private int mn_LeftVirus = 10;  // ì´ë¥¼ ì¡°ì •í•˜ì—¬ ì—†ì•¨ ë°”ì´ëŸ¬ìŠ¤ ê°’ ë³€ê²½ì‹œ, ê° ë°”ì´ëŸ¬ìŠ¤ ìƒì„±ê°œìˆ˜ë¥¼ ë”°ë¡œ ì„¤ì •í•˜ì˜€ê¸°ì— ê·¸ë¶€ë¶„ë„ ìˆ˜ì •í•´ì•¼ë¨
 
 
     void Start()
@@ -46,7 +44,7 @@ public class BrushYourTeeth_ControlUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.mg_NumberOfVirusLeft.GetComponent<Text>().text = "³²Àº ¹ÙÀÌ·¯½º ¼ö : " + this.mn_LeftVirus;
+        this.mg_NumberOfVirusLeft.GetComponent<Text>().text = "ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ : " + this.mn_LeftVirus;
 
 
         if (this.mn_LeftVirus == 0)
@@ -59,8 +57,8 @@ public class BrushYourTeeth_ControlUI : MonoBehaviour
 
     public void v_MinusVirus()
     {
-        this.mn_LeftVirus -= 1;     // ¹ÙÀÌ·¯½º ¼ö °¨¼Ò
-        Debug.Log("³²Àº ¹ÙÀÌ·¯½º ¼ö 1 °¨¼Ò");
+        this.mn_LeftVirus -= 1;     // ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ ê°ì†Œ
+        Debug.Log("ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ 1 ê°ì†Œ");
         Debug.Log(this.mn_LeftVirus);
     }
 

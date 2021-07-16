@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,22 +7,22 @@ using UnityEngine;
 
 /*
  * Name : BrushYourTeeth_Virus2.cs
- * Content : ¹ÙÀÌ·¯½º2 ¼³Á¤ ½ºÅ©¸³Æ®
+ * Content : ë°”ì´ëŸ¬ìŠ¤2 ì„¤ì • ìŠ¤í¬ë¦½íŠ¸
  * 
  * 
- * º¯¼ö
- * mg_NumberOfVirusLeft : Äµ¹ö½º ÇÏÀ§ ¿ÀºêÁ§Æ®, ³²Àº ¹ÙÀÌ·¯½º ¼ö ¾÷µ¥ÀÌÆ®¸¦ À§ÇÑ ¿ÀºêÁ§Æ®
- * man_OnClick : Å¬¸¯ÇßÀ»¶§ ¾Ö´Ï¸ÞÀÌ¼Ç ÀúÀå º¯¼ö
- * man_Virus2_Die : Á×¾úÀ»¶§ ¾Ö´Ï¸ÞÀÌ¼Ç ÀúÀå º¯¼ö
- * mn_Virus2_HP : ¹ÙÀÌ·¯½º HP ¼³Á¤ º¯¼ö
- * mb_CheckFlag : ¹ÙÀÌ·¯½º°¡ Ã³À½ Á×À»¶§ÀÎÁö È®ÀÎÀ» À§ÇÑ flag
- *   ¤¤ ¹ÙÀÌ·¯½º°¡ Á×´Â ¾Ö´Ï¸ÞÀÌ¼Ç Áß Å¬¸¯½Ã ³²Àº¹ÙÀÌ·¯½º¼ö°¡ °è¼Ó °¨¼ÒµÇ´Â ¹ö±×¸¦ ¹ß°ßÇÏ¿© ÀÌ¸¦ ÇØ°áÇÏ±âÀ§ÇØ flag¸¦ ¸¸µé¾î Ã³À½ Á×À»¶§¸¸ °¨¼ÒÇÏµµ·Ï ¼³Á¤
+ * ë³€ìˆ˜
+ * mg_NumberOfVirusLeft : ìº”ë²„ìŠ¤ í•˜ìœ„ ì˜¤ë¸Œì íŠ¸, ë‚¨ì€ ë°”ì´ëŸ¬ìŠ¤ ìˆ˜ ì—…ë°ì´íŠ¸ë¥¼ ìœ„í•œ ì˜¤ë¸Œì íŠ¸
+ * man_OnClick : í´ë¦­í–ˆì„ë•Œ ì• ë‹ˆë©”ì´ì…˜ ì €ìž¥ ë³€ìˆ˜
+ * man_Virus2_Die : ì£½ì—ˆì„ë•Œ ì• ë‹ˆë©”ì´ì…˜ ì €ìž¥ ë³€ìˆ˜
+ * mn_Virus2_HP : ë°”ì´ëŸ¬ìŠ¤ HP ì„¤ì • ë³€ìˆ˜
+ * mb_CheckFlag : ë°”ì´ëŸ¬ìŠ¤ê°€ ì²˜ìŒ ì£½ì„ë•Œì¸ì§€ í™•ì¸ì„ ìœ„í•œ flag
+ *   ã„´ ë°”ì´ëŸ¬ìŠ¤ê°€ ì£½ëŠ” ì• ë‹ˆë©”ì´ì…˜ ì¤‘ í´ë¦­ì‹œ ë‚¨ì€ë°”ì´ëŸ¬ìŠ¤ìˆ˜ê°€ ê³„ì† ê°ì†Œë˜ëŠ” ë²„ê·¸ë¥¼ ë°œê²¬í•˜ì—¬ ì´ë¥¼ í•´ê²°í•˜ê¸°ìœ„í•´ flagë¥¼ ë§Œë“¤ì–´ ì²˜ìŒ ì£½ì„ë•Œë§Œ ê°ì†Œí•˜ë„ë¡ ì„¤ì •
  * 
  * 
  * 
  * 
- * ÇÔ¼ö()
- * OnMouseDown() : ¹ÙÀÌ·¯½º Å¬¸¯½Ã ÀÛµ¿µÇ´Â ÇÔ¼ö
+ * í•¨ìˆ˜()
+ * OnMouseDown() : ë°”ì´ëŸ¬ìŠ¤ í´ë¦­ì‹œ ìž‘ë™ë˜ëŠ” í•¨ìˆ˜
  * 
  * 
  * 
@@ -77,7 +77,7 @@ public class BrushYourTeeth_Virus2 : MonoBehaviour
             man_OnClick.SetTrigger("OnClick");
 
             mn_Virus2_HP -= 1;
-            Debug.Log("¹ÙÀÌ·¯½º1 Å¬¸¯¼º°ø");
+            Debug.Log("ë°”ì´ëŸ¬ìŠ¤1 í´ë¦­ì„±ê³µ");
         }
     }
 }
