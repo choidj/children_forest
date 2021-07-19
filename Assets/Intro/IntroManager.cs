@@ -6,7 +6,8 @@
   *            -작성 기록-
   *            2021-07-19 : 제작 완료
   *
-  *
+  *  IEnumerator DelayTime(float time) : 특정 시간 뒤에 함수 호출하기
+  *         -> StartCoroutine(DelayTime(4)); : IEnumerator 인터페이스를 사용하는 메소드를 실행하기 위해 특정 호출 메소드 이용
   */
 
 using System.Collections;

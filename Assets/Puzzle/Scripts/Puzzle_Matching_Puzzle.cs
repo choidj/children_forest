@@ -1,10 +1,20 @@
+/*
+  * - Name : Puzzle_Matching_Puzzle.cs
+  * - Writer : 이윤교
+  * - Content : 퍼즐을 맞추는 스크립트
+  * 
+  *            -작성 기록-
+  *            2021-07-19 : 제작 완료
+  *
+  * 
+  */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Puzzle_Matching_Puzzle : MonoBehaviour{
-    public bool mb_classifyWhetherAns = false; //matching되기 전 
+    bool mb_classifyWhetherAns = false; //matching되기 전 
     //public Sprite[] msa_changeAnsImg = new Sprite[9];
     AudioSource auSource;
 
