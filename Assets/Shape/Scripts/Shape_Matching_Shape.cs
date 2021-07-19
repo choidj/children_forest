@@ -1,3 +1,13 @@
+/*
+  * - Name : Shape_Matching_Shape.cs
+  * - Writer : 이윤교
+  * - Content : 도형 맞추기 스크립트
+  * 
+  *            -작성 기록-
+  *            2021-07-19 : 제작 완료
+  *
+  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

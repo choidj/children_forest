@@ -1,3 +1,14 @@
+/*
+  * - Name : Puzzle_CheckPuzzle.cs
+  * - Writer : 이윤교
+  * - Content : 퍼즐을 다 맞추고 난 후의 스크립트
+  * 
+  *            -작성 기록-
+  *            2021-07-19 : 제작 완료
+  *
+  * 
+  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

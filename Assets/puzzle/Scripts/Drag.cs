@@ -1,3 +1,15 @@
+/*
+  * - Name : Drag.cs
+  * - Writer : 이윤교
+  * - Content : 드래그 스크립트
+  * 
+  *            -작성 기록-
+  *            2021-07-19 : 제작 완료
+  *
+  *  OnMouseDrag() : 게임오브젝트를 드래그로 이동시키는 함수
+  *
+  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
