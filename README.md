@@ -3,13 +3,6 @@
 ## Project Purpose
 > 유아용 게임 앱 개발을 목적으로 하고있다. 주 소비자층이 유아들이므로 정서에 맞게 아기자기하며 동화적인 분위기를 이끌어냈으며 안드로이드 플랫폼으로 제작하였다. 하지만 유아의 스마트폰의 잦은 사용으로 인한 부정적인 시각도 일부 존재하는데, 이로 인해 언어, 정서, 사회성 발달 장애를 불러온다는 것이다. 우리는 이러한 문제점을 인지하였으며 단순한 오락 용도가 아닌 유아의 올바른 성장을 위한 상식, 언어교육 등을 게임과 접목시켜 본 앱을 통해 아이가 언어적 정신적 성장을 할 수 있게 하였다.
 -----------
-## Project Role
-> **Developement** : choidj, devYoong, kimmhyeon, RyuSion1124
->
-> **Director** : jinkabpark
->
-> **Design** : RyuSion1124
--------------
 ## Project Preview
 > ### **Intro**
 >
@@ -77,5 +70,12 @@
 ## Project Plan
 > <img src = "https://user-images.githubusercontent.com/69896751/126107697-32ddeea5-992c-4e43-9795-e2f2dbc044f9.png">
 ------------
+## Project Role
+> **Developement** : choidj, devYoong, kimmhyeon, RyuSion1124
+>
+> **Director** : jinkabpark
+>
+> **Design** : RyuSion1124
+-------------
 ## README.md Change history
 > ##### *2021.7.19 최대준 create*
