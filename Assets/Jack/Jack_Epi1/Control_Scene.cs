@@ -9,15 +9,8 @@ public class Control_Scene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            Ray ra_checkMouseDistance = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D h_hitDistanceCast2D = Physics2D.GetRayIntersection(ra_checkMouseDistance, Mathf.Infinity);
-
-            if (h_hitDistanceCast2D.collider != null && h_hitDistanceCast2D.collider.tag == "Button")
-            {
-                clickedMouse();
-            }
+        if (Input.GetMouseButtonUp(0)) {
+            clickedMouse();
         }
     }
     void clickedMouse() {

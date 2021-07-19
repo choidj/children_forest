@@ -8,17 +8,10 @@ public class FixedStartScene : MonoBehaviour {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 
     static void FirstLoad()
-
     {
-        /*
-        if (SceneManager.GetActiveScene().name.CompareTo("intro") != 0)
-
-        {
-
+        if (SceneManager.GetActiveScene().name.CompareTo("intro") != 0){
             SceneManager.LoadScene("intro");
-
         }
-        */
     }
 
 }
