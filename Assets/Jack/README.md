@@ -18,8 +18,8 @@
 ***
  - 구동화면 및 내용
 
-![잭과콩나무 episode3](https://user-images.githubusercontent.com/37494407/126116350-da6271ea-9ca0-458a-ab62-6b4053b98900.png)
 
+![잭과콩나무 episode3](https://user-images.githubusercontent.com/37494407/126118020-c160be89-4e11-4a8e-be3a-a2a28c428c81.png)
 
 
     - 잭과콩나무 게임진행시 나타나는 실제 게임화면이다.
