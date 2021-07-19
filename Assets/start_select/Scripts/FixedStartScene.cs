@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class FixedStartScene : MonoBehaviour {
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 
-    static void FirstLoad()
-    {
-        if (SceneManager.GetActiveScene().name.CompareTo("intro") != 0){
-            SceneManager.LoadScene("intro");
-        }
-    }
+    // static void FirstLoad()
+    // {
+    //     if (SceneManager.GetActiveScene().name.CompareTo("intro") != 0){
+    //         SceneManager.LoadScene("intro");
+    //     }
+    // }
 
 }
