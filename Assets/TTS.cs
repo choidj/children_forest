@@ -1,3 +1,38 @@
+/*
+ * - Name : TTS.cs
+ * - Writer : 최대준
+ * - Content : Text to Speech Class로, 디자인 패턴은 싱글톤 패턴을 이용하였다. 조금 무거운 클래스 이므로 하나의 인스턴스를 다른 오브젝트 클래스에서 재사용할 수 있도록 하기 위해서 싱글톤 패턴을 이용하였다.
+ * 
+ *             -사용법-
+ *            1. TTS 클래스를 선언한다. ex) TTS mtts_testTTS;
+ *            2. 싱글톤 패턴이기 때문에 이미 사용중인 인스턴스가 있는지 확인하고 없으면 초기화한 인스턴스를 반환하는 함수를 호출한다. ex) mtts_textTTS = TTS.getInstance(Voice.KR_FEMALE_A);
+ *            3. 로그를 통해 제대로 나뉘었는지 확인한다.
+ *            4. v_NextScript()를 통해 다음 스크립트를 출력할수 있다.
+ *            5. v_NoneScript()를 통해 스크립트내용을 공백으로 설정할수 있다.
+ *            
+ *            
+ *            
+ *            -작성 기록-
+ *            2021-07-13 : 제작 완료
+ *            
+ *            
+ *            
+ * 
+ * -Variable 
+ * mg_MainScript : 스크립트를 보여주는 메인 스크립트 오브젝트
+ * ms_ScriptText : 스크립트를 통으로 넣어주는 스트링
+ * msa_SplitText[] : 구분자를 기준으로 여기에 나눠서 저장된다.
+ * n_i : for문용 변수
+ * mn_Sequence : 스크립트 읽을 순서 변수
+ * 
+ * 
+ * -Function
+ * v_NoneScript() : 스크립트를 공백으로 설정해준다.
+ * v_NextScript() : 다음 스크립트를 보여준다.
+ * 
+ * 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +54,6 @@ public enum Voice
 
 public class TTS {
     //This is a single tone class...
-
     [System.Serializable]
     public class SetTextToSpeech {
         public SetInput input;
@@ -61,7 +95,6 @@ public class TTS {
     public TTS()
     {
         tts = new SetTextToSpeech();
-        setVoice(Voice.KR_FEMALE_A);
 
         SetAudioConfig sa_setAudioConf = new SetAudioConfig();
         sa_setAudioConf.audioEncoding = "LINEAR16";
@@ -69,38 +102,23 @@ public class TTS {
         sa_setAudioConf.pitch = 0;
         sa_setAudioConf.volumeGainDb = 0;
         tts.audioConfig = sa_setAudioConf;
-    }
-    public TTS(Voice gender)
-    {
-        tts = new SetTextToSpeech();
-
-        setVoice(gender);
-
-        SetAudioConfig sa_setAudioConf = new SetAudioConfig();
-        sa_setAudioConf.audioEncoding = "LINEAR16";
-        sa_setAudioConf.speakingRate = 0.8f;
-        sa_setAudioConf.pitch = 0;
-        sa_setAudioConf.volumeGainDb = 0;
-        tts.audioConfig = sa_setAudioConf;
-    }    
+    } 
     private static TTS instance = null;
-    public static TTS GetInstance(Voice gender)
-    {
+    public static TTS GetInstance() {
         // 만약 instance가 존재하지 않을 경우 새로 생성한다.
-        if (instance is null)
-        {
-            instance = new TTS(gender);
+        if (instance is null) {
+            instance = new TTS();
         }
-        else
-            instance.setVoice(gender);
         // instance를 반환한다.
         return instance;
     }
     //convert the received byte array to float array...
-    public AudioClip CreateAudio(string speech) {
+    public AudioClip CreateAudio(string sTargetSpeech,  Voice vTargetVoice) {
         SetInput si_setInputData = new SetInput();
-        si_setInputData.text = speech;
+        si_setInputData.text = sTargetSpeech;
         tts.input = si_setInputData;
+        
+        setVoice(vTargetVoice);
 
         //After request HttpWebRequest, save the returned data in string format.
         var s_str = TextToSpeechPost(tts);
@@ -124,7 +142,7 @@ public class TTS {
         return fa_tempFloatArr;
     }
     
-    public string TextToSpeechPost(object oSendData) {
+    private string TextToSpeechPost(object oSendData) {
         //use JsonUtility. convert byte[] to send this string..
         string s_useJsonUTempStr = JsonUtility.ToJson(oSendData);
         Debug.Log(s_useJsonUTempStr);

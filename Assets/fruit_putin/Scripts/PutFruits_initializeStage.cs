@@ -26,7 +26,7 @@ public class PutFruits_initializeStage : MonoBehaviour {
                 Random.Range(-4f, 4f));
             int tempNum = Random.Range(0, 4);
             fruit.GetComponent<SpriteRenderer>().sprite = msa_changeSpritesImg[tempNum];
-            DragObject temp = fruit.GetComponent(typeof(DragObject)) as DragObject;
+            ControlFruit temp = fruit.GetComponent(typeof(ControlFruit)) as ControlFruit;
             temp.setFruitId(tempNum * 2);
             mlg_fruitList.Add(fruit);
         }

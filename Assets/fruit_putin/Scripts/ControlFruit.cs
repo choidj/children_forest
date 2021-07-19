@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragObject : MonoBehaviour {
+public class ControlFruit : MonoBehaviour {
     private VoiceManager mvm_voiceManager;
     public int mn_fruitId;
+    private Vector2 mv2_remembPos;
     private bool mb_checkClickOnce = false;
     void Start() {
         mvm_voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>() as VoiceManager;
+        mv2_remembPos = gameObject.transform.position;
+
+    }
+    void Update() {
+        this.transform.position = Vector3.MoveTowards(this.transform.position, mv2_remembPos, 2f * Time.deltaTime);
     }
     private void OnMouseDrag() {
         if(!mb_checkClickOnce) {
-            FRUIT_TYPE fType = (FRUIT_TYPE)mn_fruitId;
-            mvm_voiceManager.playVoice(fType); //한국 보이스 출력
+            mvm_voiceManager.playVoice(mn_fruitId); //한국 보이스 출력
             mb_checkClickOnce = true;
         }
         Vector2 v2_checkMousePos = new Vector2(Input.mousePosition.x,

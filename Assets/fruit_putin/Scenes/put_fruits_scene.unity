@@ -480,6 +480,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a831a087a94ec3adba86c540f9dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mvifl_setVoiceInfoList:
+  - svt_voiceType: 0
+    sstr_words: "\uB538\uAE30"
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 4
+    sstr_words: Strawberry
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 0
+    sstr_words: "\uC0AC\uACFC"
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 4
+    sstr_words: Apple
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 0
+    sstr_words: "\uD30C\uC778\uC560\uD50C"
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 4
+    sstr_words: Fine apple
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 0
+    sstr_words: "\uD3EC\uB3C4"
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 4
+    sstr_words: Grape
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 0
+    sstr_words: "\uBC14\uB098\uB098"
+    sac_voiceAudioClip: {fileID: 0}
+  - svt_voiceType: 4
+    sstr_words: banana
+    sac_voiceAudioClip: {fileID: 0}
 --- !u!82 &1565360474
 AudioSource:
   m_ObjectHideFlags: 0
@@ -677,10 +708,10 @@ RectTransform:
   m_Father: {fileID: 1492436372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -321.5, y: -265}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 180}
+  m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868714266
 MonoBehaviour:
@@ -715,7 +746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 12341
+  m_Text: 123
 --- !u!222 &1868714267
 CanvasRenderer:
   m_ObjectHideFlags: 0
