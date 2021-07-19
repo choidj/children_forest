@@ -11,6 +11,7 @@
 ***
  - Update Log
      - 21.07.19 : 초안 작성 - 김명현
+     - 21.07.19 : 이미지 수정 - 이윤교
 
 
   - 에피소드별 수정 내역은 해당 에피소드 폴더내에서 다룬다.
@@ -18,8 +19,10 @@
 ***
  - 구동화면 및 내용
 
+![잭과콩나무 episode3](https://user-images.githubusercontent.com/73592778/126117987-629f831e-1634-4425-8acd-ffe2fa60bbea.png)
 
-![잭과콩나무 episode3](https://user-images.githubusercontent.com/37494407/126118020-c160be89-4e11-4a8e-be3a-a2a28c428c81.png)
+
+
 
 
     - 잭과콩나무 게임진행시 나타나는 실제 게임화면이다.
