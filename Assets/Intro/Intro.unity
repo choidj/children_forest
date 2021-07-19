@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c836b669e8de4ef48f201b5b747fda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPanel: {fileID: 1509133281}
-  IntroPanel: {fileID: 1227694210}
+  g_StartPanel: {fileID: 1509133281}
+  g_IntroPanel: {fileID: 1227694210}
 --- !u!4 &927498990
 Transform:
   m_ObjectHideFlags: 0
