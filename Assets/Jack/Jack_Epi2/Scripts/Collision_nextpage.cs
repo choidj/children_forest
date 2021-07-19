@@ -8,6 +8,6 @@ public class Collision_nextpage : MonoBehaviour
     public string ms_nameNextScene;
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
-        SceneManager.LoadScene("Jack_Epi3");
+        SceneManager.LoadScene(ms_nameNextScene);
     }
 }
