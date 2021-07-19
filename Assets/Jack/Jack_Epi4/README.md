@@ -11,8 +11,7 @@
 ***
  - 구동화면 및 내용
 
-![잭과콩나무 episode4](https://user-images.githubusercontent.com/37494407/126124323-28eb63bf-1abe-40cc-8eed-34e0e58c2a48.png)
-
+![잭과콩나무 episode4](https://user-images.githubusercontent.com/37494407/126125062-4e44cd76-8ed1-4ebc-94f4-579ab0b709d2.png)
 
 
     - 에피소드3 첫 구동화면이다.
