@@ -17,12 +17,16 @@ public class Drag_Jack : MonoBehaviour{
     void OnTriggerEnter2D(Collider2D cCollideObject){
         OnMouseDrag();
         if(cCollideObject.tag == "Closet"){ //충돌 오브젝트의 태그가 옷장이면 -> Jack이 옷장 뒤에 숨으면
-            SceneManager.LoadScene("Jack_Epi9"); //다음 씬 Epi9로 이동
+            Invoke("gotoEpi9Scene", 3f); //3초 후 endScene 함수 수행
         }
     }
     void OnMouseDrag(){
                 Vector2 v2mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
                 Vector2 v2worldObjPos = Camera.main.ScreenToWorldPoint(v2mousePosition);
                 this.transform.position = v2worldObjPos;
+    }
+
+    void gotoEpi9Scene() {
+        SceneManager.LoadScene("Jack_Epi9"); //end_scene 씬 로드
     }
 }
