@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +10,11 @@ public struct VoiceInfo {
 
     [SerializeField]
     public string sstr_words;
-        [SerializeField]
+    [SerializeField]
+    public float sf_pitch;
+    public string sf_speakingRate;
+    [SerializeField]
     public AudioClip sac_voiceAudioClip;
-}
-public enum VOICE_TYPE {
-
 }
 public class VoiceManager : MonoBehaviour {
     public VoiceInfo[] mvifl_setVoiceInfoList;
@@ -27,9 +28,19 @@ public class VoiceManager : MonoBehaviour {
     void Start() {
         mas_playVoice = gameObject.GetComponent<AudioSource>();
         mtts_getVoice = TTS.GetInstance();
-        // //load the audio clips to need...
+        float tempSpeakRate = 0.8f;
+        //load the audio clips to need...
         for(int i = 0; i < mvifl_setVoiceInfoList.Length; i++) {
-            mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType);
+            if (float.TryParse(mvifl_setVoiceInfoList[i].sf_speakingRate, out tempSpeakRate)) {
+                mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch, tempSpeakRate);
+            }
+            else
+            {
+                mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch);
+                Debug.Log("speaking rate가 float 숫자가 아닙니다.");
+            }
+            Debug.Log("pitch :" + mvifl_setVoiceInfoList[i].sf_pitch.ToString());
+            Debug.Log("speaking rate :" + mvifl_setVoiceInfoList[i].sf_speakingRate.ToString());
         }
     }
     public void playVoice(int nPlayVoiceClipId) {

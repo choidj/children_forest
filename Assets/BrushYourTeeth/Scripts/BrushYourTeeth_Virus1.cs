@@ -48,11 +48,14 @@ public class BrushYourTeeth_Virus1 : MonoBehaviour
     //죽는 애니메이션도중 터치시 카운트 올라가는것을 방지하기 위한 flag
     private bool mb_CheckFlag;
 
+    VoiceManager vm;
+
 
     void Start()
     {
         //오브젝트 연결
         this.mg_NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         //false로 초기화
         mb_CheckFlag = false;
@@ -79,6 +82,7 @@ public class BrushYourTeeth_Virus1 : MonoBehaviour
             }
             //죽는 애니메이션 후 오브젝트 제거
             man_Virus1_Die.SetTrigger("Virus1_Die");
+            vm.playVoice(0);
             Destroy(gameObject, 1f);
 
         }
