@@ -39,7 +39,7 @@ public class BrushYourTeeth_Virus2 : MonoBehaviour
     //애니메이션
     public Animator man_OnClick;
     public Animator man_Virus2_Die;
-
+    VoiceManager vm;
     //세균 몇번 터치하면 없어질건지 설정하는 부분
     private int mn_Virus2_HP = 3;
 
@@ -51,6 +51,7 @@ public class BrushYourTeeth_Virus2 : MonoBehaviour
     {
         //오브젝트 연결
         this.mg_NumberOfVirusLeft = GameObject.Find("NumberOfVirusLeft");
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         //false로 초기화
         mb_CheckFlag = false;
@@ -76,7 +77,10 @@ public class BrushYourTeeth_Virus2 : MonoBehaviour
             }
             //죽는 애니메이션 후 오브젝트 제거
             man_Virus2_Die.SetTrigger("Virus2_Die");
+            vm.playVoice(1);
             Destroy(gameObject, 1f);
+
+
         }
         //세균을 터치하여 HP감소
         else
