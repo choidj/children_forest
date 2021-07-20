@@ -41,8 +41,7 @@ public class BrushYourTeeth_Virus1Generator : MonoBehaviour
 {
     public GameObject mg_Virus1_Prefab;
 
-    //세균1 생성주기 변경을 원할시 이 부분 수정 (단위 : 초)
-    float mf_span = 3.0f;
+    float mf_span = 3.0f;                                                       // 세균1 생성주기 변경을 원할시 이 부분 수정 (단위 : 초)
 
     float mf_delta = 0;    
     int mn_virus1_cnt = 1;
@@ -53,11 +52,9 @@ public class BrushYourTeeth_Virus1Generator : MonoBehaviour
 
     void Start()
     {
-        //세균 생성위치를 설정하는 루프문
-        while (true)
+        while (true)                                                            // 세균 생성위치를 설정하는 루프문
         {
-            //세균을 생성할 위치를 ma2f_Virus1Position배열에 저장
-            for (int n_i = 0; n_i < 5; n_i++)
+            for (int n_i = 0; n_i < 5; n_i++)                                   //세균을 생성할 위치를 ma2f_Virus1Position배열에 저장
             {
                 int n_Virus1PositionX = Random.Range(-4, 4);
                 float f_Virus1PositionY = Random.Range(-0.6f, -3.3f);
@@ -66,8 +63,7 @@ public class BrushYourTeeth_Virus1Generator : MonoBehaviour
                 ma2f_Virus1Position[n_i, 1] = f_Virus1PositionY;
             }
 
-            //세균이 중복된 위치에 생성되지 않도록 하기위한 루프문
-            for (int n_i = 0; n_i < 4; n_i++)
+            for (int n_i = 0; n_i < 4; n_i++)                                   // 세균이 중복된 위치에 생성되지 않도록 하기위한 루프문
             {
                 for (int n_j = 1; n_j < 5; n_j++)
                 {
@@ -89,20 +85,17 @@ public class BrushYourTeeth_Virus1Generator : MonoBehaviour
             }
             break;  
         }
-
         GameObject g_GenerateVirus1 = Instantiate(mg_Virus1_Prefab) as GameObject;
 
-        //첫번째 세균1 생성
-        g_GenerateVirus1.transform.position = new Vector3(ma2f_Virus1Position[0, 0], ma2f_Virus1Position[0, 1], 0);
+        g_GenerateVirus1.transform.position = new Vector3(ma2f_Virus1Position[0, 0], ma2f_Virus1Position[0, 1], 0); // 첫번째 세균1 생성
         Debug.Log("생성된 바이러스1 1번째 위치 : " + ma2f_Virus1Position[0, 0] + " " + ma2f_Virus1Position[0, 1]);
     }
 
     void Update()
     {
         this.mf_delta += Time.deltaTime;
-        //생성할 세균1 개수를 변경하려면 이 부분 수정 (5)
-        //설정한 주기마다 세균1을 생성하는 루프문
-        if (this.mf_delta > this.mf_span && mn_virus1_cnt < 5)
+
+        if (this.mf_delta > this.mf_span && mn_virus1_cnt < 5)      // 생성할 세균1 개수를 변경하려면 이 부분 수정 (5), 설정한 주기마다 세균1을 생성하는 루프문
         {
             this.mf_delta = 0;
             GameObject g_GenerateVirus1 = Instantiate(mg_Virus1_Prefab) as GameObject;
