@@ -24,7 +24,7 @@ public class PutFruits_initializeStage : MonoBehaviour {
             GameObject fruit = Instantiate(mg_instanceFruit);
             fruit.transform.position = new Vector2(Random.Range(-8f, 8f),
                 Random.Range(-4f, 4f));
-            int tempNum = Random.Range(0, 4);
+            int tempNum = Random.Range(0, 5);
             fruit.GetComponent<SpriteRenderer>().sprite = msa_changeSpritesImg[tempNum];
             ControlFruit temp = fruit.GetComponent(typeof(ControlFruit)) as ControlFruit;
             temp.setFruitId(tempNum * 2);

@@ -19,10 +19,12 @@
  * instance : 이 함수는 아무래도 통신을 하는 클래스로써, 무겁다고 작성자가 판단이 되어 클래스의 인스턴스를 계속 생산하는 것이 아니라, 싱글톤 디자인 패턴을 이용하여 하나의 인스턴스만 생성하게 만들었다. 이렇게 하면, 클래스의 인스턴스를 하나만 생성하여 여러 오브젝트 클래스들이 재사용할 수 있게 된다.
  * 
  * - TTS Member Function
- * v_NoneScript() : 스크립트를 공백으로 설정해준다.
- * v_NextScript() : 다음 스크립트를 보여준다.
- * 
- * 
+ * TextToSpeechPost() : 본 스크립트 코드의 클래스에서는 Rest API를 이용하여 Google TTS API와 통신하기 때문에 그에 필요한 통신 코드가 들어있는 함수이다.
+ * ConvertByteToFloat() : 통신을 통해 원하는 음성을 바이트 형태로 Google TTS API 서버에서 보내주게 되고, 우리는 그것을 AudioClip형태로 만들기 위해서 float형태로 변환시켜야 한다. 그 작업을 해주는 함수이다.
+ * setInput() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 어떤 Text를 음성으로 변환할지를 설정해주는 함수이다.
+ * setAudioConfig() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 음성의 음조, 말 빠르기를 어떻게 할지를 설정해주는 함수이다.
+ * setVoice() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 Google TTS API에서 정해놓은 보이스 종류를 설정해주는 함수이다.
+ * CreateAudio() : 최종적으로 Google TTS API서버에서 받은 바이트 데이터를 float 데이터로 변환했었는데, 이것을 이용해서 유니티에서 이용할 수 있는 AudioClip으로 만드는 작업을 해주는 함수이다.
  */
 
 using System.Collections;
@@ -32,6 +34,7 @@ using System.IO;
 using System.Net;
 using System;
 
+//Google TTS API에서 세팅값으로 준 보이스 설정을 쓰기 편하게 enum형식으로 정리하였다. 이렇게 정의해놓으면, 유니티 인스펙터창에서 고를수 있어 편하다.
 public enum Voice
 {
     KR_FEMALE_A,
@@ -44,29 +47,30 @@ public enum Voice
     EN_MALE_B
 }
 
+// TTS 클래스이다. Google TTS API서버와 통신하여 최종적으로 createAudio()함수를 통해서 AudioClip 클래스를 반환하게 된다.
 public class TTS {
-    //This is a single tone class...
+    // 최종적으로 API서버와 통신하기 위한 데이터 형식을 정의하는 클래스이다. 안에도 클래스 형태로 있어서, 이를 Json형태로 변환하여 API서버가 원하는 형태로 요청을 보내게 된다.
     [System.Serializable]
     public class SetTextToSpeech {
         public SetInput input;
         public SetVoice voice;
         public SetAudioConfig audioConfig;
     }
-
+    // 음성으로 바꿀 텍스트 데이터를 넣는 클래스로, 최종적으로 SetTextToSpeech클래스안에 들어가게 된다.
     [System.Serializable]
     public class SetInput {
         public string text;
     }
 
+    // 음성의 커스텀 세팅 설정 데이터를 넣는 클래스로, 최종적으로 SetTextToSpeech클래스안에 들어가게 된다.
     [System.Serializable]
     public class SetVoice {
         public string languageCode;
         public string name;
-        //ssmlGender mean which voice is man or woman...
         public string ssmlGender;
     }
 
-
+    // 음성의 커스텀 세팅 설정 데이터를 넣는 클래스로, 최종적으로 SetTextToSpeech클래스안에 들어가게 된다.
     [System.Serializable]
     public class SetAudioConfig {
         public string audioEncoding;
@@ -75,6 +79,7 @@ public class TTS {
         public int volumeGainDb;
     }
 
+    // API 서버에서 요청에 대한 응답을 받는 클래스로, 스트링(바이트) 형태로 받게 된다. 이를 float 형태로 변환하고 우리가 원하는 형태인 AudioClip으로 변환하게 된다.
     [System.Serializable]
     public class GetContent {
         public string audioContent;
@@ -83,12 +88,13 @@ public class TTS {
     private string ms_useApiURL = "https://texttospeech.googleapis.com/v1beta1/text:synthesize?key=AIzaSyANPEwOXAhoxpeYwpJQBUkZRew42sI9ECU";
     private SetTextToSpeech mstts_setTtsApi;
     private static TTS instance = null;
-    //constructor initialize these class..
-    //initialize the json object config to send a google mstts_setTtsApi api.
+
+    // TTS의 생성자이다.
     public TTS() {
         mstts_setTtsApi = new SetTextToSpeech();
     } 
 
+    // TTS는 싱글톤 디자인 패턴을 이용할 거므로, 앞으로 이 정적 함수를 통해 TTS 클래스의 인스턴스를 가져온다.
     public static TTS GetInstance() {
         // 만약 instance가 존재하지 않을 경우 새로 생성한다.
         if (instance is null) {
@@ -98,8 +104,8 @@ public class TTS {
         return instance;
     }
     //convert the received byte array to float array...
-    public AudioClip CreateAudio(string sTargetSpeech, Voice vTargetVoice, float fSetPitch = 0f, float fSpeakRate = 0.8f) {
-        
+    public AudioClip CreateAudio(string sTargetSpeech, Voice vTargetVoice, float fSetPitch = 0f, float fSpeakRate = 0.6f) {
+
         setAudioConfig(fSetPitch, fSpeakRate);
         setVoice(vTargetVoice);
         setInput(sTargetSpeech);
@@ -117,6 +123,7 @@ public class TTS {
         return ac_createAudioClip;
     }
     
+    // 스트링형태로 받은 응답 데이터를 우리가 원하는 float형태로 만들어 준다.
     private static float[] ConvertByteToFloat(byte[] baArray) {
         float[] fa_tempFloatArr = new float[baArray.Length / 2];
 
@@ -126,6 +133,7 @@ public class TTS {
         return fa_tempFloatArr;
     }
     
+    // REST API를 통해 Google TTS API서버와 통신하는 코드이다.
     private string TextToSpeechPost(object oSendData) {
         //use JsonUtility. convert byte[] to send this string..
         string s_useJsonUTempStr = JsonUtility.ToJson(oSendData);
@@ -170,6 +178,7 @@ public class TTS {
             return null;
         }
     }
+    // 이 아래 코드는 클래스 앞부분에서 보았던 음성 세팅 설정들을 설정해주는 함수이다.
     private void setInput(string sTargetSpeech) {
         SetInput si_setInputData = new SetInput();
         si_setInputData.text = sTargetSpeech;
