@@ -17,7 +17,7 @@ public class Drag_Jack : MonoBehaviour{
     void OnTriggerEnter2D(Collider2D cCollideObject){
         OnMouseDrag();
         if(cCollideObject.tag == "Closet"){ //충돌 오브젝트의 태그가 옷장이면 -> Jack이 옷장 뒤에 숨으면
-            Invoke("gotoEpi9Scene", 3f); //3초 후 endScene 함수 수행
+            Invoke("gotoEpi9Scene", 2f); //3초 후 endScene 함수 수행
         }
     }
     void OnMouseDrag(){

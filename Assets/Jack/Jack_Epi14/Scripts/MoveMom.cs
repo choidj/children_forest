@@ -21,7 +21,7 @@ public class MoveMom : MonoBehaviour
 
     float mf_timer; //현재위치
     float mf_waitingTime; //원하는 시간
-
+    VoiceManager vm;
     void Start() {
         mf_timer = 0.0f;
         mf_waitingTime = 2f; //2초뒤
@@ -30,6 +30,9 @@ public class MoveMom : MonoBehaviour
         mg_Jack = GameObject.Find("Jack");//Jack 게임 오브젝트를 mg_Jack 변수에 저장
         mg_Mom = GameObject.Find("Mom");//Mom 게임 오브젝트를 mg_Mom 변수에 저장
         v3_MomPos = new Vector3(-3,-1.14f,0); //v3_MomPos에 엄마위치저장
+
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        vm.playVoice(0);
     }
     void Update()
     {

@@ -21,11 +21,13 @@ public class DragAx : MonoBehaviour{
     public GameObject mg_Ax; //도끼
     public GameObject mg_Click; //미션유도클릭
     public ScriptControl sc;
+    VoiceManager vm;
     private bool mb_checkGetAxe = false; //잭의 도끼 습득 유무 -> 잭이 도끼를 습득 전
     SpriteRenderer rend;
     void Start() {
         mg_Click = GameObject.Find("Click"); //Click 게임 오브젝트를 찾아서 mg_Click 변수에 저장
         sc = ScriptControl.GetInstance();
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
     }
     public void OnMouseDrag(){
         Vector2 v2mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -39,6 +41,7 @@ public class DragAx : MonoBehaviour{
             rend =  mg_Jack.GetComponent<SpriteRenderer>();
             rend.flipX = false; //잭이 콩나무 바라보기 -> 좌우대칭
             transform.position = mg_Jack.transform.position; //도끼위치를 잭위치로 배치
+            vm.playVoice(1);
             sc.setNextScript(); //다음스크립트 나오게
             mb_checkGetAxe = true; //-> 잭이 도끼를 습득 후
         }

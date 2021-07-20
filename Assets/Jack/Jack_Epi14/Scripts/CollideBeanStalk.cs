@@ -23,6 +23,7 @@ public class CollideBeanStalk : MonoBehaviour
     private bool mb_checkEnd = false; //Epi14 내용 끝났는지 확인
     
     private ScriptControl sc;
+    VoiceManager vm;
 
     void OnTriggerExit2D(Collider2D cCheckCollidedObject) {
         if(mn_checkAxing < 8) {
@@ -41,6 +42,7 @@ public class CollideBeanStalk : MonoBehaviour
         GameObject g_initBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_initBean오브젝트에 저장
         g_initBean.SetActive(true); //g_initBean 오브젝트 활성화
         sc = ScriptControl.GetInstance(); // Instance 리턴 받아 사용
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class CollideBeanStalk : MonoBehaviour
 
                 if( temp <= 0.02f && !mb_checkEnd) {
                     Destroy(mg_giant);
-                    Invoke("gotoEpi15Scene", 1f); //1초 후 endScene 함수 수행
+                    Invoke("gotoEpi15Scene", 3.5f); //1초 후 endScene 함수 수행
                     mb_checkEnd = true; //Epi14 내용 끝
                 }
             }
@@ -66,6 +68,7 @@ public class CollideBeanStalk : MonoBehaviour
             mg_giant = transform.Find("giant").gameObject; //거인오브젝트 찾아서
             mg_giant.SetActive(true); //활성화
             sc.setNextScript(); //다음 스크립트 불러오기
+            vm.playVoice(2);
             mn_checkAxing++;
         }
 
