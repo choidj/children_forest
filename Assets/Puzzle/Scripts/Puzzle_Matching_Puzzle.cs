@@ -5,6 +5,7 @@
   * 
   *            -작성 기록-
   *            2021-07-19 : 제작 완료
+  *            2021-07-21 : 수정 완료
   *
   * 
   */
@@ -21,12 +22,12 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
     private void Start(){
         if(!mb_classifyWhetherAns){
             transform.position = new Vector3(Random.Range(19, 26), Random.Range(3, 11), 0);//자리 랜덤 선정
-            mv2_initPos = transform.position;
+            mv2_initPos = transform.position; //자리 랜덤 선정 따로 저장 (퍼즐을 맞추지 못할 경우 제자리로 돌아가기 위함)
         }
     }
     void Update() {
-        if(!mb_classifyWhetherAns){
-            transform.position = Vector3.MoveTowards(this.transform.position, mv2_initPos, 2f * Time.deltaTime);
+        if(!mb_classifyWhetherAns){ // matching 퍼즐일 경우
+            transform.position = Vector3.MoveTowards(this.transform.position, mv2_initPos, 2f * Time.deltaTime); //처음 지정된 랜덤자리로 다시 되돌아감.
         }
     }
 
@@ -39,13 +40,10 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
                     tempColor.a = 1f;
                     gameObject.GetComponent<SpriteRenderer>().color = tempColor;    
                 }
-                else //// matching부분변경
+                else // matching부분변경
                     Destroy(this.gameObject);
                 
             }
-            // else{
-            //     this.transform.position = Vector3.MoveTowards(this.transform.position, mv2_initPos, 2f * Time.deltaTime);
-            // }
         }
     }
 }
