@@ -2,8 +2,11 @@
  * - Name : HarpjackCollision.cs
  * - Writer : 류시온
  * - Content : 잭과콩나무 에피소드12 - 잭,하프 드래그 스크립트
- * -기록-
- * 2021-07-20 : 작성
+ *          -기록-
+ *          2021-07-20 : 작성
+ * - HarpDrag Member variable 
+ * GameObject mg_talk_Prefab : 말풍선 오브젝트를 저장하는 변수이다.
+ * - HarpDrag Member function 
  * OnTriggerEnter2D(Collider2D cCollideObject) :오브젝트간 충돌이 일어날때 처음 한번만 호출되는 함수
  * OnMouseDrag() : 게임오브젝트를 마우스 드래그로 이동시키는 함수
  * Invoke("changeNextScene", 3f): 3초 뒤에 ("")해당 함수를 호출 하는 함수
@@ -15,11 +18,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// 하프와 잭이 충돌했을 시에 나타나는 결과를 구현한 클래스이다.
 public class HarpJackCollision: MonoBehaviour
 {
     public GameObject mg_talk_Prefab;
 
-
+    // 하프와 잭이 충돌했을 시에, 말풍선 오브젝트를 생성하고, 3초뒤에 다음씬으로 이동하도록 하였다.
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
         GameObject g_talk = Instantiate(mg_talk_Prefab) as GameObject;

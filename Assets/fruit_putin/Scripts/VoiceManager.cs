@@ -47,6 +47,7 @@ public class VoiceManager : MonoBehaviour {
     public VoiceInfo[] mvifl_setVoiceInfoList;
     private TTS mtts_getVoice;
     private AudioSource mas_playVoice;
+    public bool mb_checkSceneReady = false;
 
     // 해당 스크립트가 들어간 게임 오브젝트가 생성될 때, 인스펙터창에 저장된 음성 세팅 값들을 통해서 AudioClip을 가지고 있게 된다. 
     void Start() {
@@ -63,6 +64,7 @@ public class VoiceManager : MonoBehaviour {
                 mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch);
             }
         }
+        mb_checkSceneReady = true;
     }
     // 이 함수를 통해 저장했고 해당되는 AudioClip을 씬에 출력하게 된다. 
     public void playVoice(int nPlayVoiceClipId) {
