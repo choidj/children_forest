@@ -14,8 +14,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Puzzle_Matching_Puzzle : MonoBehaviour{
-    bool mb_classifyWhetherAns = false; //matching되기 전 
-    //public Sprite[] msa_changeAnsImg = new Sprite[9];
+    public bool mb_classifyWhetherAns = false; //matching되기 전 
     AudioSource auSource;
 
     private void Start(){
@@ -25,25 +24,20 @@ public class Puzzle_Matching_Puzzle : MonoBehaviour{
     }
 
     void OnTriggerEnter2D(Collider2D cCollideObject){
-        if (cCollideObject.name[cCollideObject.name.Length - 1] == this.name[this.name.Length - 1]){//매칭퍼즐과 매칭퍼즐과모양이같은퍼즐의 이름 맨 뒤(숫자)가 같은 경우
-            if (mb_classifyWhetherAns){ //정답
-                //흐렷던 퍼즐조각을 선명하게 변경
-                Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
-                tempColor.a = 1f;
-                gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-
-                auSource.Play();
-            }
-            else{ //오류
-
-                Destroy(this.gameObject);
-                //Invoke("Awake", 1f); //Awake함수 호출
+        if(Input.GetMouseButtonUp(0)){
+            if (cCollideObject.name[cCollideObject.name.Length - 1] == this.name[this.name.Length - 1]){//매칭퍼즐과 매칭퍼즐과모양이같은퍼즐의 이름 맨 뒤(숫자)가 같은 경우
+                if (mb_classifyWhetherAns){
+                    //흐렷던 퍼즐조각을 선명하게 변경
+                    Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
+                    tempColor.a = 1f;
+                    gameObject.GetComponent<SpriteRenderer>().color = tempColor;
+                    
+                }
+                else
+                    Destroy(this.gameObject);
+                
             }
         }
     }
-
-    void Awake()
-        {
-            auSource = GetComponent<AudioSource>();
-        }
 }
+
