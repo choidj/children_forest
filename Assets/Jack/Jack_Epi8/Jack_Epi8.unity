@@ -534,8 +534,9 @@ GameObject:
   - component: {fileID: 1119427096}
   - component: {fileID: 1119427095}
   - component: {fileID: 1119427094}
+  - component: {fileID: 1119427097}
   m_Layer: 5
-  m_Name: Jack8_Script
+  m_Name: Jack_Script
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,12 +609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uADF8\uB54C\uC600\uC5B4\uC694.\n\uC5B4\uB514\uC120\uAC00 \uCFF5\uCFF5
-    \uBC1C\uAC78\uC74C \uC18C\uB9AC\uAC00 \uB4E4\uB824\uC654\uC5B4\uC694.\n\uC7AD\uC740
-    \uBAB8\uC774 \uBC14\uB4E4\uBC14\uB4E4 \uB5A8\uC5C8\uC5B4\uC694.\n\uC7AD\uC740
-    \uAE5C\uC9DD \uB180\uB77C \uC637\uC7A5\uB4A4\uB85C \uC7AC\uBE68\uB9AC \uC228\uC5C8\uC5B4\uC694\n\uACE7\uC774\uC5B4
-    \uAC70\uC778 \uBAA9\uC18C\uB9AC\uAC00 \uB4E4\uB838\uC5B4\uC694.\n\u201C\uD07C\uD07C\u2026.
-    \uC5B4\uB514\uC11C \uC0AC\uB78C\uB0C4\uC0C8\uAC00 \uB098\uB294\uAC78?\u201D"
+  m_Text: 
 --- !u!222 &1119427096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -622,6 +618,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119427092}
   m_CullTransparentMesh: 1
+--- !u!114 &1119427097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119427092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41072bb44a86540cc9ec60d40a3fa239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ms_setScriptText:
+  - "\uADF8\uB54C\uC600\uC5B4\uC694. \uC5B4\uB514\uC120\uAC00 \uCFF5\uCFF5 \uBC1C\uAC78\uC74C
+    \uC18C\uB9AC\uAC00 \uB4E4\uB824\uC654\uC5B4\uC694. \uC7AD\uC740 \uBAB8\uC774
+    \uBC14\uB4E4\uBC14\uB4E4 \uB5A8\uC5C8\uC5B4\uC694. \uC7AD\uC740 \uAE5C\uC9DD
+    \uB180\uB77C \uC637\uC7A5\uB4A4\uB85C \uC7AC\uBE68\uB9AC \uC228\uC5C8\uC5B4\uC694
+    \uACE7\uC774\uC5B4 \uAC70\uC778 \uBAA9\uC18C\uB9AC\uAC00 \uB4E4\uB838\uC5B4\uC694.
+    \u201C\uD07C\uD07C\u2026. \uC5B4\uB514\uC11C \uC0AC\uB78C\uB0C4\uC0C8\uAC00 \uB098\uB294\uAC78?\u201D"
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1342647590
 GameObject:
   m_ObjectHideFlags: 0
