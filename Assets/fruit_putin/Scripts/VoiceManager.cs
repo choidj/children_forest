@@ -2,7 +2,7 @@
  * - Name : VoiceManager.cs
  * - Writer : 최대준
  * - Content : Text to Speech Class를 통해 최종적으로 AudioClip을 통해 음성을 출력하는 클래스이다. 여기서는 협업을 통해 작업하기 쉽도록 음성 세팅을 인스펙터에서 할 수 있도록 설정하게 되었다. 덕분에 VoiceManager 라는 프리팹 하나만 각각 씬으로 가져가 음성 세팅하고, 씬에 있는 스크립트 코드에 따라 VoiceManager 클래스의 playVoice함수만 호출해 주면 음성이 출력된다.
- * 
+ * - Where the code is applied : /Asset/fruit_putin/Scenes/put_fruits_scene -> VoiceManager
  *             -사용법-
  *            1. VoiceManager라는 오브젝트를 프리팹으로 만들어두었다. 그것을 이용해서 쓰기만 하면 된다.
  *            2. VoiceManager 클래스의 안을 보자면, TTS 클래스를 선언한다. ex) TTS mtts_testTTS;
@@ -61,10 +61,6 @@ public class VoiceManager : MonoBehaviour {
             else
             {
                 mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch);
-                // Debug.Log("speaking rate가 float 숫자가 아닙니다.");
-                // Debug.Log("pitch :" + mvifl_setVoiceInfoList[i].sf_pitch.ToString());
-
-                // Debug.Log("speaking rate :" + mvifl_setVoiceInfoList[i].sf_speakingRate.ToString());
             }
         }
     }
