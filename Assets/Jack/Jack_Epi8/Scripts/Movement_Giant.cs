@@ -16,10 +16,12 @@ using UnityEngine;
 
 public class Movement_Giant : MonoBehaviour{   
   public ScriptControl sc;
+  VoiceManager vm;
   public GameObject mg_targetPosition; // walkPos 오브젝트로 지정해줘서 그 위치로 거인 이동시킴
   void Start(){
     sc = ScriptControl.GetInstance();
-    //sc.setNextScript();
+    this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    vm.playVoice(0);
   }
   void Update(){
         transform.position = Vector3.MoveTowards(gameObject.transform.position, mg_targetPosition.transform.position, 0.1f); //거인 이동 
