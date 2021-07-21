@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class End_controlStage : MonoBehaviour
 {
     void Start() {
-        Invoke("v_changeSelectStage", 3f);
+        Invoke("v_changeSelectStage", 4f);
     }
 
     void v_changeSelectStage() {
