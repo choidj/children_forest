@@ -1,3 +1,14 @@
+﻿/*
+ * - Name : DragDestroy.cs
+ * - Writer : 최대준
+ * - Content : 잭과콩나무 에피소드1 - 
+ * -기록-
+ * 2021-07-21 : 작성
+ * Destroy(GameObject.Find("speechBubble")): 말 풍선을 없애는 함수 이다.
+   Destroy(GameObject.Find("Canvas")) : 대사(canvas)를 없애는 함수 이다.
+ * 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
