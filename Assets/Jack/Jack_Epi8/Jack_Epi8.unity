@@ -245,6 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91504354a5c7d481996ecf3a3ae10657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jack: {fileID: 1342647590}
+  sc: {fileID: 1119427097}
 --- !u!1 &630404778
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,13 +636,9 @@ MonoBehaviour:
   - "\uADF8\uB54C\uC600\uC5B4\uC694. \uC5B4\uB514\uC120\uAC00 \uCFF5\uCFF5 \uBC1C\uAC78\uC74C
     \uC18C\uB9AC\uAC00 \uB4E4\uB824\uC654\uC5B4\uC694. \uC7AD\uC740 \uBAB8\uC774
     \uBC14\uB4E4\uBC14\uB4E4 \uB5A8\uC5C8\uC5B4\uC694. \uC7AD\uC740 \uAE5C\uC9DD
-    \uB180\uB77C \uC637\uC7A5\uB4A4\uB85C \uC7AC\uBE68\uB9AC \uC228\uC5C8\uC5B4\uC694
-    \uACE7\uC774\uC5B4 \uAC70\uC778 \uBAA9\uC18C\uB9AC\uAC00 \uB4E4\uB838\uC5B4\uC694.
+    \uB180\uB77C \uC637\uC7A5\uB4A4\uB85C \uC7AC\uBE68\uB9AC \uC228\uC5C8\uC5B4\uC694."
+  - " \uACE7\uC774\uC5B4 \uAC70\uC778 \uBAA9\uC18C\uB9AC\uAC00 \uB4E4\uB838\uC5B4\uC694.
     \u201C\uD07C\uD07C\u2026. \uC5B4\uB514\uC11C \uC0AC\uB78C\uB0C4\uC0C8\uAC00 \uB098\uB294\uAC78?\u201D"
-  - 
-  - 
-  - 
-  - 
 --- !u!1 &1342647590
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91504354a5c7d481996ecf3a3ae10657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jack: {fileID: 1342647590}
+  sc: {fileID: 1119427097}
 --- !u!61 &1342647594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f3d3824f0574b17b4c4f96ccd1f25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sc: {fileID: 0}
   mg_targetPosition: {fileID: 1682142886}
 --- !u!212 &1654862087
 SpriteRenderer:
@@ -1079,4 +1080,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f3d3824f0574b17b4c4f96ccd1f25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sc: {fileID: 0}
   mg_targetPosition: {fileID: 1682142886}
