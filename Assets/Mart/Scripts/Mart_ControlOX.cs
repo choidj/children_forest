@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-/*
- * - Name : BrushYourTeeth_ControlUI.cs
+﻿/*
+ * - Name : Mart_ControlOX.cs
  * - Writer : 김명현
  * 
  * - Content :
@@ -12,6 +8,7 @@ using UnityEngine;
  * -Update Log-
  * 2021-07-08 : 제작 완료
  * 2021-07-09 : 코드 정리
+ * 2021-07-20 : 인코딩형식 수정 및 주석 수정
  *                  
  * - Variable 
  * mg_O : O 프리팹을 연결해주는 변수
@@ -21,6 +18,10 @@ using UnityEngine;
  * v_ShowO() : O 를 보여주는 스크립트
  * v_ShowX() : X 를 보여주는 스크립트
  */
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Mart_ControlOX : MonoBehaviour{
     public GameObject mg_O;
