@@ -15,8 +15,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement_Giant : MonoBehaviour{   
-     public GameObject mg_targetPosition; // walkPos 오브젝트로 지정해줘서 그 위치로 거인 이동시킴
-     void Update(){
-         transform.position = Vector3.MoveTowards(gameObject.transform.position, mg_targetPosition.transform.position, 0.1f); //거인 이동 
-    }
+  public ScriptControl sc;
+  public GameObject mg_targetPosition; // walkPos 오브젝트로 지정해줘서 그 위치로 거인 이동시킴
+  void Start(){
+    sc = ScriptControl.GetInstance();
+    //sc.setNextScript();
+  }
+  void Update(){
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, mg_targetPosition.transform.position, 0.1f); //거인 이동 
+  }
 }
