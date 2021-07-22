@@ -459,10 +459,9 @@ MonoBehaviour:
     \uC800 \uBA40\uB9AC \uC5B4\uBA38\uB2C8\uAC00  \uBCF4\uC600\uC5B4\uC694.                               
     \uC7AD\uC774 \uC5B4\uBA38\uB2C8\uC5D0\uAC8C \uBE68\uB9AC \uB3C4\uB07C\uB97C \uAC00\uC838\uC624\uB77C\uACE0
     \uC18C\uB9AC\uCCE4\uC5B4\uC694. "
-  - "\uADF8\uB7EC\uACE0\uB294 \uCF69\uB098\uBB34\uC5D0\uC11C \uB0B4\uB824\uC624\uC790
-    \uB9C8\uC790 \uB3C4\uB07C\uB85C \uD798\uAECF \uCF69\uB098\uBB34\uB97C \uCC0D\uC5C8\uC5B4\uC694.
-    \uCFF5! \uCFF5! \uCA4C\uC5B5!"
-  - "\uCF69\uB098\uBB34\uAC00 \uD070 \uC18C\uB9AC\uB97C \uB0B4\uBA70 \uC4F0\uB7EC\uC84C\uC5B4\uC694.
+  - "\uADF8\uB7EC\uACE0\uB294 \uCF69\uB098\uBB34\uC5D0\uC11C \uB0B4\uB824\uC624\uC790\uB9C8\uC790
+    \uB3C4\uB07C\uB85C \uD798\uAECF \uCF69\uB098\uBB34\uB97C \uCC0D\uC5C8\uC5B4\uC694. "
+  - "\uCF69\uB098\uBB34\uAC00 \uD070 \uC18C\uB9AC\uB97C \uB0B4\uBA70 \uC4F0\uB7EC\uC84C\uC5B4\uC694.                                                                    
     \uADF8\uBC14\uB78C\uC5D0 \uAC70\uC778\uC740 \uB545\uC5D0 \uB5A8\uC5B4\uC838 \uC8FD\uACE0
     \uB9D0\uC558\uC9C0\uC694. "
 --- !u!1 &677070066
@@ -2233,8 +2232,7 @@ PrefabInstance:
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[1].sstr_words
       value: "\uADF8\uB7EC\uACE0\uB294 \uCF69\uB098\uBB34\uC5D0\uC11C \uB0B4\uB824\uC624\uC790\uB9C8\uC790
-        \uB3C4\uB07C\uB85C \uD798\uAECF \uCF69\uB098\uBB34\uB97C \uCC0D\uC5C8\uC5B4\uC694.
-        \uCFF5! \uCFF5! \uCA4C\uC5B5!"
+        \uB3C4\uB07C\uB85C \uD798\uAECF \uCF69\uB098\uBB34\uB97C \uCC0D\uC5C8\uC5B4\uC694. "
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[2].sstr_words
