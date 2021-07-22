@@ -5,7 +5,11 @@
   * 
   *            -작성 기록-
   *            2021-07-19 : 제작 완료
+  *            2021-07-22 : 주석처리 완료
   *
+  *
+  * Input.GetMouseButtonUp() : 유저가 주어진 마우스 버튼에서 손을 뗏을 때 true를 반환. 버튼이 0이면 좌클릭, 1이면 우클릭, 2이면 중앙을 클릭한 것.
+  * OnTriggerEnter2D(Collider2D cCollideObject) : 유니티의 collider 컴포넌트를 주었을 때 호출되는 함수로, 이름과 같이 collider들이 부딪혔을 때 호출되어 함수안에 어떤 작업을 할지를 적어주는 함수
   */
 
 using System.Collections;

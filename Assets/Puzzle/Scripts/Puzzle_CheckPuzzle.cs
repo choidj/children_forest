@@ -1,7 +1,7 @@
 /*
   * - Name : Puzzle_CheckPuzzle.cs
   * - Writer : 이윤교
-  * - Content : 퍼즐을 다 맞추고 난 후의 스크립트
+  * - Content : 퍼즐을 다 맞췄는지 확인하고 다음 씬 불러오는 스크립트
   * 
   *            -작성 기록-
   *            2021-07-19 : 제작 완료

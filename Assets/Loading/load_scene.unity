@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1743577170559797348, guid: 38d1874bc80f843439a1cd81bef23ac9, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1743577170559797350, guid: 38d1874bc80f843439a1cd81bef23ac9, type: 3}
       propertyPath: m_Name
       value: Loading
