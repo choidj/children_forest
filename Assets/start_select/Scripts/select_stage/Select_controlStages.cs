@@ -18,19 +18,19 @@ public class Select_controlStages : MonoBehaviour
                 switch (strTmp[0])
                 {
                     case "brush":
-                        SceneManager.LoadScene("clean_teeth_scene");
+                        LoadingScene.v_loadScene("clean_teeth_scene");
                         break;
                     case "mart":
-                        SceneManager.LoadScene("buy_mart_scene");
+                        LoadingScene.v_loadScene("buy_mart_scene");
                         break;
                     case "match":
-                        SceneManager.LoadScene("match_shape_scene");
+                        LoadingScene.v_loadScene("match_shape_scene");
                         break;
                     case "puzzle":
-                        SceneManager.LoadScene("solve_puzzle_scene");
+                        LoadingScene.v_loadScene("solve_puzzle_scene");
                         break;
                     case "reading":
-                        SceneManager.LoadScene("Jack_Epi1");
+                        LoadingScene.v_loadScene("Jack_Epi1");
                         break;
                     case "fruit":
                         SceneManager.LoadScene("put_fruits_scene");

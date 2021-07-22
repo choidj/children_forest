@@ -16,21 +16,20 @@ public class LoadingScene : MonoBehaviour
     public static void v_loadScene(string sloadSceneName)
     {
         ms_moveNextScene = sloadSceneName;
-        SceneManager.LoadScene("loading_scene");
+        SceneManager.LoadScene("load_scene");
     }
     IEnumerator LoadScene()
     {
-        // next scene index
         async_operation = SceneManager.LoadSceneAsync(ms_moveNextScene);
         async_operation.allowSceneActivation = false;
-        yield return new WaitForSeconds(1f);
+
+        float timer = 0f;
         while (!async_operation.isDone)
         {
-            if (async_operation.progress == .9f)
-            {
-                async_operation.allowSceneActivation = true;
-            }
             yield return null;
+            timer += Time.deltaTime;
+            if (async_operation.progress >= 0.9f)
+                async_operation.allowSceneActivation = true;
         }
     }
 }

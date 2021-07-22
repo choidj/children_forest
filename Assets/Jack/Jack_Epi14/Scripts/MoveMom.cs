@@ -21,6 +21,7 @@ public class MoveMom : MonoBehaviour
 
     float mf_timer; //현재위치
     float mf_waitingTime; //원하는 시간
+    bool mb_checkPlayOnce = true;
     VoiceManager vm;
     void Start() {
         mf_timer = 0.0f;
@@ -32,15 +33,22 @@ public class MoveMom : MonoBehaviour
         v3_MomPos = new Vector3(-3,-1.14f,0); //v3_MomPos에 엄마위치저장
 
         this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
-        vm.playVoice(0);
     }
     void Update()
     {
         /*2초뒤 엄마 등장*/
-        mf_timer += Time.deltaTime;
-        if (mf_timer > mf_waitingTime){
-            mg_Mom.transform.position = Vector3.MoveTowards(mg_Mom.transform.position, v3_MomPos, 2f * Time.deltaTime);
+        if(vm.mb_checkSceneReady) {
+            mf_timer += Time.deltaTime;
+            if (mf_timer > mf_waitingTime){
+                mg_Mom.transform.position = Vector3.MoveTowards(mg_Mom.transform.position, v3_MomPos, 2f * Time.deltaTime);
+            }
+            if(mb_checkPlayOnce) {
+                vm.playVoice(0);
+                mb_checkPlayOnce = false;
+            }
         }
+        
+ 
         
     }
     void OnTriggerEnter2D(Collider2D cCollideObject){

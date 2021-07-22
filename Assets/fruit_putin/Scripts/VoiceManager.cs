@@ -81,6 +81,7 @@ public class VoiceManager : MonoBehaviour {
         }
         if(mn_checkCurInx == mvifl_setVoiceInfoList.Length) {
             Destroy(mgo_loadingScene);
+            mb_checkSceneReady = true;
         }
     }
     private void runThread() {

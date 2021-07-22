@@ -21,7 +21,7 @@ public class DragDestroy : MonoBehaviour {
     private void OnMouseDrag()
     {
         Destroy(GameObject.Find("speechBubble"));
-        Destroy(GameObject.Find("Canvas"));
+        Destroy(GameObject.Find("ScriptCanvas"));
         Vector2 v2_checkMousePos = new Vector2(Input.mousePosition.x,
         Input.mousePosition.y);
         Vector2 v2_checkworldObjPos = Camera.main.ScreenToWorldPoint(v2_checkMousePos);
