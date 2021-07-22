@@ -12,42 +12,42 @@
  * 2021-07-21 : 주석 변경
  * 
  * -Variable 
- * mg_ScriptManager : 게임 디렉터 오브젝트에 접근하기 위한 변수
- * mg_ArrowToBean : 콩을 가르키는 화살표
- * mg_ArrowToCow : 소를 가르키는 화살표
- * mg_ArrowToGF : 할아버지를 가르키는 화살표
- * mg_ArrowToJack : 잭을 가르키는 화살표
- * mg_ArrowPrefab : 화살표 프리팹 연결을 위한 변수
- * mg_GenGFSpeechBubble : 할아버지 말풍선 오브젝트 조작을 위한 변수
- * mg_GFSpeech : 할아버지 말풍선 프리팹과 연결을 위한 변수
- * mg_GenJackSpeechBubble : 잭 말풍선 관련 오브젝트
- * mg_JackSpeech : 잭 말풍선 관련 오브젝트
- * mb_EventFlag : 이벤트를 한번만 작동하기 위한 flag
- * mn_EventSequence : 이벤트 순서를 관리하는 변수
- * mg_Cow : 마우스 드래그 관련 오브젝트
- * mg_Bean : 마우스 드래그 관련 오브젝트
- * mb_BeanToJack : 이벤트 성공확인을 위한 flag
- * mb_CowToGF : 이벤트 성공확인을 위한 flag
+ * mg_ScriptManager                 게임 디렉터 오브젝트에 접근하기 위한 변수
+ * mg_ArrowToBean                   콩을 가르키는 화살표
+ * mg_ArrowToCow                    소를 가르키는 화살표
+ * mg_ArrowToGF                     할아버지를 가르키는 화살표
+ * mg_ArrowToJack                   잭을 가르키는 화살표
+ * mg_ArrowPrefab                   화살표 프리팹 연결을 위한 변수
+ * mg_GenGFSpeechBubble             할아버지 말풍선 오브젝트 조작을 위한 변수
+ * mg_GFSpeech                      할아버지 말풍선 프리팹과 연결을 위한 변수
+ * mg_GenJackSpeechBubble           잭 말풍선 관련 오브젝트
+ * mg_JackSpeech                    잭 말풍선 관련 오브젝트
+ * mb_EventFlag                     이벤트를 한번만 작동하기 위한 flag
+ * mn_EventSequence                 이벤트 순서를 관리하는 변수
+ * mg_Cow                           마우스 드래그 관련 오브젝트
+ * mg_Bean                          마우스 드래그 관련 오브젝트
+ * mb_BeanToJack                    이벤트 성공확인을 위한 flag
+ * mb_CowToGF                       이벤트 성공확인을 위한 flag
  * 
  * -Function
- * v_ChangeFlagFalse() : Flag 변경 함수
- * v_ChangeFlagTrue() : Flag 변경 함수
- * v_NextMainScript() : 메인 스크립트 함수
- * v_NoneMainScript() : 메인 스크립트 함수
- * v_NextEventScript() : 이벤트 스크립트 함수
- * v_NoneEventScript() : 이벤트 스크립트 함수
- * v_NextJackScript() : 잭 스크립트 함수
- * v_NoneJackScript() : 잭 스크립트 함수
- * v_NextGFScript() : 할아버지 스크립트 함수
- * v_NoneGFScript() : 할아버지 스크립트 함수
- * v_GenGFSpeechBubble() : 말풍선 생성 함수
- * v_GenJackSpeechBubble() : 말풍선 생성 함수
- * v_RemoveGFSpeechBubble() : 말풍선 삭제 함수
- * v_RemoveJackSpeechBubble() : 말풍선 삭제 함수
- * v_TurnOnMouseDrag() : 드래그 활성화
- * v_TurnOFFMouseDrag() : 드래그 비활성화
- * v_BeanToJack() : flag true 처리 함수
- * v_CowToGF() : flag true 처리 함수
+ * v_ChangeFlagFalse()              Flag 변경 함수
+ * v_ChangeFlagTrue()               Flag 변경 함수
+ * v_NextMainScript()               메인 스크립트 함수
+ * v_NoneMainScript()               메인 스크립트 함수
+ * v_NextEventScript()              이벤트 스크립트 함수
+ * v_NoneEventScript()              이벤트 스크립트 함수
+ * v_NextJackScript()               잭 스크립트 함수
+ * v_NoneJackScript()               잭 스크립트 함수
+ * v_NextGFScript()                 할아버지 스크립트 함수
+ * v_NoneGFScript()                 할아버지 스크립트 함수
+ * v_GenGFSpeechBubble()            말풍선 생성 함수
+ * v_GenJackSpeechBubble()          말풍선 생성 함수
+ * v_RemoveGFSpeechBubble()         말풍선 삭제 함수
+ * v_RemoveJackSpeechBubble()       말풍선 삭제 함수
+ * v_TurnOnMouseDrag()              드래그 활성화
+ * v_TurnOFFMouseDrag()             드래그 비활성화
+ * v_BeanToJack()                   flag true 처리 함수
+ * v_CowToGF()                      flag true 처리 함수
  * 
  */
 
@@ -182,15 +182,15 @@ public class Jack3_EventController : MonoBehaviour
         }
 
         //전체적인 이벤트
-        if (mn_EventSequence == 1 && this.mb_EventFlag == true){
-            v_ChangeFlagFalse();
+        if (mn_EventSequence == 1 && this.mb_EventFlag == true){                                    // 화면을 1번 터치하면 진행
+            v_ChangeFlagFalse();                                                                    // 이벤트를 한번만 실행하기위한 flag
 
-            v_NoneMainScript();
+            v_NoneMainScript();                                                                     // 이전에 했던스크립트 정리
 
             v_GenGFSpeechBubble();
             v_NextGFScript();
         }
-        else if (mn_EventSequence == 2 && mb_EventFlag == true){
+        else if (mn_EventSequence == 2 && mb_EventFlag == true){                                    // 화면을 2번 터치하면 진행
             v_ChangeFlagFalse();
 
             v_RemoveGFSpeechBubble();
@@ -319,8 +319,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_Bean.GetComponent<Jack3_MouseDrag>().v_ChangeFlagTrue();
     }
 
-    //드래그 비활성화
-    private void v_TurnOFFMouseDrag()
+    private void v_TurnOFFMouseDrag()                                                               // 드래그 비활성화
     {
         this.mg_Cow.GetComponent<Jack3_MouseDrag>().v_ChangeFlagFalse();
         this.mg_Bean.GetComponent<Jack3_MouseDrag>().v_ChangeFlagFalse();
