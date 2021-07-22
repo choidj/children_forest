@@ -15,11 +15,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Puzzle_CheckPuzzle : MonoBehaviour{
-    // Update is called once per frame
+    VoiceManager vm;
+    void Start(){
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
     void Update(){
         if(transform.childCount <= 9){ // 퍼즐을 다 맞추면
+            vm.playVoice(0);
             Destroy(transform.Find("arrow"));
-            Invoke("v_EndStage", 1f); //v_Endstage함수 호출
+            Invoke("v_EndStage", 3f); //v_Endstage함수 호출
         }
     }
 
