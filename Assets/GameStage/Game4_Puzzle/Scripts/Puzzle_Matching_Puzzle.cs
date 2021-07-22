@@ -18,7 +18,7 @@ using UnityEngine.UI;
 
 public class Puzzle_Matching_Puzzle : MonoBehaviour{
     public bool mb_classifyWhetherAns = false; //matching되기 전 
-    AudioSource auSource;
+    //AudioSource auSource;
     public Sprite sNextSprite;
     Vector2 mv2_initPos;
     private void Start(){
