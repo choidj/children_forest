@@ -58,7 +58,7 @@
 >
 > 각각의 게임 스테이지를 마치면, 아기자기하고 귀여운 테마의 화면이 잠깐 나오고 다시 Stage select 화면으로 넘어가게 된다.
 >
-> > <img src = "https://user-images.githubusercontent.com/69896751/126110845-a58ff3d6-c8dd-48ed-8b4f-4b266597d85f.png" width="500" height="220">
+> > <img src = "https://user-images.githubusercontent.com/73592778/126596026-9ca7ec12-6cac-4fcc-bd79-9a9c6554cedb.png">
 -------------
 ## Project Environment
 > > <img src = "https://user-images.githubusercontent.com/69896751/126106961-8e80aaa4-62f1-4050-8ac4-34a31f03d97f.png" width="250" height="100">
@@ -68,7 +68,7 @@
 > > <img src = "https://user-images.githubusercontent.com/69896751/126107498-3f1366d8-7290-4c0d-9107-26cc2f944d8a.jpeg" width="200" height="100" text="Text to Speech">   
 ------------
 ## Project Plan
-> <img src = "https://user-images.githubusercontent.com/69896751/126107697-32ddeea5-992c-4e43-9795-e2f2dbc044f9.png">
+> <img src = "https://user-images.githubusercontent.com/69896751/126107697-32ddeea5-992c-4e43-9795-e2f2dbc044f9.png" width="500" height="220">
 ------------
 ## Project Role
 > **Developement** : choidj, devYoong, kimmhyeon, RyuSion1124
