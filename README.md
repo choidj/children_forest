@@ -58,7 +58,7 @@
 >
 > 각각의 게임 스테이지를 마치면, 아기자기하고 귀여운 테마의 화면이 잠깐 나오고 다시 Stage select 화면으로 넘어가게 된다.
 >
-> > <img src = "https://user-images.githubusercontent.com/73592778/126596026-9ca7ec12-6cac-4fcc-bd79-9a9c6554cedb.png">
+> > <img src = "https://user-images.githubusercontent.com/73592778/126596026-9ca7ec12-6cac-4fcc-bd79-9a9c6554cedb.png" width="500" height="220">
 -------------
 ## Project Environment
 > > <img src = "https://user-images.githubusercontent.com/69896751/126106961-8e80aaa4-62f1-4050-8ac4-34a31f03d97f.png" width="250" height="100">
