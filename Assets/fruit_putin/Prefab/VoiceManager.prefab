@@ -47,34 +47,56 @@ MonoBehaviour:
   mvifl_setVoiceInfoList:
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
   - svt_voiceType: 0
     sstr_words: 
+    sf_pitch: 0
+    sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
+  mc_loadingScene: {fileID: 1743577170559797350, guid: 38d1874bc80f843439a1cd81bef23ac9, type: 3}
+  mb_checkSceneReady: 0
 --- !u!82 &2824697826455121867
 AudioSource:
   m_ObjectHideFlags: 0
@@ -88,7 +110,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.6
   Loop: 0
   Mute: 0
   Spatialize: 0

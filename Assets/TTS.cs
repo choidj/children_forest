@@ -104,7 +104,7 @@ public class TTS {
         return instance;
     }
     //convert the received byte array to float array...
-    public AudioClip CreateAudio(string sTargetSpeech, Voice vTargetVoice, float fSetPitch = 0f, float fSpeakRate = 0.6f) {
+    public float[] CreateAudio(string sTargetSpeech, Voice vTargetVoice, float fSetPitch = 0f, float fSpeakRate = 0.6f) {
 
         setAudioConfig(fSetPitch, fSpeakRate);
         setVoice(vTargetVoice);
@@ -118,9 +118,7 @@ public class TTS {
         var ba_convertByteArray = Convert.FromBase64String(gc_Info.audioContent);
         var fa_convertFloatArray = ConvertByteToFloat(ba_convertByteArray);
 
-        AudioClip ac_createAudioClip = AudioClip.Create("audioContent", fa_convertFloatArray.Length, 1, 44100, false);
-        ac_createAudioClip.SetData(fa_convertFloatArray, 0);
-        return ac_createAudioClip;
+        return fa_convertFloatArray;
     }
     
     // 스트링형태로 받은 응답 데이터를 우리가 원하는 float형태로 만들어 준다.

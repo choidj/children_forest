@@ -18,7 +18,7 @@
  * TTS mtts_getVoice;
  * AudioSource mas_playVoice;
  * 
- * - TTS Member Function
+ * - VoiceManager Member Function
  * Start() : VoiceManager 게임 오브젝트가 생성될 때 최초로 실행되는 함수로, 인스펙터 창에 입력된 음성 세팅값들을 통해 씬에서 필요한 음성 데이터를 만든다.
  * playVoice(int nPlayVoiceClipId) : 생성된 음성 데이터를 가지고 있다가 이 함수가 호출되면 음성을 씬에 출력한다.
  */
@@ -27,6 +27,8 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Threading;
 
 // 인스펙터창에 입력되는 음성 세팅 값을 저장하는 struct이다.
 [System.Serializable]
@@ -45,26 +47,54 @@ public struct VoiceInfo {
 // 씬에서 음성을 출력하는 게임오브젝트에 적용되는 VoiceManager 클래스이다.
 public class VoiceManager : MonoBehaviour {
     public VoiceInfo[] mvifl_setVoiceInfoList;
+    public GameObject mc_loadingScene;
+    private GameObject mgo_loadingScene;
+    private int mn_checkCurInx = 0;
     private TTS mtts_getVoice;
+    private Queue<float[]> mqueac_queue = new Queue<float[]>();
     private AudioSource mas_playVoice;
+    private Thread mth_workThread;
     public bool mb_checkSceneReady = false;
 
     // 해당 스크립트가 들어간 게임 오브젝트가 생성될 때, 인스펙터창에 저장된 음성 세팅 값들을 통해서 AudioClip을 가지고 있게 된다. 
     void Start() {
+        mgo_loadingScene = Instantiate(mc_loadingScene);
+        mgo_loadingScene.SetActive(true);
         mas_playVoice = gameObject.GetComponent<AudioSource>();
         mtts_getVoice = TTS.GetInstance();
+        mth_workThread = new Thread(runThread);
+        mth_workThread.Start();
+    }
+    void Update()
+    {
+        if(mqueac_queue.Count > 0)
+        {
+            var fa_convertFloatArray = mqueac_queue.Dequeue();
+            
+            AudioClip ac_createAudioClip = AudioClip.Create("audioContent", fa_convertFloatArray.Length, 1, 44100, false);
+
+            ac_createAudioClip.SetData(fa_convertFloatArray, 0);
+            mvifl_setVoiceInfoList[mn_checkCurInx].sac_voiceAudioClip = ac_createAudioClip;
+
+            mn_checkCurInx++;
+            Debug.Log("queue data response index : " + mn_checkCurInx);
+        }
+        if(mn_checkCurInx == mvifl_setVoiceInfoList.Length) {
+            Destroy(mgo_loadingScene);
+        }
+    }
+    private void runThread() {
         float tempSpeakRate = 0.8f;
         //load the audio clips to need...
         for(int i = 0; i < mvifl_setVoiceInfoList.Length; i++) {
             if (float.TryParse(mvifl_setVoiceInfoList[i].sf_speakingRate, out tempSpeakRate)) {
-                mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch, tempSpeakRate);
+                mqueac_queue.Enqueue(mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch, tempSpeakRate));
             }
             else
             {
-                mvifl_setVoiceInfoList[i].sac_voiceAudioClip = mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch);
+                mqueac_queue.Enqueue(mtts_getVoice.CreateAudio(mvifl_setVoiceInfoList[i].sstr_words, mvifl_setVoiceInfoList[i].svt_voiceType, mvifl_setVoiceInfoList[i].sf_pitch));
             }
         }
-        mb_checkSceneReady = true;
     }
     // 이 함수를 통해 저장했고 해당되는 AudioClip을 씬에 출력하게 된다. 
     public void playVoice(int nPlayVoiceClipId) {
