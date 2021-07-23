@@ -40,7 +40,7 @@ public class Jack3_GFScript : MonoBehaviour
     GameObject mg_GFScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "얘야 어딜 그렇게 바쁘게 가니?@그럼 그 젖소와 이 콩과 바꾸자꾸나.@이 콩은 심은 지 하루 만에 하늘에 닿을 만큼 높이 자라는 마술 콩이란다.";
+    private string ms_ScriptText = "얘야 어딜 그렇게 바쁘게 가니?@그럼 그 젖소와 이 콩을 바꾸자꾸나.@이 콩은 심은 지 하루 만에 하늘에 닿을 만큼 높이 자라는 마술 콩이란다.";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
