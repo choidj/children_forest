@@ -13,6 +13,8 @@
 *            -작성 기록-
 *            2021-07-19 : 제작 완료
 *            2021-07-20 : 주석 처리
+*            2021-07-22 : createAudio() 함수의 반환 값을 AudioClip이 아닌 float Array 방식으로 바꾸었다.
+ * 
  * - TTS Member Variable 
  * ms_useApiURL : Google TTS API 서버와 통신을 위한 URL 주소이다.
  * mstts_setTtsApi : Google TTS API 서버와 통신하여 데이터를 주고 받기 위한 데이터 형식을 맞춰주는 클래스이다. 이 안에는 보이스의 종류, 음조, 음성으로 바꿀 텍스트 등 음서으로 바꾸기 위해서 필요로 하는 세팅 데이터가 설정된다. 이때 이 세팅을 저장하는 이너클래스가 존재하는데, 각각 SetTextToSpeech, 
@@ -24,7 +26,9 @@
  * setInput() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 어떤 Text를 음성으로 변환할지를 설정해주는 함수이다.
  * setAudioConfig() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 음성의 음조, 말 빠르기를 어떻게 할지를 설정해주는 함수이다.
  * setVoice() : 통신에 필요한 음성 세팅 정보에 대해서 설정하는 함수이다. 여기서 설정하는 정보는 Google TTS API에서 정해놓은 보이스 종류를 설정해주는 함수이다.
- * CreateAudio() : 최종적으로 Google TTS API서버에서 받은 바이트 데이터를 float 데이터로 변환했었는데, 이것을 이용해서 유니티에서 이용할 수 있는 AudioClip으로 만드는 작업을 해주는 함수이다.
+ * CreateAudio() : 최종적으로 Google TTS API서버에서 받은 바이트 데이터를 float 데이터로 변환했었는데, 이것을 이용해서 유니티에서 이용할 수 있는 AudioClip으로 만드는 작업을 해주는 함수이다. -> 2021-07-20
+ * 반환값을 AudioClip에서 float array 형태로 바꾸었다. 이 이유는, AudioClip을 다루려면, 메인 스레드가 다루어야 하기 때문이다. 
+ * TTS 통신은 메인 스레드가 아닌 스레드에서 담당하도록 설계를 바꾸게 되었다. 그 이유는 메인 스레드에서 UI와 이 TTS 통신에 데이터 처리까지 맡게 되면, 부하가 커져서 화면이 멈추는 프리징 현상이 일어나게 되기 때문에 반환값을 바꾸어 메인 스레드가 아닌 스레드에서 처리하도록 바꾸었다.
  */
 
 using System.Collections;
@@ -103,7 +107,7 @@ public class TTS {
         // instance를 반환한다.
         return instance;
     }
-    //convert the received byte array to float array...
+    //convert the received byte array to float array. And then, return float array..
     public float[] CreateAudio(string sTargetSpeech, Voice vTargetVoice, float fSetPitch = 0f, float fSpeakRate = 0.6f) {
 
         setAudioConfig(fSetPitch, fSpeakRate);

@@ -3,12 +3,17 @@
  * - Writer : 최대준
  * - Content : 잭과콩나무 에피소드1 - 
  *          -기록-
- *          2021-07-21 : 작성
+ *          2021-07-20 : 주석 작성.
+ *          2021-07-23 : TTS 음성 출력 기능 추가.
  * - ControlScene_JackEpi1 Member variable
  * string ms_loadScene : 다음 씬을 인스펙터창에서 입력하도록 하여 저장하는 변수이다.
+ * bool mb_playOnce = false : 음성이 한번만 출력하도록 체크하는 변수이다.
+ * VoiceManager mvm_playVoice : 음성을 준비하고 출력하는 클래스이다.
  * - ControlScene_JackEpi1 Member function
  * GetMouseButtonUp(0) : 좌클릭시 clickedMouse 함수를 호출하는 함수.
- * SceneManager.LoadScene("") : 다음 Scene으로 이동 하는 함수
+ * SceneManager.LoadScene("") : 다음 Scene으로 이동 하는 함수.
+ * Start() : 음성을 출력하기 위해서 VoiceManager를 초기화한다.
+ * Update() : 음성이 준비가 되었다면 한번만 출력하도록 한다.
  * 
  */
 
