@@ -1,37 +1,26 @@
 ﻿/*
- * - Name : Jack3_MissionScript.cs
+ * - Name : Jack3_MouseDrag.cs
  * - Writer : 김명현
- * - Content : 잭과콩나무 에피소드3 - 마우스 드래그 스크립트
- *            오브젝트를 드래그할 경우 마우스포인트따라 객체 이동
  * 
- *            
- *            
- *            
- *            -작성 기록-
- *            2021-07-13 : 제작 완료
- *            
- *            
- *            
+ * - Content
+ * 잭과콩나무 에피소드3 - 마우스 이벤트 스크립트
+ * 마우스 드래그시 오브젝트가 따라 움직이게 수정
+ * 마우스에서 손을 뗄 경우 오브젝트 원래위치로 이동
  * 
+ * - Update Log -
+ * 2021-07-13 : 작성 완료
+ * 2021-07-23 : 주석변경
+ *                  
  * - Variable 
- * mv2_mouseDragPosition
- * mv2_worldObjectPosition
- * mb_flag : 원하는시점에 드래그를 활성화하기 위한 flag
- * 
- * - Function
- * 
- * 마우스 조작 함수
- * OnMouseDown() : touch the object
- * OnMouseDrag() : drag
- * OnMouseUp() : When you take your hands off the mouse.
- * 
- * 플래그 설정 함수
- * v_ChangeFlagTrue()
- * v_ChangeFlagTrue()
- * 
- * 
+ * mv2_mouseDragPosition                마우스 위치를 저장하는 벡터
+ * mv2_worldObjectPosition              카메라의 월드좌표로 변환을 위한 벡터
+ * mb_flag                              원하는시점에 드래그를 활성화하기 위한 flag
+ * - Function()
+ * OnMouseDrag()                        오브젝트를 드래그한 경우
+ * OnMouseUp()                          오브젝트에서 손을 떼는 경우
+ * v_ChangeFlagTrue()                   Flag 값 True
+ * v_ChangeFlagTrue()                   Flag 값 False
  */
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -43,25 +32,15 @@ public class Jack3_MouseDrag : MonoBehaviour
     private bool mb_flag;
     GameObject mg_ScriptManager;
 
-    // Start is called before the first frame update
     void Start()
     {
-        mb_flag = false;
-
-        this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");
+        mb_flag = false;                                                                                        // Flag값 False로 초기화
+        this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");                                          // 오브젝트 연결
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnMouseDown(){
-
-    }
-
-    //드래그할 경우 마우스위치따라 오브젝트 이동
+    /// <summary>
+    /// 오브젝트를 드래그한 경우
+    /// </summary>
     private void OnMouseDrag(){
         if(mb_flag == true)
         {
@@ -80,8 +59,9 @@ public class Jack3_MouseDrag : MonoBehaviour
             mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragBeanFlagTrue();
         }
     }
-
-    //마우스에서 손을 뗄 경우 원래위치로 돌아가게끔 설정
+    /// <summary>
+    /// 오브젝트에서 손을 떼는 경우
+    /// </summary>
     private void OnMouseUp(){
         Debug.Log("오브젝트에서 손 뗌");
 
@@ -94,11 +74,13 @@ public class Jack3_MouseDrag : MonoBehaviour
             mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragBeanFalgFalse();
         }
     }
-
-    public void v_ChangeFlagTrue(){
+    /// <summary>
+    /// Flag값 변경 함수
+    /// </summary>
+    public void v_ChangeFlagTrue(){                                                                                 // Flag값 True
         mb_flag = true;
     }
-    public void v_ChangeFlagFalse(){
+    public void v_ChangeFlagFalse(){                                                                                // Flag값 False
         mb_flag = false;
     }
 
