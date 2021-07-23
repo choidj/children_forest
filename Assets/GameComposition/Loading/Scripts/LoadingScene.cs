@@ -47,8 +47,11 @@ public class LoadingScene : MonoBehaviour
         {
             yield return null;
             timer += Time.deltaTime;
-            if (async_operation.progress >= 0.9f)
-                async_operation.allowSceneActivation = true;
+            if (async_operation.progress >= 0.9f) {
+                if(timer >= 1.5f) 
+                    async_operation.allowSceneActivation = true;
+                
+            }
         }
     }
 }
