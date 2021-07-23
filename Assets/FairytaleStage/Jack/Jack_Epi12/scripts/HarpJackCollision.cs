@@ -22,11 +22,23 @@ using UnityEngine.SceneManagement;
 public class HarpJackCollision: MonoBehaviour
 {
     public GameObject mg_talk_Prefab;
+    public bool mb_playOnce = false;
+    private VoiceManager mvm_playVoice;
 
+    void Start() {
+        mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
+    void Update() {
+        if(mvm_playVoice.mb_checkSceneReady && !mb_playOnce) {
+            mvm_playVoice.playVoice(0);
+            mb_playOnce = true;
+        }
+    }
     // 하프와 잭이 충돌했을 시에, 말풍선 오브젝트를 생성하고, 3초뒤에 다음씬으로 이동하도록 하였다.
     void OnTriggerEnter2D(Collider2D cCollideObject)
     {
         GameObject g_talk = Instantiate(mg_talk_Prefab) as GameObject;
+        
         Invoke("changeNextScene", 3f);
     }
     void changeNextScene() {

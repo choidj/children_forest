@@ -30,9 +30,29 @@ public class Collision_nextpage : MonoBehaviour
 {
 
     public string ms_nameNextScene;
-    // 충돌시에 호출되는 함수이다. 지정한 다음 씬으로 넘어간다.
-    void OnTriggerEnter2D(Collider2D cCollideObject)
-    {
-        SceneManager.LoadScene(ms_nameNextScene);
+    public bool mb_playOnce = false;
+    private VoiceManager mvm_playVoice;
+
+    void Start() {
+        mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
+    // 음성은 한번만 출력되도록 한다.
+    void Update() {
+        if(mvm_playVoice.mb_checkSceneReady && !mb_playOnce) {
+            mvm_playVoice.playVoice(0);
+            mb_playOnce = true;
+        }
+    }
+    // 충돌시에 호출되는 함수이다. 음성이 끝났다면, 지정한 다음 씬으로 넘어간다.
+    void OnTriggerEnter2D(Collider2D cCollideObject) {
+        if(!mvm_playVoice.isPlaying()) {
+            SceneManager.LoadScene(ms_nameNextScene);
+        }
+    }
+    // 충돌중에 호출되는 함수이다. 음성이 끝났다면, 지정한 다음 씬으로 넘어간다.
+    void OnTriggerStay2D(Collider2D cCollideObject) {
+        if(!mvm_playVoice.isPlaying()) {
+            SceneManager.LoadScene(ms_nameNextScene);
+        }
     }
 }
