@@ -15,11 +15,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Shape_CheckShape : MonoBehaviour{
-    // Update is called once per frame
+    VoiceManager vm;
+    bool mb_checkVoice = true;
+
+    void Start(){
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
     void Update(){
         if(transform.childCount <= 4){ // 도형을 다 맞추면
+            if(mb_checkVoice){
+                vm.playVoice(0);
+                mb_checkVoice = false;
+            }
             Destroy(transform.Find("arrow"));
-            Invoke("v_EndStage", 1f); //v_Endstage함수 호출
+            Invoke("v_EndStage", 2f); //v_Endstage함수 호출
         }
     }
 

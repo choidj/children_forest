@@ -77,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FairytaleStage/Jack/Jack_Epi15/Jack_Epi15.unity
     guid: b29474fcdfdfb47e5a94e64be543cbc4
+  - enabled: 1
+    path: Assets/GameComposition/Loading/load_scene.unity
+    guid: 5ef11c687c4464178b906a8b289fda24
   m_configObjects: {}
