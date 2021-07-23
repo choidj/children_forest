@@ -487,6 +487,170 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7944956f9710e4e98bf586dd15909d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &999601186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2824697826455121862, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_Name
+      value: VoiceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[1].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[2].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[3].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[4].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[5].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[6].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[7].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sstr_words
+      value: "\uC7AD, \uBC8C\uC368 \uB2E4\uB140\uC654\uB2C8? \uB77C\uACE0 \uC5B4\uBA38\uB2C8\uAED8\uC11C
+        \uB9D0\uC500\uD558\uC168\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[1].sstr_words
+      value: "\uC9D1\uC73C\uB85C \uB3CC\uC544\uAC04 \uC7AD\uC740 \uC5B4\uBA38\uB2C8\uAED8
+        \uCF69\uC744 \uB4DC\uB838\uC5B4\uC694."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[2].sstr_words
+      value: "\uCF69\uC744 \uB4DC\uB798\uADF8\uD558\uC5EC \uC5B4\uBA38\uB2C8\uAED8
+        \uB4DC\uB9AC\uC138\uC694."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[3].sstr_words
+      value: "\uC5B4\uBA38\uB2C8, \uC816\uC18C\uB97C \uB9C8\uC220 \uCF69\uC774\uB791
+        \uBC14\uAFE8\uC5B4\uC694. \uB77C\uACE0 \uC7AD\uC774 \uB9D0\uD588\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[4].sstr_words
+      value: "\uC5B4\uBA38\uB2C8\uB294 \uAE5C\uC791 \uB180\uB77C \uC678\uCCE4\uC5B4\uC694."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[5].sstr_words
+      value: "\uBB50\uB77C\uACE0? \uC816\uC18C\uB97C \uACA8\uC6B0 \uCF69 \uD55C \uC54C\uACFC
+        \uBC14\uAFB8\uC5C8\uB2E4\uB294 \uAC70\uB2C8? \uB77C\uACE0 \uB2F9\uD669\uD558\uC168\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[6].sstr_words
+      value: "\uD654\uAC00 \uB09C \uC5B4\uBA38\uB2C8\uB294 \uCF69\uC744 \uB9C8\uB2F9\uC5D0
+        \uD68D \uC9D1\uC5B4\uB358\uC84C\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[7].sstr_words
+      value: "\uCF69\uC744 \uB4DC\uB798\uADF8\uD558\uC5EC \uCC3D\uBC16\uC73C\uB85C
+        \uB358\uC9C0\uC138\uC694."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[1].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[2].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[3].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[4].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[5].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[6].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[7].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.73104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5844088
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7637935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
 --- !u!1 &1196789030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1191,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

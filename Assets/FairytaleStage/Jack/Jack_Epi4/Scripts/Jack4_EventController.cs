@@ -1,50 +1,56 @@
 ﻿/*
  * - Name : Jack4_EventController.cs
  * - Writer : 김명현
- * - Content : 잭과콩나무 에피소드4 - 이벤트 관리 스크립트
- *            게임진행 이벤트를 총괄적으로 관리하기 위한 스크립트
  * 
- *            
- *            
- *            
- *            
- *            -작성 기록-
- *            2021-07-14 : 제작 완료
- *            
- *            
- *            
+ * - Content :
+ * 잭과콩나무 에피소드4 - 이벤트 관리 스크립트
+ * 게임진행 이벤트를 총괄적으로 관리하기 위한 스크립트
  * 
- * -Variable 
+ * - Update Log -
+ * 2021-07-14 : 제작 완료
+ * 2021-07-16 : 화살표 기능 추가 및 인코딩형식 변경
+ * 2021-07-23 : 음성기능 추가 및 주석 작성
  * 
- * 게임 디렉터 오브젝트에 접근하기 위한 오브젝트
- * mg_ScriptManager
+ * - Variable 
+ * mg_ScriptManager                 게임 디렉터 오브젝트에 접근하기 위한 변수
+ * mg_Mother                        어머니 오브젝트에 접근하기 위한 변수
+ * mg_GenMotherSpeechBubble         어머니 말풍선 
  * 
- * 어머니 말풍선 관련 오브젝트
- * mg_GenMotherSpeechBubble
- * mg_MotherSpeech
+ * - Function
+ * v_ChangeFlagFalse()              Flag 변경 함수 -> False로 설정
+ * v_ChangeFlagTrue()               Flag 변경 함수 -> True로 설정
+ * v_NextMainScript()               메인 스크립트 함수 -> 다음 메인 스크립트를 출력
+ * v_NoneMainScript()               메인 스크립트 함수 -> 메인 스크립트 내용을 지워 아무것도 출력안되게 설정
+ * v_NextEventScript()              이벤트 스크립트 함수 -> 다음 이벤트 스크립트를 출력
+ * v_NoneEventScript()              이벤트 스크립트 함수 -> 이벤트 스크립트 내용을 지워 아무것도 출력안되게 설정
+ * v_NextJackScript()               잭 스크립트 함수 -> 다음 Jack 스크립트를 출력
+ * v_NoneJackScript()               잭 스크립트 함수 -> Jack 스크립트 내용을 지워 아무것도 출력안되게 설정
+ * v_NextGFScript()                 할아버지 스크립트 함수 -> 다음 할아버지 스크립트를 출력
+ * v_NoneGFScript()                 할아버지 스크립트 함수 -> 할아버지 스크립트 내용을 지워 아무것도 출력안되게 설정
+ * v_GenGFSpeechBubble()            말풍선 생성 함수 -> 할아버지 말풍선을 생성
+ * v_GenJackSpeechBubble()          말풍선 생성 함수 -> Jack의 말풍선을 생성
+ * v_RemoveGFSpeechBubble()         말풍선 삭제 함수 -> 할아버지 말풍선 삭제
+ * v_RemoveJackSpeechBubble()       말풍선 삭제 함수 -> Jack의 말풍선 삭제
+ * v_TurnOnMouseDrag()              드래그 활성화 -> 소, 콩 오브젝트 드래그 활성화
+ * v_DragBean()                     드래그 활성화 -> 콩만 드래그 활성화
+ * v_TurnOFFMouseDrag()             드래그 비활성화 -> 소, 콩 오브젝트 드래그 기능 잠금
+ * v_BeanToJack()                   flag true 처리 함수 -> 콩이 Jack에게 전달됬다고 Flag값 True로 변경
+ * v_CowToGF()                      flag true 처리 함수 -> 소가 할아버지에게 전달됬다고 Flag값 True로 변경
+ * v_GenArrowToBean()               화살표 관련 함수 -> 콩을 가르키는 화살표 생성
+ * v_GenArrowToCow()                화살표 관련 함수 -> 소를 가르키는 화살표 생성
+ * v_GenArrowToGF()                 화살표 관련 함수 -> 할아버지를 가르키는 화살표 생성
+ * v_GenArrowToJack()               화살표 관련 함수 -> Jack을 가르키는 화살표 생성
+ * v_RemoveArrowToGF()              화살표 관련 함수 -> 할아버지를 가르키는 화살표 삭제
+ * v_RemoveArrowToJack()            화살표 관련 함수 -> Jack을 가르키는 화살표 삭제
+ * v_RemoveArrowToBean()            화살표 관련 함수 -> 콩을 가르키는 화살표 삭제
+ * v_RemoveArrowToCow()             화살표 관련 함수 -> 소를 가르키는 화살표 삭제
+ * v_DragCow()                      드래그 관련 함수 -> 소가 드래그 상태임을 나타내는 Flag값 True
+ * v_NotDragCow()                   드래그 관련 함수 -> 소가 드래그 상태임을 나타내는 Flag값 False
+ * v_DragBeanFlagTrue()             드래그 관련 함수 -> 콩이 드래그 상태임을 나타내는 Flag값 True
+ * v_DragBeanFalgFalse()            드래그 관련 함수 -> 콩이 드래그 상태임을 나타내는 Flag값 False
  * 
- * 잭 말풍선 관련 오브젝트
- * mg_GenJackSpeechBubble
- * mg_JackSpeech
  * 
- * 이벤트 관리 변수
- * mb_EventFlag : 이벤트를 한번만 작동하기 위한 flag
- * mn_EventSequence : 이벤트 순서를 관리하는 변수
- * 
- * 마우스 드래그 관련 오브젝트
- * mg_Bean
- * 
- * 마우스 클릭 제한 flag
- * StopClickFlag
- * 
- * 이벤트 성공확인을 위한 flag
- * mb_BeanToMother
- * mb_CowToGF
- * 
- * 
- * -Function
- * 
- * Flag 변경 함수
+ * * Flag 변경 함수
  * v_ChangeFlagFalse()
  * v_ChangeFlagTrue()
  * 
@@ -81,11 +87,7 @@
  * flag true 처리 함수
  * v_BeanToJack()
  * v_CowToGF()
- * 
- * 
  */
-
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -95,11 +97,12 @@ using UnityEngine.SceneManagement;
 
 public class Jack4_EventController : MonoBehaviour
 {
-    //게임 디렉터 오브젝트에 접근하기 위한 오브젝트
-    GameObject mg_ScriptManager;
+    #region 변수 선언부
 
-    //어머니 오브젝트
-    GameObject mg_Mother;
+    //오브젝트 연결을 위한 변수 선언
+    GameObject mg_ScriptManager;                                                                    // 게임 디렉터 오브젝트에 접근하기 위한 변수
+    GameObject mg_Mother;                                                                           // 어머니 오브젝트에 접근하기 위한 변수
+    VoiceManager vm;                                                                                // VoiceManager 오브젝트에 접근하기 위한 변수
 
     //어머니 말풍선 관련 오브젝트
     GameObject mg_GenMotherSpeechBubble;
@@ -133,7 +136,9 @@ public class Jack4_EventController : MonoBehaviour
     private bool mb_BeanToMother;
     private bool mb_BeanToWindow;
 
+    private bool mb_PlaySound;                                                                      // 처음 씬이 실행될때 음성이 한번만 나오기 위한 Flag
 
+    #endregion
 
 
 
@@ -144,12 +149,15 @@ public class Jack4_EventController : MonoBehaviour
         this.mg_ScriptManager = GameObject.Find("GameDirector");
         this.mg_Bean = GameObject.Find("Bean");
         this.mg_Mother = GameObject.Find("Mother");
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+
         //이벤트 flag
         mb_DontLoopEvent1 = false;
         mb_DontLoopEvent2 = false;
         mb_BeanToMother = false;
         StopClickFlag = false;
         mb_BeanToWindow = false;
+        mb_PlaySound = false;
 
         //드래그 flag
         mb_IsDragBean = false;
@@ -196,7 +204,7 @@ public class Jack4_EventController : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()))
         {
             if(StopClickFlag == false)
             {
@@ -205,13 +213,19 @@ public class Jack4_EventController : MonoBehaviour
             v_ChangeFlagTrue();
         }
 
-        if (mn_EventSequence == 1 && this.mb_EventFlag == true)
+        if (mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                // 처음 씬이 실행되면 기본 스크립트 실행
+        {
+            mb_PlaySound = true;
+            vm.playVoice(mn_EventSequence);
+        }
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
             v_RemoveMotherSpeechBubble();
 
             v_NextMainScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true && mb_DontLoopEvent1 == false)
         {
@@ -223,7 +237,7 @@ public class Jack4_EventController : MonoBehaviour
 
             mb_DontLoopEvent1 = true;
             StopClickFlag = true;
-
+            vm.playVoice(mn_EventSequence);
             v_GenArrowToBean();
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true && mb_BeanToMother == true)
@@ -234,7 +248,7 @@ public class Jack4_EventController : MonoBehaviour
 
             v_GenJackSpeechBubble();
             v_NextJackScript();
-
+            vm.playVoice(3);
             StopClickFlag = false;
             v_TurnOFFMouseDrag();
 
@@ -249,6 +263,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveJackSpeechBubble();
 
             v_NextMainScript();
+            vm.playVoice(4);
         }
         else if (mn_EventSequence == 4 && this.mb_EventFlag == true)
         {
@@ -258,6 +273,7 @@ public class Jack4_EventController : MonoBehaviour
 
             v_GenMotherSpeechBubble();
             v_NextMotherScript();
+            vm.playVoice(5);
 
             this.mg_Mother.GetComponent<Jack4_Mother>().ChangeMotherAngry();
         }
@@ -268,6 +284,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveMotherSpeechBubble();
 
             v_NextMainScript();
+            vm.playVoice(6);
         }
         else if (mn_EventSequence == 6 && this.mb_EventFlag == true && mb_DontLoopEvent2 == false)
         {
@@ -278,6 +295,7 @@ public class Jack4_EventController : MonoBehaviour
             v_TurnOnMouseDrag();
             StopClickFlag = false;
             mb_DontLoopEvent2 = true;
+            vm.playVoice(7);
 
             v_GenArrowToBean2();
         }

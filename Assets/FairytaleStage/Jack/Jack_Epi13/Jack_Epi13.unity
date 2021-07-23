@@ -800,6 +800,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: VoiceManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sstr_words
+      value: "\uC7AD\uC744 \uBC1C\uACAC\uD55C \uAC70\uC778\uC740 \uACE0\uD568\uC744
+        \uC678\uCCE4\uC5B4\uC694. \u201C\uC5B4\uB5A4 \uB188\uC774 \uB0B4 \uBCF4\uBB3C\uC744
+        \uD6D4\uCCD0 \uAC00\uB290\uB0D0! \uC774\uB140\uC11D \uAC70\uAE30 \uC11C!\u201D
+        \uAC70\uC778\uC774 \uCFF5\uCF85\uCFF5\uCF85 \uC7AD\uC758 \uB4A4\uB97C \uBC14\uC9DD
+        \uCAD3\uC558\uC5B4\uC694. \uC7AD\uC740 \uC815\uC2E0\uC5C6\uC774 \uCF69\uB098\uBB34
+        \uC904\uAE30\uB97C \uD0C0\uACE0 \uC544\uB798\uB85C \uC544\uB798\uB85C \uC7AC\uBE68\uB9AC
+        \uB0B4\uB824\uAC14\uC5B4\uC694. \u201C\uC7A1\uD788\uAE30\uB9CC \uD558\uBA74
+        \uAC00\uB9CC \uC548\uB46C!\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_speakingRate
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: m_RootOrder
       value: 9
