@@ -43,7 +43,7 @@ public class Jack3_MainScript : MonoBehaviour{
     GameObject mg_MainScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "잭은 길을 가다가가 할아버지를 만났어요.@잭은 마술 콩이라는 말에 솔깃해졌어요.@잭은 냉큼 커다란 젖소와 콩을 바꾸었어요.";
+    private string ms_ScriptText = "잭은 길을 가다가 할아버지를 만났습니다.@잭은 마술 콩이라는 말에 솔깃해졌어요.@잭은 냉큼 커다란 젖소와 콩을 바꾸었어요.";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
