@@ -22,7 +22,6 @@ using UnityEngine.SceneManagement;
 // 해당하는 오브젝트가 충돌이 일어나면 다음 지정한 씬으로 넘어가도록 하였다.
 public class Collision_nextpage : MonoBehaviour
 {
-
     public string ms_nameNextScene;
     public bool mb_playOnce = false;
     private VoiceManager mvm_playVoice;

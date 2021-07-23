@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   v3_target: {x: -2.4, y: -3.6, z: 0}
-  sc: {fileID: 0}
+  sc: {fileID: 603655705}
 --- !u!212 &1736472600
 SpriteRenderer:
   m_ObjectHideFlags: 0
