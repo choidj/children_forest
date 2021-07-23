@@ -89,7 +89,7 @@ public class Jack9_EventController : MonoBehaviour
     //게임 디렉터 오브젝트에 접근하기 위한 오브젝트
     GameObject mg_ScriptManager;
     GameObject mg_GenScript;
-
+    VoiceManager vm;
 
     //잭 말풍선 관련 오브젝트
     GameObject mg_GenGiantSpeechBubble;
@@ -101,6 +101,7 @@ public class Jack9_EventController : MonoBehaviour
     private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
 
     public GameObject mg_GiantSpeech;
+    private bool mb_PlaySound;
 
     //마우스 클릭 제한
     private bool StopClickFlag;
@@ -119,7 +120,7 @@ public class Jack9_EventController : MonoBehaviour
     {
         //오브젝트 연결
         this.mg_ScriptManager = GameObject.Find("GameDirector");
-
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         //이벤트 flag
         mb_DontLoopEvent1 = false;
@@ -145,14 +146,19 @@ public class Jack9_EventController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (StopClickFlag == false)
+            if (StopClickFlag == false && !(vm.isPlaying()))
             {
                 mn_EventSequence += 1;
             }
             v_ChangeFlagTrue();
         }
 
-        if(mn_EventSequence == 1 && this.mb_EventFlag == true)
+        if (mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
+        {
+            mb_PlaySound = true;
+            vm.playVoice(mn_EventSequence);
+        }
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
@@ -160,6 +166,7 @@ public class Jack9_EventController : MonoBehaviour
 
             v_GenGiantSpeechBubble();
             v_NextGiantScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true)
         {
@@ -168,7 +175,7 @@ public class Jack9_EventController : MonoBehaviour
             v_RemoveGiantSpeechBubble();
 
             v_NextMainScript();
-
+            vm.playVoice(mn_EventSequence);
             mb_DontLoopEvent1 = true;
         }
         else if (mn_EventSequence == 3 && this.mb_EventFlag == true && mb_DontLoopEvent1 == true)
@@ -181,7 +188,7 @@ public class Jack9_EventController : MonoBehaviour
 
             mb_DontLoopEvent1 = false;
             mb_DontLoopEvent2 = true;
-
+            vm.playVoice(mn_EventSequence);
             v_GenArrowToSack1();
             v_GenArrowToSack2();
         }
@@ -194,7 +201,7 @@ public class Jack9_EventController : MonoBehaviour
             v_NextMainScript();
 
             this.mg_ScriptManager.GetComponent<Jack9_Gentreasure>().v_GenTreasure();
-
+            vm.playVoice(mn_EventSequence+1);
             v_RemoveArrowToSack1();
             v_RemoveArrowToSack2();
         }
