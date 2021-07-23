@@ -44,7 +44,7 @@ public class Jack4_MissionScript : MonoBehaviour
     GameObject mg_EventScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "콩을 드래그하여 어머니께 드리세요.@콩을 드래그하여 창밖으로 던지세요";
+    private string ms_ScriptText = "콩을 드래그하여 엄마한테 주세요.@콩을 드래그하여 창밖으로 던지세요";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
