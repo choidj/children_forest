@@ -101,4 +101,7 @@ public class VoiceManager : MonoBehaviour {
     public void playVoice(int nPlayVoiceClipId) {
         mas_playVoice.PlayOneShot(mvifl_setVoiceInfoList[nPlayVoiceClipId].sac_voiceAudioClip);
     }
+    public bool isPlaying() {
+        return mas_playVoice.isPlaying;
+    }
 }
