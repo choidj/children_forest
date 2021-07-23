@@ -31,14 +31,15 @@ using UnityEngine;
 // Fruit 프리팹의 상태, 행동들을 컨트롤하는 스크립트 클래스이다.
 public class ControlFruit : MonoBehaviour {
     private VoiceManager mvm_voiceManager;
+    private SoundManager msm_soundManager;
     public int mn_fruitId;
     private Vector2 mv2_remembPos;
     private bool mb_checkClickOnce = false;
     // VoiceManager 클래스를 초기화하고, 처음 초기화 위치를 저장한다. (다시 돌아가기 위해서)
     void Start() {
-        mvm_voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>() as VoiceManager;
+        mvm_voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         mv2_remembPos = gameObject.transform.position;
-
     }
     // 초기화한 자리로 이동하도록 하였다. (드래그해서 다른 위치로 옮기면, 서서히 다시 처음 위치로 돌아가도록 한 것이다.)
     void Update() {
@@ -48,6 +49,7 @@ public class ControlFruit : MonoBehaviour {
     private void OnMouseDrag() {
         if(!mb_checkClickOnce) {
             mvm_voiceManager.playVoice(mn_fruitId); //한국 보이스 출력
+            msm_soundManager.playSound(0);
             mb_checkClickOnce = true;
         }
         Vector2 v2_checkMousePos = new Vector2(Input.mousePosition.x,
@@ -57,6 +59,8 @@ public class ControlFruit : MonoBehaviour {
     }
     // 드래그시에 호출되는 함수는 드래그시에는 계속 호출되므로 음성 또한 계속 출력되어서, 이러한 예외처리를 두었다.
     void OnMouseUp() {
+        msm_soundManager.playSound(1);
+        msm_soundManager.playSound(2);
         mb_checkClickOnce = false;
     }
     // PutFruits_initializeStage라는 클래스에서 총 이 Fruit 프리팹들을 생성할 때 이 프리팹이 어떤 종류의 과일인지를 이 함수를 통해 멤버 변수 mn_fruitId로 넣게 된다.
