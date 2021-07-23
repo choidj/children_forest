@@ -8,12 +8,14 @@
  *            -작성 기록-
  *            2021-07-19 : 제작 완료
  *            2021-07-20 : 주석 처리
+ *            2021-07-23 : SoundManager 추가.
  *
  * - ControlFruit Member Variable 
  * VoiceManager mvm_voiceManager : 이 클래스를 이용하여 Fruit 프리팹에 맞는 음성을 출력할 수 있게 된다.
  * int mn_fruitId : Fruit 프리팹의 종류를 나타내주는 id 변수이다.
  * Vector2 mv2_remembPos : Fruit 프리팹이 처음 생성된 위치를 저장하는 변수이다.
  * bool mb_checkClickOnce : Fruit 프리팹이 드래그중인지 아닌지를 판단하는 변수이다.
+ * SoundManager msm_soundManager : 효과음 관리하는 클래스이다.
  * 
  * - ControlFruit Member Function
  * Start() : Fruit 게임 오브젝트가 생성될 때 최초로 실행되는 함수로, VoiceManager 클래스의 인스턴스를 가지고 있게 된다.

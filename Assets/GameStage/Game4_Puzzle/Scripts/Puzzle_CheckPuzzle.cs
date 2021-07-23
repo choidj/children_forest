@@ -14,11 +14,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Puzzle_CheckPuzzle : MonoBehaviour{
+public class Puzzle_CheckPuzzle : MonoBehaviour {
     VoiceManager vm;
     bool mb_checkVoice = true;
     void Start(){
-        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
     }
     void Update(){
         if(transform.childCount <= 9){ // 퍼즐을 다 맞추면
@@ -31,8 +31,7 @@ public class Puzzle_CheckPuzzle : MonoBehaviour{
         }
     }
 
-    void v_EndStage()
-    {
+    void v_EndStage() {
         SceneManager.LoadScene("end_scene"); //end씬 불러오기
     }
 }

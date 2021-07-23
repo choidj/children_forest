@@ -83,8 +83,7 @@ public class VoiceManager : MonoBehaviour {
         mth_workThread.Start();
     }
     // 메인 스레드는 작업중인 스레드가 큐에 저장한 작업 결과물을 통해 음성을 만들게 된다.
-    void Update()
-    {
+    void Update() {
         if(mquefa_queue.Count > 0) {
             var fa_convertFloatArray = mquefa_queue.Dequeue();
             

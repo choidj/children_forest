@@ -39,8 +39,7 @@ using System.Net;
 using System;
 
 //Google TTS API에서 세팅값으로 준 보이스 설정을 쓰기 편하게 enum형식으로 정리하였다. 이렇게 정의해놓으면, 유니티 인스펙터창에서 고를수 있어 편하다.
-public enum Voice
-{
+public enum Voice {
     KR_FEMALE_A,
     KR_FEMALE_B,
     KR_MALE_A,
