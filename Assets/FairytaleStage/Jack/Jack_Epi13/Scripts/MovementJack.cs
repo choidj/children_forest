@@ -16,7 +16,28 @@ using UnityEngine;
 
 public class MovementJack : MonoBehaviour{
     public Vector3 v3_target; //원하는 위치 지정
+    public ScriptControl sc;
+    VoiceManager vm;
+    bool mb_checkPlayOnce = true;
+    bool mb_checkPlayVoice = false;
+    void Start(){
+        sc = ScriptControl.GetInstance();
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
     void Update(){
-	    transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.2f);
+        if(vm.mb_checkSceneReady) {
+            transform.position = Vector3.MoveTowards(transform.position, v3_target, 0.2f);
+            if(mb_checkPlayOnce) {
+                vm.playVoice(0);
+                mb_checkPlayOnce = false;
+            }
+            if(!vm.isPlaying() && mb_checkPlayVoice == false){
+                sc.setNextScript();
+                vm.playVoice(1);
+                mb_checkPlayVoice = true;
+            }
+
+            
+        }
     }
 }

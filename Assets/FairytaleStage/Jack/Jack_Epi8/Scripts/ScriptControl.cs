@@ -57,6 +57,11 @@ public class ScriptControl : MonoBehaviour
 
     public void setNextScript() { //다음 문장 보여줌
         mn_checkCurrentScr++;
-        mt_setText.text = ms_setScriptText[mn_checkCurrentScr];
+        //Debug.Log(mn_checkCurrentScr);
+        if(mn_checkCurrentScr <2){
+            mt_setText.text = ms_setScriptText[mn_checkCurrentScr];
+        }
+        
+        
     }
 }
