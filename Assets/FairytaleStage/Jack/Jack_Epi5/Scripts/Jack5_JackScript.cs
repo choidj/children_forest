@@ -49,7 +49,7 @@ public class Jack5_JackScript : MonoBehaviour
     GameObject mg_JackScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "진짜로 콩나무가 하늘에 닿을 만큼 자랐네!!@좋아 어디까지 닿아 있는지 한번 올라가 보자.";
+    private string ms_ScriptText = "진짜로 콩나무가 하늘에 닿을 만큼 자랐네!@좋아 어디까지 닿아 있는지 한번 올라가 보자.";
     private string[] msa_SplitText;
     private int mn_Sequence;
 

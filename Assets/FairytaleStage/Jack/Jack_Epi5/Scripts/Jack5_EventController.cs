@@ -91,6 +91,8 @@ public class Jack5_EventController : MonoBehaviour
     private bool mb_EventFlag;  //이벤트를 한번만 작동하기 위한 flag
     private int mn_EventSequence;   //이벤트 순서를 관리하는 변수
     private bool mb_DragFlag;
+    VoiceManager vm;
+    private bool mb_PlaySound;
 
     //마우스 드래그 관련 오브젝트
     GameObject mg_Jack;
@@ -106,15 +108,18 @@ public class Jack5_EventController : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         //오브젝트 연결
         this.mg_ScriptManager = GameObject.Find("GameDirector");
         this.mg_Jack = GameObject.Find("Jack");
+        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         //이벤트 flag
         StopClickFlag = false;
+        mb_PlaySound = false;
 
         //이벤트 관련
         v_ChangeFlagFalse();
@@ -133,7 +138,7 @@ public class Jack5_EventController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()))
         {
             if (StopClickFlag == false)
             {
@@ -142,17 +147,24 @@ public class Jack5_EventController : MonoBehaviour
             v_ChangeFlagTrue();
         }
 
-        if (mn_EventSequence == 1 && this.mb_EventFlag == true)
+        if(mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
+        {
+            mb_PlaySound = true;
+            vm.playVoice(mn_EventSequence);
+        }
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
             v_NextMainScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
             v_NextMainScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 3 && this.mb_EventFlag == true)
         {
@@ -162,12 +174,14 @@ public class Jack5_EventController : MonoBehaviour
 
             v_GenJackSpeechBubble();
             v_NextJackScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 4 && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
             v_NextJackScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 5 && this.mb_EventFlag == true)
         {
@@ -176,6 +190,7 @@ public class Jack5_EventController : MonoBehaviour
             v_RemoveJackSpeechBubble();
 
             v_NextMainScript();
+            vm.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 6 && this.mb_EventFlag == true)
         {
@@ -184,7 +199,7 @@ public class Jack5_EventController : MonoBehaviour
             v_TurnOnMouseDrag();
 
             v_NextEventScript();
-
+            vm.playVoice(mn_EventSequence);
         }
 
         if (mb_DragFlag == false && mn_EventSequence >= 6)

@@ -45,7 +45,7 @@ public class Jack5_MainScript : MonoBehaviour
     GameObject mg_MainScript;   //연결할 스크립트 오브젝트 선언
 
     //ms_ScriptText 에 문장을 입력해주세요.
-    private string ms_ScriptText = "다음날 아침, 잭은 마당을 보고 깜짝 놀랐어요.@마당 한 가운데에 커다란 콩나무가 떡하니 하늘에 닿을 만큼 높이 자랐어요.@어찌나 높은지 콩나무의 끝이 보이지 않았지요.@잭은  구불구불한 콩나무 줄기를 타고 위로 올라갔어요.";
+    private string ms_ScriptText = "다음날 아침, 잭은 마당을 보고 깜짝 놀랐어요.@마당 한가운데에 커다란 콩나무가 떡하니 하늘에 닿을 만큼 높이 자랐어요.@어찌나 높은지 콩나무의 끝이 보이지 않았지요.@잭은  구불구불한 콩나무 줄기를 타고 위로 올라갔어요.";
     private string[] msa_SplitText;
     private int mn_Sequence;
 
