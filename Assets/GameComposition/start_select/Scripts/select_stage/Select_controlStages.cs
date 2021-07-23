@@ -1,8 +1,25 @@
+/*
+ * - Name : Select_controlStages.cs
+ * - Writer : 최대준
+ * - Content : 스테이지 선택 화면으로, 각각 스테이지를 플레이어가 클릭하게 되면, 그에 맞는 스테이지 화면으로 넘어가게끔 만들었다.
+ *          -기록-
+ *          2021-07-09 : 코드 완성
+ *          2021-07-22 : 코드 수정 (LoadingScene 클래스를 이용하여 Loading 행위 구현)
+ *          2021-07-22 : 주석 작성
+ * - Select_controlStages Member variable
+ * null
+ * - Select_controlStages Member function
+ * Update() : 플레이어가 스테이지를 선택하는 행위를 감지하여 선택한 스테이지에 맞게 씬을 전환하게 하였다.
+ * SceneManager.LoadScene() : 다음 Scene으로 이동 하는 함수
+ * 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// 플레이어가 스테이지를 선택하는 행위를 감지하여 선택한 스테이지에 맞게 씬을 전환하게 하도록 하기 위한 클래스.
 public class Select_controlStages : MonoBehaviour
 {
     void Update()

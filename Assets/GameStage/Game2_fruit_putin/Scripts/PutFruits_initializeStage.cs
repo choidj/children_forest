@@ -36,13 +36,13 @@ public class PutFruits_initializeStage : MonoBehaviour {
     public int mn_countFruits = 10;
     public Sprite[] msa_changeSpritesImg = new Sprite[5];
     private bool mb_stopUpdating = true;
-    private Text mt_putFruitSize;
+    private TextMesh mtm_putFruitSize;
     private List<GameObject> mlg_fruitList = new List<GameObject>();
 
     // When fruitPutIn stage start, random initializing position of fruits.
     void Start() {
-        mt_putFruitSize = GameObject.Find("PutFruitSize").GetComponent<Text>();
-        mt_putFruitSize.text = mn_countFruits.ToString();
+        mtm_putFruitSize = GameObject.Find("PutFruitsSize").GetComponent<TextMesh>() as TextMesh;
+        mtm_putFruitSize.text = mn_countFruits.ToString();
 
         for (int i = 0; i < mn_countFruits; i++) {
             GameObject fruit = Instantiate(mg_instanceFruit);
@@ -66,7 +66,7 @@ public class PutFruits_initializeStage : MonoBehaviour {
             }
         }
 
-        mt_putFruitSize.text = n_countFruits.ToString();
+        mtm_putFruitSize.text = n_countFruits.ToString();
 
         if(n_countFruits == 0 && mb_stopUpdating) {
             mb_stopUpdating = false;

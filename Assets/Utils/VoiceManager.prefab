@@ -95,7 +95,7 @@ MonoBehaviour:
     sf_pitch: 0
     sf_speakingRate: 
     sac_voiceAudioClip: {fileID: 0}
-  mc_loadingScene: {fileID: 1743577170559797350, guid: 38d1874bc80f843439a1cd81bef23ac9, type: 3}
+  mc_loadingScene: {fileID: 2641264804734032775, guid: 38d1874bc80f843439a1cd81bef23ac9, type: 3}
   mb_checkSceneReady: 0
 --- !u!82 &2824697826455121867
 AudioSource:
