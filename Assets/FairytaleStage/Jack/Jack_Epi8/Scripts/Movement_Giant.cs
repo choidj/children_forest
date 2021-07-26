@@ -19,7 +19,6 @@ public class Movement_Giant : MonoBehaviour{
   public ScriptControl sc;
   VoiceManager vm;
   bool mb_checkPlayOnce = true; //한번만 실행하게 설정
-  bool mb_checkPlayVoice = false; //첫번째 스크립트와 겹치지 않게 설정
   void Start(){
     sc = ScriptControl.GetInstance();
     this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
