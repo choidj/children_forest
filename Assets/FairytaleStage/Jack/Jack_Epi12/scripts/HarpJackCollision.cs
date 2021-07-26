@@ -5,6 +5,7 @@
  *          -기록-
  *          2021-07-20 : 주석 작성.
  *          2021-07-23 : TTS 음성 출력 기능 추가.
+*           2021-07-26 : 효과음 추가 완료 (이윤교)
  * - HarpDrag Member variable 
  * GameObject mg_talk_Prefab : 말풍선 오브젝트를 저장하는 변수이다.
  * bool mb_playOnce = false : 음성이 한번만 출력하도록 체크하는 변수이다.
@@ -29,7 +30,7 @@ public class HarpJackCollision: MonoBehaviour
     public GameObject mg_talk_Prefab;
     public bool mb_playOnce = false;
     private VoiceManager mvm_playVoice;
-    private AudioSource HarpSound; //하프 소리
+    private AudioSource HarpSound;// 하프 소리
     // VoiceManager 클래스 초기화.
     void Start() {
         mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
