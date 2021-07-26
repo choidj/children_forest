@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2655168929005838733, guid: c52714dc81d634f43985b18ddbf3c955, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655168929005838733, guid: c52714dc81d634f43985b18ddbf3c955, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 2878566594994159658, guid: c52714dc81d634f43985b18ddbf3c955, type: 3}
       propertyPath: m_Camera
       value: 
