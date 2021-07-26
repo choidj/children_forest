@@ -3930,7 +3930,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_pitch
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sstr_words
+      value: "\uCC38 \uC798\uD588\uC5B4\uC694~"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
+      propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_speakingRate
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121865, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: m_RootOrder
