@@ -14,7 +14,7 @@
  * - Variable 
  * mg_ScriptManager                 오브젝트 연결을 위한 변수 -> 게임 디렉터 오브젝트에 접근하기 위한 변수
  * mg_Mother                        오브젝트 연결을 위한 변수 -> 어머니 오브젝트에 접근하기 위한 변수
- * vm                               오브젝트 연결을 위한 변수 -> VoiceManager 오브젝트에 접근하기 위한 변수
+ * mvm_playVoice                               오브젝트 연결을 위한 변수 -> VoiceManager 오브젝트에 접근하기 위한 변수
  * mg_Bean                          오브젝트 연결을 위한 변수 -> 콩 오브젝트 연결하기 위한 변수
  * mg_GenMotherSpeechBubble         말풍선 관련 변수 -> 어머니 말풍선 프리팹과 연결을 위한 변수 
  * mg_MotherSpeech                  말풍선 관련 변수 -> 어머니 말풍선 프리팹과 연결을 위한 변수
@@ -63,7 +63,7 @@ public class Jack4_EventController : MonoBehaviour
     // 오브젝트 연결을 위한 변수 선언
     GameObject mg_ScriptManager;                                                                    // 게임 디렉터 오브젝트에 접근하기 위한 변수
     GameObject mg_Mother;                                                                           // 어머니 오브젝트에 접근하기 위한 변수
-    VoiceManager vm;                                                                                // VoiceManager 오브젝트에 접근하기 위한 변수
+    VoiceManager mvm_playVoice;                                                                                // VoiceManager 오브젝트에 접근하기 위한 변수
     GameObject mg_Bean;                                                                             // 콩 오브젝트에 접근하기 위한 변수
 
     // 말풍선 관련 변수
@@ -98,7 +98,7 @@ public class Jack4_EventController : MonoBehaviour
         this.mg_ScriptManager = GameObject.Find("GameDirector");
         this.mg_Bean = GameObject.Find("Bean");
         this.mg_Mother = GameObject.Find("Mother");
-        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        this.mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         //이벤트 flag False로 초기화
         mb_DontLoopEvent1 = false;
@@ -142,7 +142,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveArrowToWindow();
         }
 
-        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()))                                           // 화면을 클릭하면 다음이벤트가 진행되도록 설정
+        if (Input.GetMouseButtonDown(0) && !(mvm_playVoice.isPlaying()) && mvm_playVoice.mb_checkSceneReady)                                           // 화면을 클릭하면 다음이벤트가 진행되도록 설정
         {
             if(mb_StopClickFlag == false)
             {
@@ -152,10 +152,10 @@ public class Jack4_EventController : MonoBehaviour
         }
 
         // 메인 이벤트 진행
-        if (mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
+        if (mn_EventSequence == 0 && mb_PlaySound == false && mvm_playVoice.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
         {
             mb_PlaySound = true;
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 1 && this.mb_EventFlag == true)                                    // 화면이 한번 클릭되면 다음 이벤트 진행
         {
@@ -164,7 +164,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveMotherSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true && mb_DontLoopEvent1 == false)      // 화면이 한번 클릭되면 다음 이벤트 진행
         {
@@ -176,10 +176,10 @@ public class Jack4_EventController : MonoBehaviour
 
             mb_DontLoopEvent1 = true;
             mb_StopClickFlag = true;
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
             v_GenArrowToBean();
         }
-        else if (mn_EventSequence == 2 && mb_BeanToMother == true && !(vm.isPlaying()) && this.mb_EventFlag == true)
+        else if (mn_EventSequence == 2 && mb_BeanToMother == true && !(mvm_playVoice.isPlaying()) && this.mb_EventFlag == true)
         {
             v_ChangeFlagFalse();
 
@@ -187,7 +187,7 @@ public class Jack4_EventController : MonoBehaviour
 
             v_GenJackSpeechBubble();
             v_NextJackScript();
-            vm.playVoice(3);
+            mvm_playVoice.playVoice(3);
             mb_StopClickFlag = false;
             v_TurnOFFMouseDrag();
 
@@ -202,7 +202,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveJackSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(4);
+            mvm_playVoice.playVoice(4);
         }
         else if (mn_EventSequence == 4 && this.mb_EventFlag == true)
         {
@@ -212,7 +212,7 @@ public class Jack4_EventController : MonoBehaviour
 
             v_GenMotherSpeechBubble();
             v_NextMotherScript();
-            vm.playVoice(5);
+            mvm_playVoice.playVoice(5);
 
             this.mg_Mother.GetComponent<Jack4_Mother>().ChangeMotherAngry();
         }
@@ -223,7 +223,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveMotherSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(6);
+            mvm_playVoice.playVoice(6);
         }
         else if (mn_EventSequence == 6 && this.mb_EventFlag == true && mb_DontLoopEvent2 == false)
         {
@@ -234,7 +234,7 @@ public class Jack4_EventController : MonoBehaviour
             v_TurnOnMouseDrag();
             mb_StopClickFlag = false;
             mb_DontLoopEvent2 = true;
-            vm.playVoice(7);
+            mvm_playVoice.playVoice(7);
 
             v_GenArrowToBean2();
         }

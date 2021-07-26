@@ -90,7 +90,7 @@ public class Jack9_EventController : MonoBehaviour
     GameObject mg_ScriptManager;
     GameObject mg_GenScript;
     GameObject mg_Sack;
-    VoiceManager vm;
+    VoiceManager mvm_playVoice;
 
     //잭 말풍선 관련 오브젝트
     GameObject mg_GenGiantSpeechBubble;
@@ -121,7 +121,7 @@ public class Jack9_EventController : MonoBehaviour
     {
         //오브젝트 연결
         this.mg_ScriptManager = GameObject.Find("GameDirector");
-        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        this.mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
         this.mg_Sack = GameObject.Find("Sack");
         //이벤트 flag
         mb_DontLoopEvent1 = false;
@@ -145,21 +145,21 @@ public class Jack9_EventController : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && mvm_playVoice.mb_checkSceneReady)
         {
-            if (StopClickFlag == false && !(vm.isPlaying()))
+            if (StopClickFlag == false && !(mvm_playVoice.isPlaying()))
             {
                 mn_EventSequence += 1;
             }
             v_ChangeFlagTrue();
         }
 
-        if (mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
+        if (mn_EventSequence == 0 && mb_PlaySound == false && mvm_playVoice.mb_checkSceneReady)                    // 처음 씬이 실행되면 기본 스크립트 실행
         {
             mb_PlaySound = true;
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
-        else if (mn_EventSequence == 1 && this.mb_EventFlag == true && !(vm.isPlaying()) && mb_PlaySound == true)
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true && !(mvm_playVoice.isPlaying()) && mb_PlaySound == true)
         {
             v_ChangeFlagFalse();
             mb_PlaySound = false;
@@ -167,7 +167,7 @@ public class Jack9_EventController : MonoBehaviour
 
             v_GenGiantSpeechBubble();
             v_NextGiantScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && this.mb_EventFlag == true && mb_PlaySound == false)
         {
@@ -176,7 +176,7 @@ public class Jack9_EventController : MonoBehaviour
             v_RemoveGiantSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
             mb_DontLoopEvent1 = true;
         }
         else if (mn_EventSequence == 3 && this.mb_EventFlag == true && mb_DontLoopEvent1 == true)
@@ -189,7 +189,7 @@ public class Jack9_EventController : MonoBehaviour
 
             mb_DontLoopEvent1 = false;
             mb_DontLoopEvent2 = true;
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
             v_GenArrowToSack1();
             v_GenArrowToSack2();
         }
@@ -202,7 +202,7 @@ public class Jack9_EventController : MonoBehaviour
             v_NextMainScript();
 
             this.mg_ScriptManager.GetComponent<Jack9_Gentreasure>().v_GenTreasure();
-            vm.playVoice(mn_EventSequence+1);
+            mvm_playVoice.playVoice(mn_EventSequence+1);
             v_RemoveArrowToSack1();
             v_RemoveArrowToSack2();
         }

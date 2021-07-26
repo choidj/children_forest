@@ -128,7 +128,8 @@ public class Jack3_EventController : MonoBehaviour
     }
 
     void Update(){
-        if (Input.GetMouseButtonDown(0) && !(mvm_playVoice.isPlaying())){                                      // 음성이 끝나고 화면을 클릭시 다음으로 넘어감
+        if (Input.GetMouseButtonDown(0) && !(mvm_playVoice.isPlaying()) && mvm_playVoice.mb_checkSceneReady)               // 음성이 끝나고 화면을 클릭시 다음으로 넘어감
+        {                         
             mn_EventSequence += 1;
             v_ChangeFlagTrue();
         }
