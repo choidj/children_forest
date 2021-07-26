@@ -44,16 +44,17 @@ public class Jack4_MouseDrag : MonoBehaviour
 {
     private bool mb_flag;
     private bool mb_BeanPositionFlag;
-
+    private SoundManager msm_soundManager;
     GameObject mg_ScriptManager;
-
+    private bool PlayOnce;
 
     // Start is called before the first frame update
     void Start()
     {
         mb_BeanPositionFlag = false;
-
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         this.mg_ScriptManager = GameObject.Find("GameDirector");
+        PlayOnce = false;
     }
 
     // Update is called once per frame
@@ -76,6 +77,11 @@ public class Jack4_MouseDrag : MonoBehaviour
             Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
+            if (PlayOnce == false)
+            {
+                msm_soundManager.playSound(0);
+                PlayOnce = true;
+            }
         }
 
         if(this.tag == "Bean")
@@ -88,7 +94,6 @@ public class Jack4_MouseDrag : MonoBehaviour
     private void OnMouseUp()
     {
         Debug.Log("오브젝트에서 손 뗌");
-
         if (this.tag == "Bean")
         {
             if(mb_BeanPositionFlag == false)
@@ -100,8 +105,12 @@ public class Jack4_MouseDrag : MonoBehaviour
                 this.transform.position = new Vector3(5.2f, -3.5f, 0);
             }
             this.mg_ScriptManager.GetComponent<Jack4_EventController>().DragFalgFalse();
+            if(mb_flag == true)
+            {
+                msm_soundManager.playSound(2);
+            }
         }
-
+        PlayOnce = false;
     }
 
     public void v_ChangeFlagTrue()

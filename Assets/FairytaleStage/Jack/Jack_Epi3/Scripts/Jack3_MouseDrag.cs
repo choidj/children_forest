@@ -31,11 +31,14 @@ public class Jack3_MouseDrag : MonoBehaviour
 {
     private bool mb_flag;
     GameObject mg_ScriptManager;
-
+    private SoundManager msm_soundManager;
+    private bool PlayOnce;
     void Start()
     {
         mb_flag = false;                                                                                        // Flag값 False로 초기화
         this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");                                          // 오브젝트 연결
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        PlayOnce = false;
     }
 
     /// <summary>
@@ -48,6 +51,11 @@ public class Jack3_MouseDrag : MonoBehaviour
             Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
+            if (PlayOnce == false)
+            {
+                msm_soundManager.playSound(0);
+                PlayOnce = true;
+            }
         }
         
         if(this.gameObject.tag == "Jack3_Cow")
@@ -64,7 +72,10 @@ public class Jack3_MouseDrag : MonoBehaviour
     /// </summary>
     private void OnMouseUp(){
         Debug.Log("오브젝트에서 손 뗌");
-
+        if(mb_flag == true)
+        {
+            msm_soundManager.playSound(1);
+        }
         if (this.tag == "Jack3_Cow"){
             this.transform.position = new Vector3(-6.7f, -3.26f, 0);
             mg_ScriptManager.GetComponent<Jack3_EventController>().v_NotDragCow();
@@ -73,6 +84,7 @@ public class Jack3_MouseDrag : MonoBehaviour
             this.transform.position = new Vector3(5f, -3.5f, 0);
             mg_ScriptManager.GetComponent<Jack3_EventController>().v_DragBeanFalgFalse();
         }
+        PlayOnce = false;
     }
     /// <summary>
     /// Flag값 변경 함수

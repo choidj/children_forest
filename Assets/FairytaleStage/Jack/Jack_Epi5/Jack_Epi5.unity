@@ -1123,6 +1123,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d96c358645073f4e966db184b4dc70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2069848951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1983530800160481097, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1170
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 836.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481102, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[0].name
+      value: MouseDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[1].name
+      value: MouseUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 78d306bd4b6554e8587e19d01f36454d, type: 3}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: d08752ae22b6243febb41e1618da8624, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
 --- !u!1 &2146301325
 GameObject:
   m_ObjectHideFlags: 0

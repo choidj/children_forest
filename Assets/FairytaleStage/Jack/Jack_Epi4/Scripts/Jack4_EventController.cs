@@ -63,8 +63,9 @@ public class Jack4_EventController : MonoBehaviour
     // 오브젝트 연결을 위한 변수 선언
     GameObject mg_ScriptManager;                                                                    // 게임 디렉터 오브젝트에 접근하기 위한 변수
     GameObject mg_Mother;                                                                           // 어머니 오브젝트에 접근하기 위한 변수
-    VoiceManager mvm_playVoice;                                                                                // VoiceManager 오브젝트에 접근하기 위한 변수
+    VoiceManager mvm_playVoice;                                                                     // VoiceManager 오브젝트에 접근하기 위한 변수
     GameObject mg_Bean;                                                                             // 콩 오브젝트에 접근하기 위한 변수
+    private SoundManager msm_soundManager;                                                          // SoundManager 오브젝트에 접근하기 위한 변수
 
     // 말풍선 관련 변수
     GameObject mg_GenMotherSpeechBubble;                                                            // 어머니 말풍선 오브젝트 조작을 위한 변수
@@ -82,7 +83,7 @@ public class Jack4_EventController : MonoBehaviour
     private bool mb_BeanToMother;                                                                   // 콩이 어머니에게 전달되었는지 확인하기위한 Flag
     private bool mb_BeanToWindow;                                                                   // 콩이 창문에게 전달되었는지 확인하기위한 Flag
     private bool mb_PlaySound;                                                                      // 처음 씬이 실행될때 음성이 한번만 나오기 위한 Flag
-
+    
     // 화살표 관련 변수
     GameObject mg_ArrowToBean;                                                                      // Jack의 콩을 가르키는 화살표 변수
     GameObject mg_ArrowToMother;                                                                    // 어머니를 가르키는 화살표 변수
@@ -99,6 +100,7 @@ public class Jack4_EventController : MonoBehaviour
         this.mg_Bean = GameObject.Find("Bean");
         this.mg_Mother = GameObject.Find("Mother");
         this.mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 
         //이벤트 flag False로 초기화
         mb_DontLoopEvent1 = false;
@@ -241,7 +243,13 @@ public class Jack4_EventController : MonoBehaviour
 
         if(mb_BeanToWindow == true)                                                                     // 콩이 창문에게 전달되면 다음 씬으로 이동
         {
-            SceneManager.LoadScene("Jack_Epi5");
+            if(mb_PlaySound == true)
+            {
+                mb_PlaySound = false;
+                msm_soundManager.playSound(1);
+            }
+            Invoke("NextScene", 1f);
+            //SceneManager.LoadScene("Jack_Epi5");
         }
     }
 
@@ -424,5 +432,9 @@ public class Jack4_EventController : MonoBehaviour
         mb_IsDragBean = false;
     }
 
+    public void NextScene()
+    {
+        SceneManager.LoadScene("Jack_Epi5");
+    }
     #endregion
 }
