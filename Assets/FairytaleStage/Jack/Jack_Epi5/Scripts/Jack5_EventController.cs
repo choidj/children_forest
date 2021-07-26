@@ -138,7 +138,7 @@ public class Jack5_EventController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()))
+        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()) && vm.mb_checkSceneReady)
         {
             if (StopClickFlag == false)
             {

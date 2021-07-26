@@ -142,7 +142,7 @@ public class Jack4_EventController : MonoBehaviour
             v_RemoveArrowToWindow();
         }
 
-        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()))                                           // 화면을 클릭하면 다음이벤트가 진행되도록 설정
+        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying()) && vm.mb_checkSceneReady)                                           // 화면을 클릭하면 다음이벤트가 진행되도록 설정
         {
             if(mb_StopClickFlag == false)
             {

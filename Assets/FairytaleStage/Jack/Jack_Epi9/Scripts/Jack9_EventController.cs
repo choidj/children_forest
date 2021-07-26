@@ -145,7 +145,7 @@ public class Jack9_EventController : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && vm.mb_checkSceneReady)
         {
             if (StopClickFlag == false && !(vm.isPlaying()))
             {
