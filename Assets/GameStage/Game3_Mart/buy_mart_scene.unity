@@ -1833,5 +1833,13 @@ PrefabInstance:
       propertyPath: mssl_saveSounds.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[0].name
+      value: MouseDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983530800160481103, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
+      propertyPath: mssl_saveSounds.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 78d306bd4b6554e8587e19d01f36454d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56623e6ba012449d9e09e4fe31f9598, type: 3}
