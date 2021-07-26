@@ -31,13 +31,14 @@ public class Jack9_Sack : MonoBehaviour
 {
     int mn_SackTouchCount;
     GameObject EventController;
+    private bool TouchSackFlag;
 
 
     // Start is called before the first frame update
     void Start()
     {
         this.EventController = GameObject.Find("GameDirector");
-
+        TouchSackFlag = false;
         mn_SackTouchCount = 5;
     }
 
@@ -53,8 +54,14 @@ public class Jack9_Sack : MonoBehaviour
 
     private void OnMouseDown()
     {
-        mn_SackTouchCount -= 1;
+        if (TouchSackFlag == true)
+        {
+            mn_SackTouchCount -= 1;
+        }
     }
 
-
+    public void ChangSackFlagTrue()
+    {
+        TouchSackFlag = true;
+    }
 }
