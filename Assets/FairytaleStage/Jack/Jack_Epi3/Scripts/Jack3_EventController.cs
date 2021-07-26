@@ -166,11 +166,11 @@ public class Jack3_EventController : MonoBehaviour
         {
             v_RemoveArrowToGF();
 
-            if(this.mg_ArrowToCow == null && mn_EventSequence >= 9 && mb_CowToGF == false )
+            if(this.mg_ArrowToCow == null && mn_EventSequence >= 8 && mb_CowToGF == false )
             {
                 v_GenArrowToCow();
             }
-            if (this.mg_ArrowToBean == null && mn_EventSequence >= 9 && mb_BeanToJack == false)
+            if (this.mg_ArrowToBean == null && mn_EventSequence >= 8 && mb_BeanToJack == false)
             {
                 v_GenArrowToBean();
             }
@@ -191,11 +191,11 @@ public class Jack3_EventController : MonoBehaviour
         {
             v_RemoveArrowToJack();
 
-            if (this.mg_ArrowToCow == null && mn_EventSequence >= 9 && mb_CowToGF == false)
+            if (this.mg_ArrowToCow == null && mn_EventSequence >= 8 && mb_CowToGF == false)
             {
                 v_GenArrowToCow();
             }
-            if (this.mg_ArrowToBean == null && mn_EventSequence >= 9 && mb_BeanToJack == false)
+            if (this.mg_ArrowToBean == null && mn_EventSequence >= 8 && mb_BeanToJack == false)
             {
                 v_GenArrowToBean();
             }
@@ -375,26 +375,37 @@ public class Jack3_EventController : MonoBehaviour
     /// </summary>
     public void v_GenArrowToBean()                                                                          // 콩을 가르키는 화살표 생성
     {
-        mg_ArrowToBean = Instantiate(mg_ArrowPrefab) as GameObject;
-        mg_ArrowToBean.transform.position = new Vector3(3.5f, -2.5f, 0);
-        //mg_ArrowToBean.transform.position = new Vector3(6.1f, -3, 0);
+        if (mg_ArrowToBean == null)
+        {
+            mg_ArrowToBean = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_ArrowToBean.transform.position = new Vector3(3.5f, -2.5f, 0);
+        }
     }
     public void v_GenArrowToCow()                                                                           // 소를 가르키는 화살표 생성
     {
-        mg_ArrowToCow = Instantiate(mg_ArrowPrefab) as GameObject;
-        mg_ArrowToCow.transform.position = new Vector3(-3.5f, -1, 0);
-        mg_ArrowToCow.GetComponent<SpriteRenderer>().flipX = true;   
+        if (mg_ArrowToCow == null)
+        {
+            mg_ArrowToCow = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_ArrowToCow.transform.position = new Vector3(-3.5f, -1, 0);
+            mg_ArrowToCow.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
     public void v_GenArrowToGF()                                                                            // 할아버지를 가르키는 화살표 생성
     {
-        mg_ArrowToGF = Instantiate(mg_ArrowPrefab) as GameObject;
-        mg_ArrowToGF.transform.position = new Vector3(5.5f, 0, 0);
+        if (mg_ArrowToGF == null)
+        {
+            mg_ArrowToGF = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_ArrowToGF.transform.position = new Vector3(5.5f, 0, 0);
+        }
     }
     public void v_GenArrowToJack()                                                                          // Jack을 가르키는 화살표 생성
     {
-        mg_ArrowToJack = Instantiate(mg_ArrowPrefab) as GameObject;
-        mg_ArrowToJack.transform.position = new Vector3(-1.5f, -2, 0);
-        mg_ArrowToJack.GetComponent<SpriteRenderer>().flipX = true;
+        if (mg_ArrowToJack == null)
+        {
+            mg_ArrowToJack = Instantiate(mg_ArrowPrefab) as GameObject;
+            mg_ArrowToJack.transform.position = new Vector3(-1.5f, -2, 0);
+            mg_ArrowToJack.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
     public void v_RemoveArrowToGF()                                                                         // 할아버지를 가르키는 화살표 삭제
     {
