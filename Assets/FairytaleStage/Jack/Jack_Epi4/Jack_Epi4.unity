@@ -546,17 +546,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[2].sstr_words
-      value: "\uCF69\uC744 \uB4DC\uB798\uADF8\uD558\uC5EC \uC5C4\uB9C8\uD55C\uD14C
-        \uC8FC\uC138\uC694."
+      value: "\uCF69\uC744 \uB4DC\uB798\uADF8\uD558\uC5EC \uC5B4\uBA38\uB2C8\uD55C\uD14C
+        \uB4DC\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[3].sstr_words
-      value: "\uC5C4\uB9C8, \uC816\uC18C\uB97C \uB9C8\uC220 \uCF69\uC774\uB791 \uBC14\uAFE8\uC5B4\uC694.
-        \uB77C\uACE0 \uC7AD\uC774 \uB9D0\uD588\uC5B4\uC694."
+      value: "\uC5B4\uBA38\uB2C8, \uC816\uC18C\uB97C \uB9C8\uC220 \uCF69\uC774\uB791
+        \uBC14\uAFE8\uC5B4\uC694. \uB77C\uACE0 \uC7AD\uC774 \uB9D0\uD588\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[4].sstr_words
-      value: "\uC5C4\uB9C8\uB294 \uAE5C\uC791 \uB180\uB77C \uC678\uCCE4\uC5B4\uC694."
+      value: "\uC5B4\uBA38\uB2C8\uB294 \uAE5C\uC791 \uB180\uB77C \uC678\uCCE4\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[5].sstr_words
@@ -565,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[6].sstr_words
-      value: "\uD654\uAC00 \uB09C \uC5C4\uB9C8\uB294 \uCF69\uC744 \uB9C8\uB2F9\uC5D0
+      value: "\uD654\uAC00 \uB09C \uC5B4\uBA38\uB2C8\uB294 \uCF69\uC744 \uB9C8\uB2F9\uC5D0
         \uD68D \uC9D1\uC5B4\uB358\uC84C\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}

@@ -158,7 +158,7 @@ public class Jack9_EventController : MonoBehaviour
             mb_PlaySound = true;
             vm.playVoice(mn_EventSequence);
         }
-        else if (mn_EventSequence == 1 && this.mb_EventFlag == true)
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true && !(vm.isPlaying()))
         {
             v_ChangeFlagFalse();
 
