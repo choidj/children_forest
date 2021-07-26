@@ -32,13 +32,16 @@ public class Jack9_Sack : MonoBehaviour
     int mn_SackTouchCount;
     GameObject EventController;
     private bool TouchSackFlag;
-
+    private SoundManager msm_soundManager;
+    private bool mb_PlayOnce;
 
     // Start is called before the first frame update
     void Start()
     {
         this.EventController = GameObject.Find("GameDirector");
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         TouchSackFlag = false;
+        mb_PlayOnce = false;
         mn_SackTouchCount = 5;
     }
 
@@ -47,6 +50,11 @@ public class Jack9_Sack : MonoBehaviour
     {
         if(mn_SackTouchCount <= 0)
         {
+            if(mb_PlayOnce == false)
+            {
+                msm_soundManager.playSound(1);
+                mb_PlayOnce = true;
+            }
             Destroy(gameObject);
             this.EventController.GetComponent<Jack9_EventController>().v_IsSackDestroy();
         }
@@ -57,6 +65,7 @@ public class Jack9_Sack : MonoBehaviour
         if (TouchSackFlag == true)
         {
             mn_SackTouchCount -= 1;
+            msm_soundManager.playSound(0);
         }
     }
 
