@@ -29,9 +29,11 @@ public class HarpJackCollision: MonoBehaviour
     public GameObject mg_talk_Prefab;
     public bool mb_playOnce = false;
     private VoiceManager mvm_playVoice;
+    private AudioSource HarpSound;
     // VoiceManager 클래스 초기화.
     void Start() {
         mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        HarpSound = GameObject.Find("HarpSound").GetComponent<AudioSource>();
     }
     // VoiceManager를 통해 음성이 준비가 되었다면, 음성을 한번만 출력.
     void Update() {
@@ -41,13 +43,15 @@ public class HarpJackCollision: MonoBehaviour
         }
     }
     // 하프와 잭이 충돌했을 시에, 말풍선 오브젝트를 생성하고, 3초뒤에 다음씬으로 이동하도록 하였다.
-    void OnTriggerEnter2D(Collider2D cCollideObject)
-    {
+    void OnTriggerEnter2D(Collider2D cCollideObject){
         GameObject g_talk = Instantiate(mg_talk_Prefab) as GameObject;
-        
-        Invoke("changeNextScene", 3f);
+        PlayHarp();
+        Invoke("changeNextScene", 4f);
     }
     void changeNextScene() {
         SceneManager.LoadScene("Jack_Epi13");
+    }
+    void PlayHarp(){
+        HarpSound.Play();
     }
 }
