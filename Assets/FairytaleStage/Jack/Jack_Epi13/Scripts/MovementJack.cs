@@ -18,11 +18,14 @@ public class MovementJack : MonoBehaviour{
     public Vector3 v3_target; //원하는 위치 지정
     public ScriptControl sc;
     VoiceManager vm;
+    private AudioSource ScreamSound;// 잭 비명소리
     bool mb_checkPlayOnce = true; //한번만 실행하게 설정
     bool mb_checkPlayVoice = false; //첫번째 스크립트와 겹치지 않게 설정
     void Start(){
         sc = ScriptControl.GetInstance();
         this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        ScreamSound = GameObject.Find("ScreamSound").GetComponent<AudioSource>();
+        Invoke("PlayScream",1f);
     }
     void Update(){
         if(vm.mb_checkSceneReady) {
@@ -39,5 +42,9 @@ public class MovementJack : MonoBehaviour{
 
             
         }
+    }
+
+    void PlayScream(){
+        ScreamSound.Play();
     }
 }
