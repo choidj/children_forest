@@ -80,7 +80,7 @@ public class Jack3_EventController : MonoBehaviour
     GameObject mg_ScriptManager;                                                                    // 게임 디렉터 오브젝트에 접근하기 위한 변수
     GameObject mg_Cow;                                                                              // 소 오브젝트 연결을 위한 변수
     GameObject mg_Bean;                                                                             // 콩 오브젝트 연결을 위한 변수  
-    VoiceManager vm;                                                                                // 씬이 시작되었을때 음성이 한번만 나오게 하기위한 Flag
+    VoiceManager mvm_playVoice;                                                                                // 씬이 시작되었을때 음성이 한번만 나오게 하기위한 Flag
 
     // 화살표 관련 변수
     GameObject mg_ArrowToBean;                                                                      // 콩을 가르키는 화살표
@@ -111,7 +111,7 @@ public class Jack3_EventController : MonoBehaviour
         this.mg_ScriptManager = GameObject.Find("Jack3_GameDirector");
         this.mg_Cow = GameObject.Find("Jack3_Cow");
         this.mg_Bean = GameObject.Find("Jack3_Bean");
-        this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        this.mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
 
         // Flag값 False로 초기화
         mb_BeanToJack = false;
@@ -128,7 +128,7 @@ public class Jack3_EventController : MonoBehaviour
     }
 
     void Update(){
-        if (Input.GetMouseButtonDown(0) && !(vm.isPlaying())){                                      // 음성이 끝나고 화면을 클릭시 다음으로 넘어감
+        if (Input.GetMouseButtonDown(0) && !(mvm_playVoice.isPlaying())){                                      // 음성이 끝나고 화면을 클릭시 다음으로 넘어감
             mn_EventSequence += 1;
             v_ChangeFlagTrue();
         }
@@ -201,10 +201,10 @@ public class Jack3_EventController : MonoBehaviour
         }
 
         //전체적인 이벤트
-        if (mn_EventSequence == 0 && mb_PlaySound == false && vm.mb_checkSceneReady)                // 처음 씬이 실행되면 기본 스크립트 실행
+        if (mn_EventSequence == 0 && mb_PlaySound == false && mvm_playVoice.mb_checkSceneReady)                // 처음 씬이 실행되면 기본 스크립트 실행
         {
             mb_PlaySound = true;
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         if (mn_EventSequence == 1 && this.mb_EventFlag == true){                                    // 화면을 1번 터치하면 진행
             v_ChangeFlagFalse();                                                                    // 이벤트를 한번만 실행하기위한 flag
@@ -213,7 +213,7 @@ public class Jack3_EventController : MonoBehaviour
 
             v_GenGFSpeechBubble();                                                                  // 스크립트, 말풍선 등 출력
             v_NextGFScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 2 && mb_EventFlag == true){                                    // 화면을 2번 터치하면 진행
             v_ChangeFlagFalse();
@@ -222,7 +222,7 @@ public class Jack3_EventController : MonoBehaviour
 
             v_NextJackScript();
             v_GenJackSpeechBubble();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 3 && mb_EventFlag == true){                                    // 화면을 3번 터치하여 진행
             v_ChangeFlagFalse();
@@ -231,13 +231,13 @@ public class Jack3_EventController : MonoBehaviour
 
             v_GenGFSpeechBubble();
             v_NextGFScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 4 && mb_EventFlag == true){
             v_ChangeFlagFalse();
 
             v_NextGFScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 5 && mb_EventFlag == true){
             v_ChangeFlagFalse();
@@ -245,7 +245,7 @@ public class Jack3_EventController : MonoBehaviour
             v_RemoveGFSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 6 && mb_EventFlag == true){
             v_ChangeFlagFalse();
@@ -254,7 +254,7 @@ public class Jack3_EventController : MonoBehaviour
 
             v_NextJackScript();
             v_GenJackSpeechBubble();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 7 && mb_EventFlag == true){
             v_ChangeFlagFalse();
@@ -262,7 +262,7 @@ public class Jack3_EventController : MonoBehaviour
             v_RemoveJackSpeechBubble();
 
             v_NextMainScript();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
         else if (mn_EventSequence == 8 && mb_EventFlag == true)
         {
@@ -275,7 +275,7 @@ public class Jack3_EventController : MonoBehaviour
 
             v_GenArrowToBean();
             v_GenArrowToCow();
-            vm.playVoice(mn_EventSequence);
+            mvm_playVoice.playVoice(mn_EventSequence);
         }
     }
 
