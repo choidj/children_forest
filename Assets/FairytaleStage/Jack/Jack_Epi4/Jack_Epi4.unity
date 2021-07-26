@@ -536,18 +536,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[0].sstr_words
-      value: "\uC7AD, \uBC8C\uC368 \uB2E4\uB140\uC654\uB2C8? \uB77C\uACE0 \uC5C4\uB9C8\uAC00
+      value: "\uC7AD, \uBC8C\uC368 \uB2E4\uB140\uC654\uB2C8? \uB77C\uACE0 \uC5B4\uBA38\uB2C8\uAC00
         \uB9D0\uD588\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[1].sstr_words
-      value: "\uC9D1\uC73C\uB85C \uB3CC\uC544\uAC04 \uC7AD\uC740 \uC5C4\uB9C8\uD55C\uD14C
-        \uCF69\uC744 \uC92C\uC5B4\uC694."
+      value: "\uC9D1\uC73C\uB85C \uB3CC\uC544\uAC04 \uC7AD\uC740 \uC5B4\uBA38\uB2C8\uD55C\uD14C
+        \uCF69\uC744 \uB4DC\uB838\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[2].sstr_words
       value: "\uCF69\uC744 \uB4DC\uB798\uADF8\uD558\uC5EC \uC5B4\uBA38\uB2C8\uD55C\uD14C
-        \uB4DC\uC138\uC694."
+        \uB4DC\uB9AC\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[3].sstr_words
