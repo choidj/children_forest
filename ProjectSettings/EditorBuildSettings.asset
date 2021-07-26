@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/main_scene.unity
-    guid: 22a5e869bdab1497e8c59ad0467e8dd7
-  - enabled: 1
     path: Assets/GameComposition/Select/Scene/select_stage_scene.unity
     guid: f248880c943314f358e31fd9611d338d
   - enabled: 1
@@ -38,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FairytaleStage/Jack/Jack_Epi2/Jack_Epi2.unity
     guid: 05f19a0547b716645ae2af22d63531ca
+  - enabled: 1
+    path: Assets/main_scene.unity
+    guid: 22a5e869bdab1497e8c59ad0467e8dd7
   - enabled: 1
     path: Assets/FairytaleStage/Jack/Jack_Epi3/Jack_Epi3.unity
     guid: c2d99abb4d674c14387d1478c7a474ec
