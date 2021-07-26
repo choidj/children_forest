@@ -699,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[3].sstr_words
-      value: "\uC790\uB8E8\uB97C \uB2E4\uC12F\uBC88 \uCC98\uD53C\uD558\uC5EC \uD130\uB728\uB824\uC8FC\uC138\uC694."
+      value: "\uC790\uB8E8\uB97C \uB2E4\uC12F\uBC88 \uD130\uCE58\uD558\uC5EC \uD130\uB728\uB824\uC8FC\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[4].sstr_words

@@ -35,14 +35,16 @@ public struct Sound {
     public string name;
     public AudioClip sound;
 }   
+// 본 클래스는 효과음을 담당하는 클래스이다.
 public class SoundManager : MonoBehaviour
 {
-
     public Sound[] mssl_saveSounds;
     private AudioSource mas_outputSounds;
+    // AudioSource 컴포넌트를 가져온다.
     void Start() {
         mas_outputSounds = this.GetComponent<AudioSource>();
     }
+    // 인스펙터 창에서 저장한 clip 중 id or name이 같은 
     public void playSound(int id) {
         mas_outputSounds.PlayOneShot(mssl_saveSounds[id].sound);
     }

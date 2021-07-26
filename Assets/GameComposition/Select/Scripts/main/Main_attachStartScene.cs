@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Main_attachStartScene : MonoBehaviour
 {
-    private void Awake()
-    {
+    private void Awake() {
         SceneManager.LoadScene("start_stage_scene");
     }
 }
