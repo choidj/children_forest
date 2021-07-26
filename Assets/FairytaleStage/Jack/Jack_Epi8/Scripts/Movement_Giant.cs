@@ -16,7 +16,23 @@ using UnityEngine;
 
 public class Movement_Giant : MonoBehaviour{
   public GameObject mg_targetPosition; // walkPos 오브젝트로 지정해줘서 그 위치로 거인 이동시킴
+  public ScriptControl sc;
+  VoiceManager vm;
+  bool mb_checkPlayOnce = true; //한번만 실행하게 설정
+  bool mb_checkPlayVoice = false; //첫번째 스크립트와 겹치지 않게 설정
+  void Start(){
+    sc = ScriptControl.GetInstance();
+    this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+    }
+  
   void Update(){
-    transform.position = Vector3.MoveTowards(gameObject.transform.position, mg_targetPosition.transform.position, 0.1f); //거인 이동 
+    if(vm.mb_checkSceneReady) {
+      transform.position = Vector3.MoveTowards(gameObject.transform.position, mg_targetPosition.transform.position, 0.1f); //거인 이동 
+      if(mb_checkPlayOnce) {
+      vm.playVoice(0);
+      mb_checkPlayOnce = false;
+      } 
+    }
+    
   }
 }

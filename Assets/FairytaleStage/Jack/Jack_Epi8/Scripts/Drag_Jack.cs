@@ -27,7 +27,9 @@ public class Drag_Jack : MonoBehaviour{
         if(cCollideObject.tag == "Closet"){ //충돌 오브젝트의 태그가 옷장이면 -> Jack이 옷장 뒤에 숨으면
             sc.setNextScript();
             vm.playVoice(1);
-            Invoke("gotoEpi9Scene", 10f); //5초 후 endScene 함수 수행
+        }
+        if(!vm.isPlaying()) {
+            Invoke("gotoEpi9Scene", 5f); //5초 후 endScene 함수 수행
         }
     }
     void OnMouseDrag(){
