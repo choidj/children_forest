@@ -29,7 +29,12 @@ using UnityEngine.EventSystems;
 
 public class Mart_MouseDrag : MonoBehaviour
 {
+    private SoundManager msm_soundManager;
+    private bool PlayOnce;
+
     void Start(){
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        PlayOnce = false;
 
     }
 
@@ -52,6 +57,11 @@ public class Mart_MouseDrag : MonoBehaviour
         Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
         this.transform.position = mv2_worldObjectPosition;
         Debug.Log("오브젝트 드래그");
+        if(PlayOnce == false)
+        {
+            msm_soundManager.playSound(0);
+            PlayOnce = true;
+        }
     }
 
     /// <summary>
@@ -77,5 +87,6 @@ public class Mart_MouseDrag : MonoBehaviour
         if (this.tag == "Mart_Item6"){
             this.transform.position = new Vector3(9.5f, -3f, 0);
         }
+        PlayOnce = false;
     }
 }
