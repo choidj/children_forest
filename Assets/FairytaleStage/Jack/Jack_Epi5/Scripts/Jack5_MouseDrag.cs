@@ -41,24 +41,16 @@ using UnityEngine.EventSystems;
 public class Jack5_MouseDrag : MonoBehaviour
 {
     private bool mb_flag;
-
+    private SoundManager msm_soundManager;
+    private bool PlayOnce;
     GameObject mg_ScriptManager;
 
     // Start is called before the first frame update
     void Start()
     {
         this.mg_ScriptManager = GameObject.Find("GameDirector");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnMouseDown()
-    {
-
+        msm_soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        PlayOnce = false;
     }
 
     //드래그할 경우 마우스위치따라 오브젝트 이동
@@ -71,6 +63,11 @@ public class Jack5_MouseDrag : MonoBehaviour
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
             this.mg_ScriptManager.GetComponent<Jack5_EventController>().v_DragFalgTrue();
+            if (PlayOnce == false)
+            {
+                msm_soundManager.playSound(0);
+                PlayOnce = true;
+            }
         }
             
     }
@@ -85,7 +82,11 @@ public class Jack5_MouseDrag : MonoBehaviour
             this.transform.position = new Vector3(-6.22f, -3.69f, 0);
         }
         this.mg_ScriptManager.GetComponent<Jack5_EventController>().v_DragFalgFalse();
-
+        PlayOnce = false;
+        if (mb_flag == true)
+        {
+            msm_soundManager.playSound(1);
+        }
     }
     
     public void v_ChangeFlagTrue()
