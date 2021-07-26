@@ -29,7 +29,7 @@ public class HarpJackCollision: MonoBehaviour
     public GameObject mg_talk_Prefab;
     public bool mb_playOnce = false;
     private VoiceManager mvm_playVoice;
-    private AudioSource HarpSound;
+    private AudioSource HarpSound; //하프 소리
     // VoiceManager 클래스 초기화.
     void Start() {
         mvm_playVoice = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
