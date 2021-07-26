@@ -10,5 +10,9 @@ public class ChangeScene : MonoBehaviour
 
     public void Select(){
         SceneManager.LoadScene("select_stage_scene");
+        var obj = GameObject.Find("BGMmanager");
+        if(obj != null) {
+            Destroy(obj);
+        }
     }
 }

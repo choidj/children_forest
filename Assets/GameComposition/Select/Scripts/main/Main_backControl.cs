@@ -18,6 +18,10 @@ public class Main_backControl : MonoBehaviour {
             else if (h_hitDistanceCast2D.collider != null && h_hitDistanceCast2D.collider.name == "homeController")
             {
                 SceneManager.LoadScene("select_stage_scene");
+                var obj = GameObject.Find("BGMmanager");
+                if(obj != null) {
+                    Destroy(obj);
+                }
             }
         }
     }
