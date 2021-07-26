@@ -554,15 +554,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 45
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uADF8 \uB4A4 \uC7AD\uC740 \uB2E4\uC2DC \uCF69\uB098\uBB34\uB97C \uD0C0\uACE0
-    \uC62C\uB77C\uAC00 \uD558\uD504\uB97C \uAC00\uC838\uAC00\uAE30 \uC704\uD574 \uBAB0\uB798
-    \uC131\uC5D0 \uB4E4\uC5B4\uC654\uC5B4\uC694. \n\uADF8\uB54C \uD558\uD504\uC5D0\uC11C
+    \uC62C\uB77C\uAC00 \n\uD558\uD504\uB97C \uAC00\uC838\uAC00\uAE30 \uC704\uD574
+    \uBAB0\uB798 \uC131\uC5D0 \uB4E4\uC5B4\uC654\uC5B4\uC694. \n\uADF8\uB54C \uD558\uD504\uC5D0\uC11C
     \uC544\uB984\uB2E4\uC6B4 \uC74C\uC545\uC774 \uC220\uC220 \uB098\uC624\uB294 \uBC14\uB78C\uC5D0
     \uAC70\uC778\uC774 \uC7A0\uC5D0\uC11C  \uAE7C\uC5B4\uC694."
 --- !u!222 &1383189944

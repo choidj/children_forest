@@ -606,14 +606,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 45
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uADF8\uB9AC\uACE0 \uB610\uB2E4\uC2DC \uC7AD\uC740 \uB2E4\uC2DC \uCF69\uB098\uBB34\uB97C
-    \uC62C\uB77C\uD0C0\uACE0 \uAE08\uACFC \uC740\uC774 \uB4E0 \uC790\uB8E8\uB97C
+    \uC62C\uB77C\uD0C0\uACE0 \n\uAE08\uACFC \uC740\uC774 \uB4E0 \uC790\uB8E8\uB97C
     \uB4E4\uACE0 \uC9D1\uC73C\uB85C \uB3CC\uC544\uC654\uC5B4\uC694."
 --- !u!222 &609726496
 CanvasRenderer:
