@@ -24,27 +24,20 @@ public class CollideBeanStalk : MonoBehaviour
     private int mn_checkAxing = 0; //도끼질 한 후 콩나무 잘린 모습 순서
     private bool mb_checkEnd = false; //Epi14 내용 끝났는지 확인
     private AudioSource GiantSound; // 거인 떨어지면서 나는 소리 
+    private AudioSource AxSound; //도끼질 하는 소리
     
     private ScriptControl sc;
     VoiceManager vm;
 
-    void OnTriggerExit2D(Collider2D cCheckCollidedObject) {
-        if(mn_checkAxing < 8) {
-            GameObject g_axedBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_axedBean오브젝트에 저장
-            g_axedBean.SetActive(false); //g_axedBean 오브젝트 비활성화
-            mn_checkAxing++;
-            GameObject g_initBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_initBean오브젝트에 저장
-            g_initBean.SetActive(true);//g_initBean 오브젝트 활성화
-        }
-
-    }
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         mg_Click = GameObject.Find("Click (1)"); //Click (1) 게임 오브젝트를 찾아서 mg_Click 변수에 저장
         GameObject g_initBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_initBean오브젝트에 저장
         g_initBean.SetActive(true); //g_initBean 오브젝트 활성화
+
         GiantSound = GameObject.Find("GiantSound").GetComponent<AudioSource>();
+        AxSound = GameObject.Find("AxSound").GetComponent<AudioSource>();
+
         sc = ScriptControl.GetInstance(); // Instance 리턴 받아 사용
         this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
     }
@@ -75,6 +68,17 @@ public class CollideBeanStalk : MonoBehaviour
             sc.setNextScript(); //다음 스크립트 불러오기
             vm.playVoice(2);
             mn_checkAxing++;
+        }
+
+    }
+    void OnTriggerExit2D(Collider2D cCheckCollidedObject) {
+        if(mn_checkAxing < 8) {
+            GameObject g_axedBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_axedBean오브젝트에 저장
+            g_axedBean.SetActive(false); //g_axedBean 오브젝트 비활성화
+            mn_checkAxing++;
+            AxSound.Play();
+            GameObject g_initBean = transform.GetChild(mn_checkAxing).gameObject; // 부모 오브젝트의 스크립트에서 자식 오브젝트를 가져와서 g_initBean오브젝트에 저장
+            g_initBean.SetActive(true);//g_initBean 오브젝트 활성화
         }
 
     }
