@@ -89,6 +89,7 @@ public class Jack9_EventController : MonoBehaviour
     //게임 디렉터 오브젝트에 접근하기 위한 오브젝트
     GameObject mg_ScriptManager;
     GameObject mg_GenScript;
+    GameObject mg_Sack;
     VoiceManager vm;
 
     //잭 말풍선 관련 오브젝트
@@ -121,7 +122,7 @@ public class Jack9_EventController : MonoBehaviour
         //오브젝트 연결
         this.mg_ScriptManager = GameObject.Find("GameDirector");
         this.vm = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
-
+        this.mg_Sack = GameObject.Find("Sack");
         //이벤트 flag
         mb_DontLoopEvent1 = false;
         mb_DontLoopEvent2 = false;
@@ -158,20 +159,20 @@ public class Jack9_EventController : MonoBehaviour
             mb_PlaySound = true;
             vm.playVoice(mn_EventSequence);
         }
-        else if (mn_EventSequence == 1 && this.mb_EventFlag == true && !(vm.isPlaying()))
+        else if (mn_EventSequence == 1 && this.mb_EventFlag == true && !(vm.isPlaying()) && mb_PlaySound == true)
         {
             v_ChangeFlagFalse();
-
+            mb_PlaySound = false;
             v_NoneMainScript();
 
             v_GenGiantSpeechBubble();
             v_NextGiantScript();
             vm.playVoice(mn_EventSequence);
         }
-        else if (mn_EventSequence == 2 && this.mb_EventFlag == true)
+        else if (mn_EventSequence == 2 && this.mb_EventFlag == true && mb_PlaySound == false)
         {
             v_ChangeFlagFalse();
-
+            mb_PlaySound = true;
             v_RemoveGiantSpeechBubble();
 
             v_NextMainScript();
@@ -183,7 +184,7 @@ public class Jack9_EventController : MonoBehaviour
             v_ChangeFlagFalse();
 
             v_NextEventScript();
-
+            mg_Sack.GetComponent<Jack9_Sack>().ChangSackFlagTrue();
             StopClickFlag = true;
 
             mb_DontLoopEvent1 = false;
@@ -269,7 +270,7 @@ public class Jack9_EventController : MonoBehaviour
         this.mg_ScriptManager.GetComponent<Jack9_GiantScript>().v_NoneScript();
         Destroy(this.mg_GenGiantSpeechBubble);
     }
-
+    
     public void v_IsSackDestroy()
     {
         IsSackDestroy = true;
