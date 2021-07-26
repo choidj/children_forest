@@ -19,12 +19,11 @@ using UnityEngine.UI;
 // 본 스크립트는 모든 스테이지에서 기기의 스크린에 맞게 배경사진을 맞춰주는 역할을 한다.
 public class ImgSizeResize : MonoBehaviour
 {
-    public Sprite sprImg;
+    public Sprite sprImg = null;
     // 인스펙터 창에서 받은 스프라이트(배경사진)와 캔버스를 기기의 스크린 사이즈에 맞게 조정하도록 초기화 시킨다.
-    void Start()
-    {
+    void Start() {
         GameObject tempImg = transform.GetChild(0).gameObject;
-        if(sprImg is null) {
+        if(sprImg == null) {
             RectTransform rt_saveTransform = (RectTransform)this.transform;
             rt_saveTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
             return;
