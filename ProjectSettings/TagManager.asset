@@ -14,6 +14,7 @@ TagManager:
   - Mom
   - Button
   - backController
+  - homeController
   layers:
   - Default
   - TransparentFX
