@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4853250250030158280}
   m_Layer: 0
   m_Name: backController
-  m_TagString: Untagged
+  m_TagString: homeController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b33793a9f1d4dae9d52da70ec021a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ms_backScene: select_stage_scene
