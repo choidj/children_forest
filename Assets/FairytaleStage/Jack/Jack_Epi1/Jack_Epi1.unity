@@ -245,8 +245,8 @@ PrefabInstance:
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[0].sstr_words
       value: "\uC61B\uB0A0 \uC61B\uC801 \uC5B4\uB290 \uD55C \uC2DC\uACE8 \uB9C8\uC744\uC5D0
-        \uC5B4\uBA38\uB2C8\uC640 \uAC00\uB09C\uD55C \uC18C\uB144 \uC7AD\uC774 \uC5B4\uBA38\uB2C8\uC640
-        \uB2E8 \uB458\uC774 \uC0B4\uACE0 \uC788\uC5C8\uC5B4\uC694."
+        \uC5B4\uBA38\uB2C8\uC640 \uAC00\uB09C\uD55C \uC18C\uB144 \uC7AD\uC774 \uB2E8
+        \uB458\uC774 \uC0B4\uACE0 \uC788\uC5C8\uC5B4\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 2824697826455121864, guid: 50ca070287779419e9e7b136edb025e0, type: 3}
       propertyPath: mvifl_setVoiceInfoList.Array.data[0].sf_speakingRate
