@@ -83,7 +83,7 @@ public class Jack4_EventController : MonoBehaviour
     private bool mb_BeanToMother;                                                                   // 콩이 어머니에게 전달되었는지 확인하기위한 Flag
     private bool mb_BeanToWindow;                                                                   // 콩이 창문에게 전달되었는지 확인하기위한 Flag
     private bool mb_PlaySound;                                                                      // 처음 씬이 실행될때 음성이 한번만 나오기 위한 Flag
-
+    
     // 화살표 관련 변수
     GameObject mg_ArrowToBean;                                                                      // Jack의 콩을 가르키는 화살표 변수
     GameObject mg_ArrowToMother;                                                                    // 어머니를 가르키는 화살표 변수
@@ -243,7 +243,11 @@ public class Jack4_EventController : MonoBehaviour
 
         if(mb_BeanToWindow == true)                                                                     // 콩이 창문에게 전달되면 다음 씬으로 이동
         {
-            msm_soundManager.playSound(1);
+            if(mb_PlaySound == true)
+            {
+                mb_PlaySound = false;
+                msm_soundManager.playSound(1);
+            }
             Invoke("NextScene", 1f);
             //SceneManager.LoadScene("Jack_Epi5");
         }

@@ -77,16 +77,16 @@ public class Jack4_MouseDrag : MonoBehaviour
             Vector2 mv2_worldObjectPosition = Camera.main.ScreenToWorldPoint(mv2_mouseDragPosition);
             this.transform.position = mv2_worldObjectPosition;
             Debug.Log("오브젝트 드래그");
+            if (PlayOnce == false)
+            {
+                msm_soundManager.playSound(0);
+                PlayOnce = true;
+            }
         }
 
         if(this.tag == "Bean")
         {
             this.mg_ScriptManager.GetComponent<Jack4_EventController>().DragFalgTrue();
-        }
-        if (PlayOnce == false)
-        {
-            msm_soundManager.playSound(0);
-            PlayOnce = true;
         }
     }
 
@@ -99,14 +99,16 @@ public class Jack4_MouseDrag : MonoBehaviour
             if(mb_BeanPositionFlag == false)
             {
                 this.transform.position = new Vector3(-3, -4.5f, 0);
-                msm_soundManager.playSound(2);
             }
             else
             {
                 this.transform.position = new Vector3(5.2f, -3.5f, 0);
-                msm_soundManager.playSound(2);
             }
             this.mg_ScriptManager.GetComponent<Jack4_EventController>().DragFalgFalse();
+            if(mb_flag == true)
+            {
+                msm_soundManager.playSound(2);
+            }
         }
         PlayOnce = false;
     }
